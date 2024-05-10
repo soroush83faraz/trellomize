@@ -3,10 +3,12 @@ from validate_email_address import validate_email
 
 #1 : emailaddress in not valid \ 2 : emailaddress is used \ 7 : emailaddress is correct
 def my_validate_email():
-    
+    print('Enter a standard form of emailaddress and if you wanna exit enter *')
     while True:
         problem = False
         emailaddress = input('Email :')
+        if emailaddress == '*':
+            return None
         if not validate_email(emailaddress):
             print('you should enter standard form like : firstname.lastname@example.com')
             problem = True
@@ -56,8 +58,10 @@ def find_strange(password):
 def validating_username():
     while True:
         problem = False
-        print("Username must include at least 5 letter or number")
+        print("Username must include at least 5 letter or number \t if you wanna Exit enter *")
         username = input("Username :")
+        if username == '*':
+            return None
         if len(username) < 5:
             print('Your username must at least include 5 letters')
             problem = True
@@ -66,6 +70,17 @@ def validating_username():
             problem = True
         if not alpha_or_num(username):
             print("Your username must include just number and alphabetical letter")
+            problem = True
+        with open('.venv\save_username_password_email.csv' , mode='r') as reading_file:
+            reader = csv.reader(reading_file)
+            header = next(reader)
+            existing_username = []
+            for row in reader:
+                existing_username.append(row[0])
+
+        reading_file.close()
+        if username in existing_username:
+            print('This username is used')
             problem = True
         if not problem:        
             print("Username was acceped")
@@ -76,11 +91,13 @@ def validating_username():
 def IsPasswordValid():
     checklist = ['@' , '#' , '$' , '&']
     
-    print('Your password should include at least 8 letter and must be combination of letter number and a character like @,#,$,&')
+    print('Your password should include at least 8 letter and must be combination of letter number and a character like @,#,$,& \t if you wanna exit enter *')
     while True:
         checklist_number = 0
         problem = False
         password = input("Password :")
+        if password == '*':
+            return None
         if len(password) < 8:
             print('your password should be longer')
             problem = True
@@ -104,28 +121,55 @@ def IsPasswordValid():
     return password            
 
         
-        
+#Section for saving data in CSV format=========================================
+def save_account(username , password , email):
+    with open('.venv\save_username_password_email.csv' , 'a' , newline='') as writing_file:
+        writer = csv.writer(writing_file)
+        writer.writerow([username , password , email , None])
+    
+
+    
+    print('Your Account was saved successfully')
+#==============================================================================
 
 
 
 def make_an_account():
     print('For making an account in trellomize you should pick username , password and emailaddress')
-#Section for validating username===============================================
-    username = validating_username()
-#==============================================================================
-#Section for validating password===============================================
-    password = IsPasswordValid()
-#==============================================================================
-#Section for validating Email==================================================
-    email = my_validate_email()
-#==============================================================================
-#Section for saving data in CSV format=========================================
-    with open('.venv\save_username_password_email.csv' , 'a' , newline='') as writing_file:
-        writer = csv.writer(writing_file)
-        writer.writerow([username , password , email])
 
-    
-    print('Your Account was saved successfully')
-#==============================================================================
+    username = None
+    password = None
+    email = None
+    while True:
+        print("Here is the status of data:")
+        print(f"1_Username :{username}")
+        print(f"2_Password :{password}")
+        print(f"3_EmailAddress :{email}")
+        print('4_Save')
+        print('5_Exit')
+        print('\n')
+        print("What do you want to do?(1,2,3,4,5)")
+
+        
+
+        Option = input('Option :')
+
+        if Option == '1':
+            username = validating_username()
+        elif Option == '2':
+            password = IsPasswordValid()
+        elif Option == '3':
+            email = my_validate_email()
+        elif Option == '4':
+            if username != None and password != None and email != None:
+                save_account(username , password , email)
+                break
+            else:
+                print('Some field is empty')
+        elif Option == '5':
+            break
+
+
+
         
     
