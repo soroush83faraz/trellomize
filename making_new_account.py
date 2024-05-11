@@ -13,7 +13,7 @@ def my_validate_email():
             print('you should enter standard form like : firstname.lastname@example.com')
             problem = True
        
-        with open('.venv\save_username_password_email.csv' , mode='r') as reading_file:
+        with open('save_username_password_email.csv' , mode='r') as reading_file:
             reader = csv.reader(reading_file)
             header = next(reader)
             existing_email = []
@@ -71,7 +71,7 @@ def validating_username():
         if not alpha_or_num(username):
             print("Your username must include just number and alphabetical letter")
             problem = True
-        with open('.venv\save_username_password_email.csv' , mode='r') as reading_file:
+        with open('save_username_password_email.csv' , mode='r') as reading_file:
             reader = csv.reader(reading_file)
             header = next(reader)
             existing_username = []
@@ -123,7 +123,7 @@ def IsPasswordValid():
         
 #Section for saving data in CSV format=========================================
 def save_account(username , password , email):
-    with open('.venv\save_username_password_email.csv' , 'a' , newline='') as writing_file:
+    with open('save_username_password_email.csv' , 'a' , newline='') as writing_file:
         writer = csv.writer(writing_file)
         writer.writerow([username , password , email , None])
     
