@@ -4,7 +4,7 @@ import csv
 #FUnction for checking if a combination is valid or not==============
 def check_combinations(username , password):
     data_list = []
-    with open('.venv\save_username_password_email.csv' , 'r') as file:
+    with open('save_username_password_email.csv' , 'r') as file:
         reader = csv.reader(file)
         header = next(reader)
 
