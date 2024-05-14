@@ -1,6 +1,8 @@
 import json
 from validate_email_address import validate_email
+import logging
 
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 #1 : emailaddress in not valid \ 2 : emailaddress is used \ 7 : emailaddress is correct
 def my_validate_email():
     print('Enter a standard form of emailaddress and if you wanna exit enter *')
@@ -138,10 +140,10 @@ def save_account(username , password , email):
     existing_data.append(new_data)
 
     with open('save_username_password_email.json' , 'w') as writing_file:
-        json.dump(existing_data , writing_file)
+        json.dump(existing_data , writing_file , indent=4)
 
     
-
+    logging.info(f"An account was made by {username} in save_account function and was saved in save_username_password_email.json")
     
     print('Your Account was saved successfully')
 #==============================================================================
