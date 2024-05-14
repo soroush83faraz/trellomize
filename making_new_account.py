@@ -1,4 +1,4 @@
-import csv
+import json
 from validate_email_address import validate_email
 
 #1 : emailaddress in not valid \ 2 : emailaddress is used \ 7 : emailaddress is correct
@@ -13,13 +13,14 @@ def my_validate_email():
             print('you should enter standard form like : firstname.lastname@example.com')
             problem = True
        
-        with open('save_username_password_email.csv' , mode='r') as reading_file:
-            reader = csv.reader(reading_file)
-            header = next(reader)
+        try :
+            with open('save_username_password_email.json') as reading_file:
+                reader_dict = json.load(reading_file)
+                existing_email = []
+                for i in reader_dict['email']:
+                    existing_email.append(i)
+        except:
             existing_email = []
-            for row in reader:
-                existing_email.append(row[2])
-        reading_file.close()
 
         if emailaddress in existing_email:
             print('this email is used')
@@ -71,14 +72,17 @@ def validating_username():
         if not alpha_or_num(username):
             print("Your username must include just number and alphabetical letter")
             problem = True
-        with open('save_username_password_email.csv' , mode='r') as reading_file:
-            reader = csv.reader(reading_file)
-            header = next(reader)
-            existing_username = []
-            for row in reader:
-                existing_username.append(row[0])
+        try: 
+            with open('save_username_password_email.json' , mode='r') as reading_file:
+                username_dict = json.load(reading_file)
+                existing_username = []
+                for i in username_dict:
+                    existing_username.append(i)
+            reading_file.close()
 
-        reading_file.close()
+        except:
+            existing_username = []
+
         if username in existing_username:
             print('This username is used')
             problem = True
@@ -123,9 +127,19 @@ def IsPasswordValid():
         
 #Section for saving data in CSV format=========================================
 def save_account(username , password , email):
-    with open('save_username_password_email.csv' , 'a' , newline='') as writing_file:
-        writer = csv.writer(writing_file)
-        writer.writerow([username , password , email , None])
+    try:
+        with open('save_username_password_email.json' , 'r') as reading_file:
+            existing_data = json.load(reading_file)
+    except:
+        existing_data = []
+
+    new_data = {"username" : username , "password" : password , "email" : email , 'projects' : []}
+
+    existing_data.append(new_data)
+
+    with open('save_username_password_email.json' , 'w') as writing_file:
+        json.dump(existing_data , writing_file)
+
     
 
     
