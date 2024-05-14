@@ -16,8 +16,9 @@ if __name__ == "__main__":
             make_an_account()
         elif Choice == '2':
             datalist = Log_in()
+            print(datalist)
             if len(datalist) != 0:
-                Work_inside_Trellomize()
+                Work_inside_Trellomize(datalist)
         
 
 

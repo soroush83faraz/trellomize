@@ -1,19 +1,7 @@
-import json
+from tasks import *
 
-dict = {'username' : "Saeed" , 'password' : 'Saeedg00' , 'email' : "Saeed@gmail.com" , 'projects' : ['A' , 'B' , 'C']}
+task_1 = Task()
 
-try: 
-    with open('test.json' , 'r') as load_file:
-        existing_dict = json.load(load_file)
-    load_file.close()
-except:
-    existing_dict = []
+task_1.title = 'hello'
 
-
-with open('test.json' , 'w') as wfile:
-    json.dump(existing_dict , wfile , indent=4)
-    wfile.close()
-
-for i in existing_dict :
-    print(i['email'])
-
+print(task_1.title)
