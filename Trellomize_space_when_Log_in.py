@@ -1,7 +1,10 @@
 import json
 from projects import *
 from tasks import * 
+from user import *
 new_project = Projects(None , None)
+In_account_user = User(None , None , None , None , None)
+pre_list_of_members = []
 #Defining function for choosing name for project================
 def name_project():
     while True:
@@ -48,47 +51,64 @@ def Add_member():
         
         for i in data:
             if i['username'] == member_name:
-                new_project.members.append(i)
+                new_project.members_usernames.append(i['username'])
+                pre_list_of_members.append(i['username'])
                 Added = True
                 print(f"{member_name} was added to project successfully")
+            
                 
         if Added:
-            try:
-                with open('save_username_password_email.json' , 'r') as rfile:
-                    existing_data = json.load(rfile)
-                    rfile.close()
-            except:
-                existing_data = []
+            # try:
+            #     with open('save_username_password_email.json' , 'r') as rfile:
+            #         existing_data = json.load(rfile)
+            #         rfile.close()
+            # except:
+            #     existing_data = []
 
-            for i in existing_data:
-                if i['username'] == member_name:
-                    i['projects'].append(new_project.name)
-                    new_data = existing_data
+            # for i in existing_data:
+            #     if i['username'] == member_name:
+            #         i['projects_member'].append(new_project.make_dict_of_project())
+            #         new_data = existing_data
 
-            with open('save_username_password_email.json' , 'w') as wfile:
-                json.dump(new_data , wfile , indent=4)
-                wfile.close()
+            # with open('save_username_password_email.json' , 'w') as wfile:
+            #     json.dump(new_data , wfile , indent=4)
+            #     wfile.close()
             break
         else:
             print("The username was not found")
 
 #===============================================================
 #Functiom for saving project====================================
-def save_my_project(datalist):
+def save_my_project():
+    proj_names = []
     if new_project.name == None:
         print("You should pick a title for your project")
-    else:
-        for i in new_project.members:
-            members_name = i['username']
+    
+    try:
+        with open('Projects.json' , 'r') as file: 
+            projs = json.load(file)
+            file.close()
+    except:
+        projs = []
 
-        new_project.leader = datalist['username']
+    for i in projs:
+        proj_names = i['title']
+    if new_project.name in proj_names:
+        return
+
+    else:
+        members_name = []
+        for i in new_project.members_usernames:
+            members_name.append(i)
+
+        new_project.leader = In_account_user.username
         
         with open("Projects.json" , 'w') as wfile:
             project_dict = {'title' : new_project.name , "members" : members_name, "ID" : new_project.ID , "leader" : new_project.leader , "tasks" : new_project.tasks}
             json.dump(project_dict , wfile , indent=4)
             wfile.close()
         
-        datalist['projects'].append(new_project.name)
+        In_account_user.projects_leads.append(new_project.make_dict_of_project())
 
         try:
             with open('save_username_password_email.json' , 'r') as rfile:
@@ -98,41 +118,86 @@ def save_my_project(datalist):
             existing_data = []
 
         for i in existing_data:
-            if i['username'] == datalist['username']:
-                i['projects'] = datalist['projects']
+            if i['username'] == In_account_user.username:
+                i['projects_leads'] = In_account_user.projects_leads
                 new_data = existing_data
             with open('save_username_password_email.json' , 'w') as wfile:
                 json.dump(new_data , wfile , indent=4)
                 wfile.close()
+    #Section for saving project info into usernames dictionary==
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                user_info = json.load(file)
+                file.close()
+        except:
+            user_info = []
 
+        for i in user_info:
+            if i['username'] in members_name:
+                i['projects_member'].append(new_project.make_dict_of_project())
+
+        with open('save_username_password_email.json' , 'w') as wfile:
+            json.dump(user_info , wfile , indent=4)
+            wfile.close()
+    #===========================================================
                 
 
 
 #===============================================================
+#Function for getting ID for project an validate it=============
+def get_ID():
+    print("You should enter an unique ID for your project")
+    while True:
+        ID = input("ID :")
+
+        if ID == '*':
+            break
+        try:
+            with open('Project_ID_center.json' , 'r') as file:
+                All_ID = json.load(file)
+                file.close()
+        except:
+            All_ID = []
+        
+        if ID in All_ID:
+            print("Choose an unique ID")
+        else:
+            new_project.ID = ID
+            print('ID set')
+            break
+
+
+
+
+#===============================================================
+
 
 #Function for making new project in mainpage of App=============
-def Creat_new_project(datalist):
+def Creat_new_project():
     
     while True:
         member_list = []
-        for i in new_project.members:
-            member_list.append(i['username'])
+        for i in new_project.members_usernames:
+            member_list.append(i)
         print("Fill ito make project")
-        print(f"1_Name of project :{new_project.name}")
-        print(f"2_Set member for your project {member_list}")
-        print("3_Save")
-        print("4_exit")
+        print(f"1_Project's title:{new_project.name}")
+        print(f"2_Project's members {member_list}")
+        print(f"3_Project's ID :{new_project.ID}")
+        print("4_Save")
+        print("5_exit")
 
         chosen_option = input('Choose :')
 
         if chosen_option == '1':
-           projectname = name_project()
+            name_project()
 
         elif chosen_option == '2':
             Add_member()
         elif chosen_option == '3':
-            save_my_project(datalist)
+            get_ID()
         elif chosen_option == '4':
+            save_my_project()
+        elif chosen_option == '5':
             break
 
 
@@ -147,6 +212,12 @@ def Creat_new_project(datalist):
 
 
 def Work_inside_Trellomize(datalist):
+    In_account_user.username = datalist['username']
+    In_account_user.password = datalist['password']
+    In_account_user.email = datalist['email']
+    In_account_user.projects_leads = datalist['projects_leads']
+    In_account_user.projects_member = datalist['projects_member']
+
     while True:
         print('Choose a number & (*) to exit')
         print('1_Creat new project')
@@ -160,4 +231,4 @@ def Work_inside_Trellomize(datalist):
             break
         
         elif chosen_option == '1':
-            Creat_new_project(datalist)
+            Creat_new_project()
