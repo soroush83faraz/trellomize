@@ -1,7 +1,10 @@
 {
-    "title": "Project1",
-    "members": "Pouria",
-    "ID": null,
-    "leader": "Saeed",
+    "title": "title",
+    "members": [
+        "soroush",
+        "pouria"
+    ],
+    "ID": "1323",
+    "leader": "saeed",
     "tasks": []
 }

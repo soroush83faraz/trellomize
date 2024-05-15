@@ -2,7 +2,7 @@ class Projects:
     ID = None
     name = None
     leader = None
-    members = []
+    members_usernames = []
     tasks = []
 
     def __init__(self , name , leader):
@@ -10,7 +10,7 @@ class Projects:
         self.leader = leader
 
     def make_dict_of_project(self):
-        dicted_project = {'ID' : self.ID , 'name' : self.name , 'leader' : self.leader , 'members' : self.members , 'tasks' : self.tasks}
+        dicted_project = {'ID' : self.ID , 'name' : self.name , 'leader' : self.leader , 'members' : self.members_usernames , 'tasks' : self.tasks}
         return dicted_project
 
         

@@ -53,3 +53,49 @@
 2024-05-15 02:14:27,212 | INFO | Saeed was logged in his account
 2024-05-15 02:16:57,309 | INFO | Saeed was logged in his account
 2024-05-15 02:16:57,309 | INFO | Saeed was logged in his account
+2024-05-15 12:13:42,251 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
+2024-05-15 12:14:13,020 | INFO | An account was made by soroush in save_account function and was saved in save_username_password_email.json
+2024-05-15 12:14:42,357 | INFO | An account was made by pouria in save_account function and was saved in save_username_password_email.json
+2024-05-15 12:16:54,370 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
+2024-05-15 13:16:16,564 | INFO | pouria was logged in his account
+2024-05-15 13:16:16,564 | WARNING | pouria tried to log in with false informations
+2024-05-15 13:16:49,534 | INFO | An account was made by pouria in save_account function and was saved in save_username_password_email.json
+2024-05-15 13:17:21,986 | INFO | saeed was logged in his account
+2024-05-15 13:17:21,986 | INFO | saeed was logged in his account
+2024-05-15 13:21:17,929 | INFO | saeed was logged in his account
+2024-05-15 13:21:17,936 | WARNING | saeed tried to log in with false informations
+2024-05-15 13:21:24,797 | INFO | saeed was logged in his account
+2024-05-15 13:21:24,797 | INFO | saeed was logged in his account
+2024-05-15 13:26:51,511 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
+2024-05-15 13:27:31,964 | INFO | An account was made by pouria in save_account function and was saved in save_username_password_email.json
+2024-05-15 13:31:58,716 | INFO | An account was made by soroush in save_account function and was saved in save_username_password_email.json
+2024-05-15 13:32:49,755 | INFO | saeed was logged in his account
+2024-05-15 13:32:49,755 | INFO | saeed was logged in his account
+2024-05-15 13:38:17,498 | INFO | saeed was logged in his account
+2024-05-15 13:38:17,498 | INFO | saeed was logged in his account
+2024-05-15 13:38:55,900 | INFO | saeed was logged in his account
+2024-05-15 13:38:55,900 | INFO | saeed was logged in his account
+2024-05-15 13:39:50,136 | INFO | saeed was logged in his account
+2024-05-15 13:39:50,136 | INFO | saeed was logged in his account
+2024-05-15 13:41:53,960 | INFO | saeed was logged in his account
+2024-05-15 13:41:53,960 | INFO | saeed was logged in his account
+2024-05-15 13:43:45,742 | INFO | saeed was logged in his account
+2024-05-15 13:43:45,742 | INFO | saeed was logged in his account
+2024-05-15 13:44:42,648 | INFO | saeed was logged in his account
+2024-05-15 13:44:42,648 | INFO | saeed was logged in his account
+2024-05-15 13:45:48,132 | INFO | saeed was logged in his account
+2024-05-15 13:45:48,139 | INFO | saeed was logged in his account
+2024-05-15 14:09:11,025 | INFO | saeed was logged in his account
+2024-05-15 14:09:11,025 | INFO | saeed was logged in his account
+2024-05-15 14:28:32,326 | INFO | saeed was logged in his account
+2024-05-15 14:28:32,326 | INFO | saeed was logged in his account
+2024-05-15 14:33:53,317 | INFO | saeed was logged in his account
+2024-05-15 14:33:53,317 | INFO | saeed was logged in his account
+2024-05-15 14:54:05,219 | INFO |  was logged in his account
+2024-05-15 14:54:05,219 | WARNING |  tried to log in with false informations
+2024-05-15 14:54:11,508 | INFO | saeed was logged in his account
+2024-05-15 14:54:11,508 | INFO | saeed was logged in his account
+2024-05-15 14:58:13,580 | INFO | saeed was logged in his account
+2024-05-15 14:58:13,580 | INFO | saeed was logged in his account
+2024-05-15 14:59:49,097 | INFO | saeed was logged in his account
+2024-05-15 14:59:49,097 | INFO | saeed was logged in his account
