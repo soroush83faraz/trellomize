@@ -92,7 +92,7 @@ def save_my_project():
         projs = []
 
     for i in projs:
-        proj_names = i['title']
+        proj_names.append(i['title'])
     if new_project.name in proj_names:
         return
 
