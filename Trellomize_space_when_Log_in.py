@@ -7,30 +7,10 @@ In_account_user = User(None , None , None , None , None)
 pre_list_of_members = []
 #Defining function for choosing name for project================
 def name_project():
+    print('Enter a name for your project')
+    
     while True:
-        duplicate = False
-        print("Choose name for project : (*) for exit")
         
-        name = input("Name :")
-
-        if name == '*':
-            break
-
-        try:
-            with open('Projects.json' , 'r') as rfile:
-                data = json.read(rfile)
-                rfile.close()
-        except:
-            data = []
-
-            for i in data:
-                if name == i['name']:
-                    print("Duplicate projectname! Try again")
-                    duplicate = True
-        
-        if not duplicate:
-            new_project.name = name
-            break
 
 #===============================================================
 #Function for adding member to project==========================
@@ -153,13 +133,22 @@ def get_ID():
         if ID == '*':
             break
         try:
-            with open('Project_ID_center.json' , 'r') as file:
-                All_ID = json.load(file)
+            with open('save_username_password_email.json' , 'r') as file:
+                all_users_data = json.load(file)
                 file.close()
         except:
-            All_ID = []
-        
-        if ID in All_ID:
+            all_users_data = []
+
+        list_of_project_ID = []
+        for user in all_users_data:
+            if user['username'] == In_account_user.username:
+                for project in user['project']:
+                    list_of_project_ID.append(project['ID'])
+
+
+
+
+        if ID in list_of_project_ID:
             print("Choose an unique ID")
         else:
             new_project.ID = ID
@@ -179,7 +168,7 @@ def Creat_new_project():
         member_list = []
         for i in new_project.members_usernames:
             member_list.append(i)
-        print("Fill ito make project")
+        print(f"Dear {In_account_user.username} Fill it to make project")
         print(f"1_Project's title:{new_project.name}")
         print(f"2_Project's members {member_list}")
         print(f"3_Project's ID :{new_project.ID}")
@@ -219,7 +208,7 @@ def Work_inside_Trellomize(datalist):
     In_account_user.projects_member = datalist['projects_member']
 
     while True:
-        print('Choose a number & (*) to exit')
+        print(f'Dear {In_account_user.username} Choose a number & (*) to exit')
         print('1_Creat new project')
         print("2_View all projects")
         print('3_View projects you lead')
@@ -232,3 +221,17 @@ def Work_inside_Trellomize(datalist):
         
         elif chosen_option == '1':
             Creat_new_project()
+
+        elif chosen_option == '2':
+            All_user_projects = []
+            try:
+                with open('save_username_password_email.json' , 'r') as file:
+                    users_info = json.load(file)
+                    file.close()
+            except:
+                users_info = []
+
+            for i in users_info:
+                
+
+
