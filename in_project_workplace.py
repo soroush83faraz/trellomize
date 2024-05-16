@@ -163,6 +163,8 @@ def finding_projects_member (ID) :
                 #print(proj_path)
                 return proj_path
     
+
+
 def task_and_member (proj_path_leads) :
     while True :
         clear()
@@ -308,4 +310,4 @@ def show_task (proj_path_leads) :
 def clear():
     os.system('cls')            
     
-work_inside_proj("1323")
+# work_inside_proj("1323")
