@@ -2,6 +2,8 @@ import json
 from validate_email_address import validate_email
 import logging
 from user import *
+from printing import *
+
 user = User(None , None , None , None , None)
 logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 #1 : emailaddress in not valid \ 2 : emailaddress is used \ 7 : emailaddress is correct
@@ -9,7 +11,7 @@ def my_validate_email():
     print('Enter a standard form of emailaddress and if you wanna exit enter *')
     while True:
         problem = False
-        emailaddress = input('Email :')
+        emailaddress = input('                                                                                 Email :')
         if emailaddress == '*':
             return None
         if not validate_email(emailaddress):
@@ -62,18 +64,18 @@ def find_strange(password):
 def validating_username():
     while True:
         problem = False
-        print("Username must include at least 5 letter or number \t if you wanna Exit enter *")
-        username = input("Username :")
+        console.print("[italic][green]Username must include at least 5 letter or number \t if you wanna Exit enter[/][/] [red]*[/]" , justify='center')
+        username = input('                                                                                 Username :')
         if username == '*':
             return None
         if len(username) < 5:
-            print('Your username must at least include 5 letters')
+            console.print('[bold][green]Your username must at least include [red]5[/] letters[/][/]' , justify='center')
             problem = True
         if  ' ' in username:
-            print("Your username musn't include space")
+            console.print("[purple][bold]Your username musn't include[/][/] [red]space[/]" , justify='center')
             problem = True
         if not alpha_or_num(username):
-            print("Your username must include just number and alphabetical letter")
+            console.print("[violet][bold]Your username must include just[/][/] [red][italic]number[/][/] and [red][italic]alphabetical[/][/] letter" , justify='center')
             problem = True
         try: 
             with open('save_username_password_email.json' , mode='r') as reading_file:
@@ -87,10 +89,10 @@ def validating_username():
             existing_username = []
 
         if username in existing_username:
-            print('This username is used')
+            console.print('This username is used' , style='green underline' , justify='center')
             problem = True
         if not problem:        
-            print("Username was acceped")
+            console.print("Username was acceped" , style='green bold' , justify='center')
             break
     return username
         
@@ -98,31 +100,31 @@ def validating_username():
 def IsPasswordValid():
     checklist = ['@' , '#' , '$' , '&']
     
-    print('Your password should include at least 8 letter and must be combination of letter number and a character like @,#,$,& \t if you wanna exit enter *')
+    console.print('[green]Your password should include at least[/] [red]8[/] [green]letter and must be combination of letter number and a character like[/] [red]@,#,$,&[/] \t [green]if you wanna exit enter[/] [red]*[/]   😊' , justify='center')
     while True:
         checklist_number = 0
         problem = False
-        password = input("Password :")
+        password = input('                                                                                 Password :')
         if password == '*':
             return None
         if len(password) < 8:
-            print('your password should be longer')
+            console.print('your password should be longer .😊' , style= 'bold violet' , justify='center')
             problem = True
         for letter in password:
             if letter in checklist:
                 checklist_number += 1
         if checklist_number == 0:
-            print("Your password must include at least one of @ ,# ,$ ,&")
+            console.print("[violet]Your password must include at least one of[/] [red]@ ,# ,$ ,&[/]  😁" , justify='center')
             problem = True
         if len(password) > 16:
-            print('Your password must be less then 16 letter')
+            console.print('[violet]Your password must be less then[/] [red][italic]16[/] [violet]letter[/] ✌️' , justify='center')
             problem = True
         Strange_letter = find_strange(password)
         if Strange_letter != None:
-            print(f'{Strange_letter} is forbidden')
+            console.print(f'[red]{Strange_letter}[/] [violet]is forbidden[/]  ⛔' , justify='center')
             problem = True
         if not problem:
-            print('Password accepted')
+            console.print('[italic][green]]Password accepted[/][/] ✅' , justify='center')
             break
 
     return password            
@@ -146,30 +148,23 @@ def save_account():
     
     logging.info(f"An account was made by {user.username} in save_account function and was saved in save_username_password_email.json")
     
-    print('Your Account was saved successfully')
+    console.print('Your Account was saved successfully  ✅✌️'  , style='green' , justify= 'center')
 #==============================================================================
 
 
 
 def make_an_account():
-    print('For making an account in trellomize you should pick username , password and emailaddress')
+    console.print('For making an account in trellomize you should pick username , password and emailaddress  😊' , style='bold blue' , justify='center')
 
     user.username = None
     user.password = None
     user.email = None
     while True:
-        print("Here is the status of data:")
-        print(f"1_Username :{user.username}")
-        print(f"2_Password :{user.password}")
-        print(f"3_EmailAddress :{user.email}")
-        print('4_Save')
-        print('5_Exit')
-        print('\n')
-        print("What do you want to do?(1,2,3,4,5)")
-
         
-
-        Option = input('Option :')
+        console.print("[green][italic]What do you want to do?[/][/][red](w , a , s , d)[/]" , justify='center')
+        lines_list = [f"1_Username :{user.username}" , f"2_Password :{user.password}" , f"3_EmailAddress :{user.email}" , '4_Save' ,'5_Exit']
+        
+        Option = pro_print(lines_list)
 
         if Option == '1':
            user.username =  validating_username()
@@ -182,7 +177,7 @@ def make_an_account():
                 save_account()
                 break
             else:
-                print('Some field is empty')
+                console.print('Some field is empty' ,style= "bold yellow" , justify='center')
         elif Option == '5':
             break
 
