@@ -1,7 +1,8 @@
 from making_new_account import *
 from Login_section import *
 from Trellomize_space_when_Log_in import *
-import 
+import rich
+
 if __name__ == "__main__":
 
     while True:
