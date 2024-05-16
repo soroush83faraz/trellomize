@@ -45,7 +45,7 @@ def create_new_task (proj_path_leads) :
         elif choice == "5" :
             task = tasks.Task(Priority , Title , Description , status)
             dict_of_tasks = task.make_dict_of_tasks()
-            print(dict_of_tasks)
+            # print(dict_of_tasks)
             try :
                 with open("save_username_password_email.json" , "r") as json_file :
                     users_info = json.load(json_file)
@@ -54,7 +54,7 @@ def create_new_task (proj_path_leads) :
 
             except FileNotFoundError:
                 users_info = []
-            print(users_info[proj_path_leads[0]][proj_path_leads[1]][0])
+            # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0])
             users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]].append(dict_of_tasks)
             with open("save_username_password_email.json"  , "w") as json_file :
                 json.dump(users_info , json_file , indent=4)
@@ -73,7 +73,7 @@ def work_inside_proj (ID) :
     proj_path_member = finding_projects_member (ID)       
     # print(proj_member) 
     proj_path_leads = finding_projects_leads (ID)     
-    print(proj_path_leads) 
+    # print(proj_path_leads) 
     
     try :
         with open("save_username_password_email.json" , "r") as json_file :

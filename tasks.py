@@ -49,8 +49,8 @@ class Task:
         self.title = title
         self.start_time = (datetime.datetime.now()).strftime("%Y-%m-%d  %H:%M:%S")
         self.end_time = (datetime.datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d  %H:%M:%S")
-        self.ID  = make_unique_ID()
+        self.ID  = str(make_unique_ID())
         
     def make_dict_of_tasks(self):
-        dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , 'Comments' : self.comments}
+        dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , 'Comments' : self.comments , "ID" : self.ID}
         return dicted_tasks
