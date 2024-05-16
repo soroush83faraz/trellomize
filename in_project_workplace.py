@@ -5,12 +5,12 @@ import tasks
 
 
 
-def create_new_task (proj_leads) :
+def create_new_task (proj_path_leads) :
     
-    Title = None
-    Description = None
-    Priority = None
-    status = None
+    Title = "Task"
+    Description = "Put your discription here"
+    Priority = "LOW"
+    status = "BACKLOG"
     while True :
         
         print("Choose a number & (*) to exit")
@@ -44,7 +44,21 @@ def create_new_task (proj_leads) :
                 
         elif choice == "5" :
             task = tasks.Task(Priority , Title , Description , status)
-            # print(task.end_time)
+            dict_of_tasks = task.make_dict_of_tasks()
+            print(dict_of_tasks)
+            try :
+                with open("save_username_password_email.json" , "r") as json_file :
+                    users_info = json.load(json_file)
+                    json_file.close()
+
+
+            except FileNotFoundError:
+                users_info = []
+            print(users_info[proj_path_leads[0]][proj_path_leads[1]][0])
+            users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]].append(dict_of_tasks)
+            with open("save_username_password_email.json"  , "w") as json_file :
+                json.dump(users_info , json_file , indent=4)
+                json_file.close()
             break
             
 
@@ -56,28 +70,41 @@ def create_new_task (proj_leads) :
 
 def work_inside_proj (ID) :
     
-    proj_member = finding_projects_member (ID)       
-    print(proj_member) 
-    proj_leads = finding_projects_leads (ID)       
-    print(proj_leads) 
-    while True :
-        print (f"hello dear {proj_leads[0]["leader"]} Choose a number & (*) to exit")
-        print("1_Create a new task")
-        print("2_Choose a task and member ")
-        print("3_ exit ")
-        print("Choose your option : ")
-        choice = input()
-        if choice == '*' :
-            break
-        if choice == "1" :
-            create_new_task(proj_leads)
-            break
-        if choice == "2" :
-            pass 
-        if choice == "3" :
-            break
-        else :
-            print("your choice isnt valid please choose from 1 , 2 , 3 ")
+    proj_path_member = finding_projects_member (ID)       
+    # print(proj_member) 
+    proj_path_leads = finding_projects_leads (ID)     
+    print(proj_path_leads) 
+    
+    try :
+        with open("save_username_password_email.json" , "r") as json_file :
+            users_info = json.load(json_file)
+            json_file.close()
+               
+    except FileNotFoundError:
+        users_info = []
+        
+        
+    if (proj_path_leads != None) :    
+        while True :
+            print (f"hello dear {users_info[proj_path_leads[0]]["username"]} Choose a number & (*) to exit")
+            print("1_Create a new task")
+            print("2_Choose a task and member ")
+            print("3_ exit ")
+            print("Choose your option : ")
+            choice = input()
+            if choice == '*' :
+                break
+            if choice == "1" :
+                create_new_task(proj_path_leads)
+                break
+            if choice == "2" :
+                pass 
+            if choice == "3" :
+                break
+            else :
+                print("your choice isnt valid please choose from 1 , 2 , 3 ")
+    else :
+        print("you are not leading in this project ")
             
 
 
@@ -92,14 +119,19 @@ def finding_projects_leads (ID) :
     except FileNotFoundError:
         users_info = []
         
-        
-    for user in users_info :
-        for item in user["projects_leads"] :
-            if item["ID"] == ID :
-                return user["projects_leads"]
+    proj_path = [] 
+    for user in range(len(users_info)) :
+        for item in range(len(users_info[user]["projects_leads"])) :
+            if users_info[user]["projects_leads"][item]["ID"] == ID :
+                proj_path.append(user)
+                proj_path.append("projects_leads")
+                proj_path.append("tasks")
+                #print(proj_path)
+                return proj_path
             
             
 def finding_projects_member (ID) :
+    
     
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -110,13 +142,15 @@ def finding_projects_member (ID) :
     except FileNotFoundError:
         users_info = []
         
-            
-    for user in users_info :
-        for item in user["projects_member"] :
-            if item["ID"] == ID :
-                return user["projects_member"]
-            
-
+    proj_path = [] 
+    for user in range(len(users_info)) :
+        for item in range(len(users_info[user]["projects_member"])) :
+            if users_info[user]["projects_member"][item]["ID"] == ID :
+                proj_path.append(user)
+                proj_path.append("projects_member")
+                proj_path.append("tasks")
+                #print(proj_path)
+                return proj_path
     
                 
             
