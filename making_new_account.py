@@ -1,6 +1,9 @@
-import csv
+import json
 from validate_email_address import validate_email
-
+import logging
+from user import *
+user = User(None , None , None , None , None)
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 #1 : emailaddress in not valid \ 2 : emailaddress is used \ 7 : emailaddress is correct
 def my_validate_email():
     print('Enter a standard form of emailaddress and if you wanna exit enter *')
@@ -13,13 +16,14 @@ def my_validate_email():
             print('you should enter standard form like : firstname.lastname@example.com')
             problem = True
        
-        with open('save_username_password_email.csv' , mode='r') as reading_file:
-            reader = csv.reader(reading_file)
-            header = next(reader)
+        try :
+            with open('save_username_password_email.json') as reading_file:
+                reader_dict = json.load(reading_file)
+                existing_email = []
+                for i in reader_dict['email']:
+                    existing_email.append(i)
+        except:
             existing_email = []
-            for row in reader:
-                existing_email.append(row[2])
-        reading_file.close()
 
         if emailaddress in existing_email:
             print('this email is used')
@@ -71,14 +75,17 @@ def validating_username():
         if not alpha_or_num(username):
             print("Your username must include just number and alphabetical letter")
             problem = True
-        with open('save_username_password_email.csv' , mode='r') as reading_file:
-            reader = csv.reader(reading_file)
-            header = next(reader)
-            existing_username = []
-            for row in reader:
-                existing_username.append(row[0])
+        try: 
+            with open('save_username_password_email.json' , mode='r') as reading_file:
+                username_dict = json.load(reading_file)
+                existing_username = []
+                for i in username_dict:
+                    existing_username.append(i)
+            reading_file.close()
 
-        reading_file.close()
+        except:
+            existing_username = []
+
         if username in existing_username:
             print('This username is used')
             problem = True
@@ -122,12 +129,22 @@ def IsPasswordValid():
 
         
 #Section for saving data in CSV format=========================================
-def save_account(username , password , email):
-    with open('save_username_password_email.csv' , 'a' , newline='') as writing_file:
-        writer = csv.writer(writing_file)
-        writer.writerow([username , password , email , None])
-    
+def save_account():
+    try:
+        with open('save_username_password_email.json' , 'r') as reading_file:
+            existing_data = json.load(reading_file)
+    except:
+        existing_data = []
 
+    new_data = {"username" : user.username , "password" : user.password , "email" : user.email , 'projects_leads' : [] , 'projects_member' : []}
+
+    existing_data.append(new_data)
+
+    with open('save_username_password_email.json' , 'w') as writing_file:
+        json.dump(existing_data , writing_file , indent=4)
+
+    
+    logging.info(f"An account was made by {user.username} in save_account function and was saved in save_username_password_email.json")
     
     print('Your Account was saved successfully')
 #==============================================================================
@@ -137,14 +154,14 @@ def save_account(username , password , email):
 def make_an_account():
     print('For making an account in trellomize you should pick username , password and emailaddress')
 
-    username = None
-    password = None
-    email = None
+    user.username = None
+    user.password = None
+    user.email = None
     while True:
         print("Here is the status of data:")
-        print(f"1_Username :{username}")
-        print(f"2_Password :{password}")
-        print(f"3_EmailAddress :{email}")
+        print(f"1_Username :{user.username}")
+        print(f"2_Password :{user.password}")
+        print(f"3_EmailAddress :{user.email}")
         print('4_Save')
         print('5_Exit')
         print('\n')
@@ -155,14 +172,14 @@ def make_an_account():
         Option = input('Option :')
 
         if Option == '1':
-            username = validating_username()
+           user.username =  validating_username()
         elif Option == '2':
-            password = IsPasswordValid()
+           user.password = IsPasswordValid()
         elif Option == '3':
-            email = my_validate_email()
+           user.email = my_validate_email()
         elif Option == '4':
-            if username != None and password != None and email != None:
-                save_account(username , password , email)
+            if user.username != None and user.password != None and user.email != None:
+                save_account()
                 break
             else:
                 print('Some field is empty')

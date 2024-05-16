@@ -1,18 +1,23 @@
-import csv
+import json
+import logging
 
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 #FUnction for checking if a combination is valid or not==============
 def check_combinations(username , password):
-    data_list = []
-    with open('save_username_password_email.csv' , 'r') as file:
-        reader = csv.reader(file)
-        header = next(reader)
+    data_list = {}
+    with open('save_username_password_email.json' , 'r') as file:
+        reader_list = json.load(file)
+        file.close()
 
-        for row in reader:
-            if username == row[0] and password == row[1]:
-                for i in row:
-                    data_list.append(i)
+
+        for row in reader_list:
+            if username == row['username'] and password == row['password']:
+                data_list = row 
+                break
     
+    logging.info(f"{username} was logged in his account")
+
     return data_list
 
     
@@ -53,6 +58,7 @@ def Log_in():
                 break
             else:
                 print("The username-password combination doesn't exist")
+                logging.warning(f"{username} tried to log in with false informations")
         elif Choice == '4':
             break      
 
