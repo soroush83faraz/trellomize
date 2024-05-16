@@ -105,7 +105,7 @@ def work_inside_proj (ID) :
                 show_task(proj_path_leads)
             
             if choice == "3" :
-                pass
+                task_and_member(proj_path_leads)            
             
             if choice == "4" :
                 break
@@ -161,7 +161,10 @@ def finding_projects_member (ID) :
                 #print(proj_path)
                 return proj_path
     
-def task_and_member () :
+def task_and_member (proj_path_leads) :
+    show_task (proj_path_leads) 
+    print()
+    
     pass              
             
             
@@ -177,6 +180,7 @@ def show_task (proj_path_leads) :
     # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]]) 
     
     table = Table(title="TASKS")
+    table.add_column("Index" , justify="center" , style="bold white")
     table.add_column("Title" , justify="center" , style="cyan")
     table.add_column("Description" , justify="center" , style="green")
     table.add_column("Priority" , justify="center" , style="magenta")
@@ -208,13 +212,15 @@ def show_task (proj_path_leads) :
         all.append(MEDIUM)        
     if len(LOW) != 0 :        
         all.append(LOW)  
-    # print(all)
-     
+    
+    index = 0 
     for j in all : 
         for i in j :
-                   
-            table.add_row(i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
-        
+            index = index + 1 
+            print(index)
+            # table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+            table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+            
     console = Console()
     console.print(table)    
          
