@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.table import Table
+import os
 import json
 import tasks
 
@@ -60,6 +61,7 @@ def create_new_task (proj_path_leads) :
             with open("save_username_password_email.json"  , "w") as json_file :
                 json.dump(users_info , json_file , indent=4)
                 json_file.close()
+            break
             
             
 
@@ -110,8 +112,8 @@ def work_inside_proj (ID) :
             if choice == "4" :
                 break
             
-            if choice != "1" or choice != "2" or choice != "3" or choice != "4" :
-                print("your choice isnt valid please choose from 1 , 2 , 3 , 4")
+            # if choice != "1" or choice != "2" or choice != "3" or choice != "4" or choice != 3 or choice != 2 or choice != 1 :
+            #     print("your choice isnt valid please choose from 1 , 2 , 3 , 4")
     else :
         print("you are not leading in this project ")
             
@@ -162,11 +164,86 @@ def finding_projects_member (ID) :
                 return proj_path
     
 def task_and_member (proj_path_leads) :
-    show_task (proj_path_leads) 
-    print()
-    
-    pass              
+    while True :
+        clear()
+        tasks = show_task (proj_path_leads) 
+        ls = []
+        
+                
+        for i in range(len(tasks)) :
+            ls.append(i+1)
+        while True :
+            try :
+                the_task = int(input("please enter the index of your task that you want to edit :"))
+                break
+            except :
+                print (f"please enter on of these nnumbers {ls}")
+
+        if the_task in ls :
+            table = Table(title="TASKS")
+            table.add_column("BACKLOG" , justify="center" , style="white")
+            table.add_column("TODO" , justify="center" , style="white")
+            table.add_column("DOING" , justify="center" , style="white")
+            table.add_column("DONE" , justify="center" , style="white")
+            table.add_column("ARCHIVED" , justify="center" , style="white")
+            clear() 
+            # for attributes in tasks :
+            #     if attributes == tasks[the_task-1] :
+            #         if attributes["Status"] == "BACKLOG" :
+            #             table.add_row(attributes["Title"] , "" , "" , "" , "" , style="blue")
+            #         if attributes["Status"] == "TODO" :
+            #             table.add_row("" ,attributes["Title"] , "" , "" , "" , style="blue")
+            #         if attributes["Status"] == "DOING" :
+            #             table.add_row("" , "" , attributes["Title"] , "" , "" , style="blue")
+            #         if attributes["Status"] == "HIGH" :
+            #             table.add_row("" , "" , "" , attributes["Title"] , "" , style="blue")
+            #         if attributes["Status"] == "ARCHIVED" :
+            #             table.add_row("" , "" , "" , "" , attributes["Title"] , style="blue")                    
+
+                  
+            for attributes in tasks :
+                if attributes["Status"] == "BACKLOG" :
+                    if attributes != tasks[the_task-1]:                    
+                        table.add_row(attributes["Title"] , "" , "" , "" , "" , style="yellow")
+                    else :
+                        table.add_row(attributes["Title"] , "" , "" , "" , "" , style="blue")                       
+                if attributes["Status"] == "TODO" :
+                    if attributes != tasks[the_task-1]:                    
+                        table.add_row("" ,attributes["Title"] , "" , "" , "" , style="yellow")
+                    else :
+                        table.add_row("" , attributes["Title"] , "" , "" , "" , style="blue")   
+                if attributes["Status"] == "DOING" :
+                    if attributes != tasks[the_task-1]:                    
+                        table.add_row("" , "" , attributes["Title"] , "" , "" , style="yellow")
+                    else :
+                        table.add_row("" , "" , attributes["Title"] , "" , "" , style="blue")   
+                if attributes["Status"] == "HIGH" :
+                    if attributes != tasks[the_task-1]:                    
+                        table.add_row("" , "" , "" , attributes["Title"] , "" , style="yellow")
+                    else :
+                        table.add_row("" , "" , "" , attributes["Title"] , "" , style="blue")   
+                if attributes["Status"] == "ARCHIVED" :
+                    if attributes != tasks[the_task-1]:
+                        table.add_row("" , "" , "" , "" , attributes["Title"] , style="yellow")
+                    else :
+                        table.add_row("" , "" , "" , "" , attributes["Title"] , style="blue")   
+                
+                    
+                                    
+            console = Console()
+            console.print(table)  
+            a = input() 
             
+            
+            
+            
+            print(tasks[the_task-1])
+        else :
+            print (f"please enter on of these nnumbers {ls}")
+
+      
+      
+                     
             
 def show_task (proj_path_leads) :
     try :
@@ -213,17 +290,22 @@ def show_task (proj_path_leads) :
     if len(LOW) != 0 :        
         all.append(LOW)  
     
+    tasks = []
     index = 0 
     for j in all : 
         for i in j :
-            index = index + 1 
-            print(index)
+            tasks.append(i)
             # table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
-            table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
-            
+    for i in tasks :     
+        index = index + 1 
+        table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+    clear()        
     console = Console()
-    console.print(table)    
+    console.print(table)   
+    return tasks
          
-            
+               
+def clear():
+    os.system('cls')            
     
 work_inside_proj("1323")
