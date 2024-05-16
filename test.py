@@ -1,7 +1,8 @@
-from tasks import *
+import json
 
-task_1 = Task()
+with open('save_username_password_email.json' , 'r') as file:
 
-task_1.title = 'hello'
+    data = json.load(file)
 
-print(task_1.title)
+print(data[1])
+
