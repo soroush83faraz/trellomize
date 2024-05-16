@@ -196,7 +196,7 @@ def show_all_projects():
                 counter += 1
             for proj in user["projects_member"]:
                 print(f"{counter}_{proj['name']}       (member)")
-                proj_list.append[proj]
+                proj_list.append(proj)
                 counter += 1
         
     print('Wanna work on your project?')
@@ -208,8 +208,9 @@ def show_all_projects():
         while True:
             print('Which project?')
             proj_number = input("project number :") 
-            if proj_number > 0 and proj_number < counter:
-                       work_inside_proj(proj_list[proj_number]['ID'])
+            if int(proj_number) > 0 and int(proj_number) < counter:
+                print(proj_list)
+                work_inside_proj(proj_list[int(proj_number)-1]['ID'])
 
         
 #===============================================================
