@@ -3,16 +3,17 @@ from projects import *
 from tasks import * 
 from user import *
 from in_project_workplace import *
+from printing import *
 
 new_project = Projects(None , None)
 In_account_user = User(None , None , None , None , None)
 pre_list_of_members = []
 #Defining function for choosing name for project================
 def name_project():
-    print('Enter a title for your project')
+    console.print('Enter a title for your project  😊' , justify='center' , style= 'violet bold')
     
     while True:
-        title = input('Title :')
+        title = input('                                                                                 Title :')
         if title == '*':
             break
         else:
@@ -26,8 +27,8 @@ def name_project():
 def Add_member():
     while True:
         Added = False
-        print("Enter member's name who you wanna add :")
-        member_name = input('Member name :')
+        console.print("Enter member's name who you wanna add :" , justify='center' , style='green')
+        member_name = input('                                                                                 Member name :')
         if member_name == '*':
             break
 
@@ -43,7 +44,7 @@ def Add_member():
                 new_project.members_usernames.append(i['username'])
                 pre_list_of_members.append(i['username'])
                 Added = True
-                print(f"{member_name} was added to project successfully")
+                console.print(f"[blue]{member_name}[/] [green]was added to project successfully[/]  ✅" , justify='center')
             
                 
         if Added:
@@ -64,16 +65,16 @@ def Add_member():
             #     wfile.close()
             break
         else:
-            print("The username was not found")
+            console.print("The username was not found  🥲" , style='red' , justify='center')
 
 #===============================================================
 #Functiom for saving project====================================
 def save_my_project():
     proj_ID = []
     if new_project.name == None:
-        print("You should pick a title for your project")
+        console.print("You should pick a title for your project" , justify='center')
     elif new_project.ID == None:
-        print("You should pick an ID for your project")
+        console.print("You should pick an ID for your project" , justify='center')
     
     try:
         with open('save_username_password_email.json' , 'r') as file: 
@@ -141,9 +142,9 @@ def save_my_project():
 #===============================================================
 #Function for getting ID for project an validate it=============
 def get_ID():
-    print("You should enter an unique ID for your project")
+    console.print("You should enter an unique [red]ID[/] for your project" , style='italic purple' , justify='center')
     while True:
-        ID = input("ID :")
+        ID = input("                                                                                 ID :")
 
         if ID == '*':
             break
@@ -167,7 +168,7 @@ def get_ID():
 
 
         if ID in list_of_project_ID:
-            print("Choose an unique ID")
+            console.print("Choose an unique [red]ID[/]" , justify='center' , style='green italic')
         else:
             new_project.ID = ID
             print('ID set')
@@ -191,23 +192,23 @@ def show_all_projects():
     for user in users_info:
         if user['username'] == In_account_user.username:
             for project in user['projects_leads']:
-                print(f"{counter}_{project['name']}    (leader)")
+                console.print(f"{counter}_{project['name']}    (leader)" , justify='center')
                 proj_list.append(project)
                 counter += 1
             for proj in user["projects_member"]:
-                print(f"{counter}_{proj['name']}       (member)")
+                console.print(f"{counter}_{proj['name']}       (member)" , justify='center')
                 proj_list.append(proj)
                 counter += 1
         
-    print('Wanna work on your project?')
-    print('1_Yes')
-    print("2_NO")
-    chosen_option = input('Choose :')
+    console.print('Wanna work on your project?' , style='green italic' , justify='center')
+    lines_list = ['1_Yes' , "2_NO"]
+    chosen_option = pro_print(lines_list)
+    chosen_option = input('                                                                                 Choose :')
     
     if chosen_option == '1':
         while True:
-            print('Which project?')
-            proj_number = input("project number :") 
+            console.print('Which project?' , justify='center' , style='cyan bold')
+            proj_number = input("                                                                                 project number :") 
             if int(proj_number) > 0 and int(proj_number) < counter:
                 print(proj_list)
                 work_inside_proj(proj_list[int(proj_number)-1]['ID'])
@@ -222,14 +223,11 @@ def Creat_new_project():
         member_list = []
         for i in new_project.members_usernames:
             member_list.append(i)
-        print(f"Dear {In_account_user.username} Fill it to make project")
-        print(f"1_Project's title:{new_project.name}")
-        print(f"2_Project's members {member_list}")
-        print(f"3_Project's ID :{new_project.ID}")
-        print("4_Save")
-        print("5_exit")
+        console.print(f"[blue]Dear[/] [green]{In_account_user.username}[/] [blue]Fill it to make project[/]  😊" , justify='center')
 
-        chosen_option = input('Choose :')
+        lines_list = [f"1_Project's title:{new_project.name}" , f"2_Project's members {member_list}" , f"3_Project's ID :{new_project.ID}" , "4_Save" , "5_exit"]
+
+        chosen_option = pro_print(lines_list)
 
         if chosen_option == '1':
             name_project()
@@ -253,11 +251,12 @@ def Work_inside_Trellomize(datalist):
     In_account_user.projects_member = datalist['projects_member']
 
     while True:
-        print(f'Dear {In_account_user.username} Choose a number & (*) to exit')
-        print('1_Creat new project')
-        print("2_View all projects")
+        console.print(f'Dear [green][italic]{In_account_user.username}[/][/] Choose a number & [red](*)[/] to exit' , justify='center')
+        
 
-        chosen_option = input("Choose your option")
+        lines_list = ['1_Creat new project' ,"2_View all projects" ]
+
+        chosen_option = pro_print(lines_list)
 
         if chosen_option == '*':
             break
