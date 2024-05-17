@@ -213,7 +213,7 @@ def show_all_projects():
             proj_number = pro_print(proj_show)
             if int(proj_number) > 0 and int(proj_number) < counter:
                 print("HERE IS THE ID :" ,  proj_list[int(proj_number)-1]['ID'])
-                work_inside_proj(proj_list[int(proj_number)-1]['ID'])
+                work_inside_proj(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
                 
 
         

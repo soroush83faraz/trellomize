@@ -56,7 +56,7 @@ def Log_in():
                 console.print(f'[green]Welcome dear [bold][italic]{username}[/][/] to Trellomize[/]  😊💪' , justify='center')
                 break
             else:
-                console.print("The username-password combination doesn't exist  ❌" , justify='center' , style='darkgreen italic')
+                console.print("The username-password combination doesn't exist  ❌" , justify='center' , style='green italic')
                 logging.warning(f"{username} tried to log in with false informations")
         elif Choice == '4':
             break      
