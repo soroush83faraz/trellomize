@@ -6,18 +6,37 @@ import tasks
 from printing_nocls import *
 from printing import *
 from tabulate import tabulate
-in_account_user = None
-inacc_ID = None
+
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
     show_task_allways(ID , username)
+#EVERYTHING STARTS HERE===========================================================
+def start(IDr , usernamer):
+    global ID
+    ID = IDr
+    global username
+    username = usernamer
 
-#Function for finding user info by ID ==========================================
+    proj_path_leads = finding_projects_leads(ID , username)
+    while True:
+        show_task_allways(ID , username)
+        lines_list = ["1_Create a new task" , "2_Move task" , "3_exit "]
+        Choice = pro_print_nocls(lines_list)
+
+        if Choice == '1':
+            create_new_task(proj_path_leads)
+        elif Choice == '2':
+            Move_task(ID , username)
+        elif Choice == '3':
+            break
+        
+#=================================================================================
+#Function for finding user info by ID ============================================
 def finding_projects_leads (ID , username) :
-    in_account_user = username
+    
     try :
         with open("save_username_password_email.json" , "r") as json_file :
             users_info = json.load(json_file)
@@ -88,7 +107,7 @@ def create_new_task (proj_path_leads) :
             except FileNotFoundError:
                 users_info = []
             # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0])
-            users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]].append(dict_of_tasks)
+            users_info[proj_path_leads[0]][proj_path_leads[1]][proj_path_leads[2]][proj_path_leads[3]].append(dict_of_tasks)
             with open("save_username_password_email.json"  , "w") as json_file :
                 json.dump(users_info , json_file , indent=4)
                 json_file.close()
@@ -218,9 +237,9 @@ def swap_task(origin_point , destination_point):
         users_info = []
 
     for user in users_info:
-        if user['username'] == in_account_user:
+        if user['username'] == username:
             for project in user['projects_leads']:
-                if project['ID'] == inacc_ID:
+                if project['ID'] == ID:
                     project['tasks'] = extended_list
 
     with open('save_username_password_email.json' , 'w') as file:
@@ -390,21 +409,7 @@ def Move_task(ID , username):
 
 #=================================================================================
 
-if __name__ == '__main__':
-    ID = '1323'
-    username = 'saeed'
-    inacc_ID = ID
-    in_account_user = username
-    proj_path_leads = finding_projects_leads(ID , username)
-    while True:
-        show_task_allways(ID , username)
-        lines_list = ["1_Create a new task" , "2_Move task" , "4_ exit "]
-        Choice = pro_print_nocls(lines_list)
 
-        if Choice == '1':
-            create_new_task(proj_path_leads)
-        elif Choice == '2':
-            Move_task(ID , username)
-        
+
 
 

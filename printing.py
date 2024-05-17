@@ -20,7 +20,7 @@ def pro_print(lines_list):
         console.print()
         choice = input("                                                                                 Move :")
         if choice == '*':
-            return '-'
+            return '*'
         elif choice == 'w' and line > 1:
             line -= 1
         elif choice == 's' and line < len(lines_list):
