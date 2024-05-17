@@ -246,7 +246,7 @@ def final_move(movement_list , array_2D , text):
             array_2D_saved = array_2D[current_row-1][current_column-1]
             array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '🥅'
 
-        print(tabulate(array_2D , headers=['BACKLOG' , 'DOING' , 'TODO' , 'DONE' , 'ARCHIVED']))
+        print(tabulate(array_2D , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
                     
         Chosen = input('                                                                                 Choose :')
         if Chosen == 'w' and current_row > 1:
@@ -376,7 +376,7 @@ def Move_task(ID , username):
             current_column += 1
             worked = True
             clear_terminal()
-        elif Chosen == 'c':
+        elif Chosen == 'c' and len(array_2D[current_row-1][current_column-1]) > 1:
             moving_list.append([current_row-1 , current_column-1])
             final_move(moving_list , array_2D , array_2D_saved)
             break
