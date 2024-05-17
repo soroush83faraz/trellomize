@@ -189,29 +189,32 @@ def show_all_projects():
     counter = 1
 
     proj_list = []
+    proj_show = []
     for user in users_info:
         if user['username'] == In_account_user.username:
             for project in user['projects_leads']:
                 console.print(f"{counter}_{project['name']}    (leader)" , justify='center')
                 proj_list.append(project)
+                proj_show.append(f"{counter}_{project['name']}    (leader)")
                 counter += 1
             for proj in user["projects_member"]:
                 console.print(f"{counter}_{proj['name']}       (member)" , justify='center')
                 proj_list.append(proj)
+                proj_show.append(f"{counter}_{proj['name']}       (member)")
                 counter += 1
         
     console.print('Wanna work on your project?' , style='green italic' , justify='center')
     lines_list = ['1_Yes' , "2_NO"]
     chosen_option = pro_print(lines_list)
-    chosen_option = input('                                                                                 Choose :')
     
     if chosen_option == '1':
         while True:
             console.print('Which project?' , justify='center' , style='cyan bold')
-            proj_number = input("                                                                                 project number :") 
+            proj_number = pro_print(proj_show)
             if int(proj_number) > 0 and int(proj_number) < counter:
-                print(proj_list)
+                print("HERE IS THE ID :" ,  proj_list[int(proj_number)-1]['ID'])
                 work_inside_proj(proj_list[int(proj_number)-1]['ID'])
+                
 
         
 #===============================================================
