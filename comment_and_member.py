@@ -1,13 +1,20 @@
 import json
+import datetime
 # from projects import *
 # from tasks import * 
 # from user import *
 # from in_project_workplace import *
 # from printing import *
 # from saeed_mode_on import *
-def Comment(ID) :
-   
+def Comment(ID , name) :
+    
+    
     comment = input("please enter your comment here : ") 
+    
+
+    now = (datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S"))
+    comment = comment + " \n" +now + " \n" + name
+    print(comment)
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -99,7 +106,7 @@ def assigning_task_to_member (ID) :
  
 
 
-Comment("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f")
+Comment("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f" , "saeed")
 
 
 
