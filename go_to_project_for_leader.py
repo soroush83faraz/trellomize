@@ -6,7 +6,7 @@ import tasks
 from printing_nocls import *
 from printing import *
 from tabulate import tabulate
-
+from comment_and_member import *
 
 def justify_table_center(table):
     # Split the table into lines
@@ -107,7 +107,7 @@ def edit_task(ID , username):
     console.print('Choose which one of tasks do you want to move 😊' , justify='center' , style='green bold')
     rows , columns = (row , column)
 
-    array_2D = [[0, 0 , 0 , 0 , 0] for _ in range(rows)]
+    array_2D = [[0 , 0 , 0 , 0 , 0] for _ in range(rows)]
     
     for num in range(len(Backlog_tasks)):
         array_2D[num][0] = Backlog_tasks[num]['Title']
@@ -149,10 +149,10 @@ def edit_task(ID , username):
             current_column += 1
             worked = True
             clear_terminal()
-        elif Chosen == 'c' and len(array_2D[current_row-1][current_column-1]) > 1:
+        elif Chosen == 'c' and len(array_2D[current_row-1][current_column-1]) > 2:
             moving_list.append([current_row-1 , current_column-1])
             # final_move(moving_list , array_2D , array_2D_saved)
-            edit_task(array_2D , [current_row-1 , current_column-1])
+            edit_it(array_2D , [current_row-1 , current_column-1])
             break
 
         else:
@@ -161,7 +161,7 @@ def edit_task(ID , username):
 
 #=================================================================================
 #edit task========================================================================
-def edit_task(array_2D , current_point_list):
+def edit_it(array_2D , current_point_list):
     owner_of_proj = finding_projects_leads(ID , username)
     Id_we_wanna_edit = ''
     try :
@@ -191,9 +191,10 @@ def edit_task(array_2D , current_point_list):
             Archived_tasks.append(task)
 
     all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]  
+
+    Id_we_wanna_edit = all_list[current_point_list[1]][current_point_list[0]]
     
-      
-    
+    Start_Editing(Id_we_wanna_edit)
 
 #=================================================================================
 
@@ -220,6 +221,7 @@ def finding_projects_leads (ID , username) :
                     proj_path.append("tasks")
                     #print(proj_path)
                     return proj_path
+    
                 
 #=================================================================================
 #Function for creating new task===================================================
