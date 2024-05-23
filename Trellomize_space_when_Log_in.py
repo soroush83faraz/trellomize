@@ -193,29 +193,26 @@ def show_all_projects():
     for user in users_info:
         if user['username'] == In_account_user.username:
             for project in user['projects_leads']:
-                console.print(f"{counter}_{project['name']}    (leader)" , justify='center')
+                # console.print(f"{counter}_{project['name']}    (leader)" , justify='center')
                 proj_list.append(project)
                 proj_show.append(f"{counter}_{project['name']}    (leader)")
                 counter += 1
             for proj in user["projects_member"]:
-                console.print(f"{counter}_{proj['name']}       (member)" , justify='center')
+                # console.print(f"{counter}_{proj['name']}       (member)" , justify='center')
                 proj_list.append(proj)
                 proj_show.append(f"{counter}_{proj['name']}       (member)")
                 counter += 1
         
-    console.print('Wanna work on your project?' , style='green italic' , justify='center')
-    lines_list = ['1_Yes' , "2_NO"]
-    chosen_option = pro_print(lines_list)
     
-    if chosen_option == '1':
-        while True:
-            console.print('Which project?' , justify='center' , style='cyan bold')
-            proj_number = pro_print(proj_show)
-            if int(proj_number) > 0 and int(proj_number) < counter:
-                print("HERE IS THE ID :" ,  proj_list[int(proj_number)-1]['ID'])
-                start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
-            elif proj_number == '*':
-                break
+    
+    
+    while True:
+        console.print('Which project?' , justify='center' , style='cyan bold')
+        proj_number = pro_print(proj_show)
+        if int(proj_number) > 0 and int(proj_number) < counter:
+            start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
+        elif proj_number == '*':
+            break
         
 #===============================================================
 
