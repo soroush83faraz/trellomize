@@ -12,23 +12,64 @@
 
 # print(users_info)
 
-ls1 = [1,2,3,4]
-ls2 = [11 , 22 , 33 , 44]
-ls3 = [111 , 222 , 333 ,444]
-ls4 = [1111 , 2222 , 3333 , 4444]
+import curses
 
-sRR = [[0, 0 , 0 , 0] for _ in range(4)]
+def pro_print(stdscr, lines_list):
+    # Initialize curses colors
+    curses.start_color()
+    curses.init_pair(1, curses.COLOR_CYAN, curses.COLOR_BLACK)   # Selected line color
+    curses.init_pair(2, curses.COLOR_WHITE, curses.COLOR_BLACK)  # Normal line color
 
+    # Turn off echoing of keys to the screen
+    curses.noecho()
+    
+    # React to keys instantly without waiting for Enter to be pressed
+    curses.cbreak()
+    
+    # Enable keypad mode to capture special keys
+    stdscr.keypad(True)
 
-for i in range(len(ls1)):
-    sRR[i][0] = ls1[i]
-for i in range(len(ls2)):
-    sRR[i][1] = ls2[i]
-for i in range(len(ls3)):
-    sRR[i][2] = ls3[i]
-for i in range(len(ls4)):
-    sRR[i][3] = ls4[i]
+    line = 1
 
+    while True:
+        stdscr.clear()
 
+        # Display the lines
+        height, width = stdscr.getmaxyx()
+        for strnum in range(len(lines_list)):
+            if strnum == line - 1:
+                stdscr.addstr(strnum, width // 2 - len(lines_list[strnum]) // 2, f"{lines_list[strnum]} 👈", curses.color_pair(1) | curses.A_BOLD | curses.A_UNDERLINE)
+            else:
+                stdscr.addstr(strnum, width // 2 - len(lines_list[strnum]) // 2, lines_list[strnum], curses.color_pair(2))
 
-print(sRR)
+        # Display the instructions
+        instructions = '[Use arrow keys to move and Enter to choose]'
+        stdscr.addstr(len(lines_list) + 1, width // 2 - len(instructions) // 2, instructions)
+
+        stdscr.refresh()
+
+        # Wait for user input
+        choice = stdscr.getch()
+
+        # Handle user input
+        if choice == ord('*'):
+            return '*'
+        elif choice == curses.KEY_UP and line > 1:
+            line -= 1
+        elif choice == curses.KEY_DOWN and line < len(lines_list):
+            line += 1
+        elif choice == curses.KEY_ENTER or choice in [10, 13]:  # Enter key
+            return str(line)
+
+def main():
+    lines_list = [
+        "Option 1",
+        "Option 2",
+        "Option 3",
+        "Option 4"
+    ]
+    result = curses.wrapper(pro_print, lines_list)
+    print(f"You selected option {result}")
+
+if __name__ == "__main__":
+    main()
