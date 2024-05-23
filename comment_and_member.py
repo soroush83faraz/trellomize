@@ -1,20 +1,23 @@
 import json
 import datetime
+from comment import *
 # from projects import *
 # from tasks import * 
 # from user import *
 # from in_project_workplace import *
 # from printing import *
 # from saeed_mode_on import *
-def Comment(ID , name) :
+def Add_Comment(ID , name) :
     
     
-    comment = input("please enter your comment here : ") 
+    text = input("please enter your comment here : ") 
+    time = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
+    comment = Comment(name , time , text)
+    
     
 
-    now = (datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S"))
-    comment = comment + " \n" +now + " \n" + name
-    print(comment)
+    
+    comment.converting_to_str()
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -28,12 +31,12 @@ def Comment(ID , name) :
         for proj in range(len(users_info[user]["projects_leads"])) :
             for tasks in users_info[user]["projects_leads"][proj]["tasks"] :
                 if ID == tasks["ID"] :
-                    tasks["Comments"].append(comment)    
+                    tasks["Comments"].append(comment.converting_to_str())    
     for user in range(len(users_info)) :
         for proj in range(len(users_info[user]["projects_member"])) :
             for tasks in users_info[user]["projects_member"][proj]["tasks"] :
                 if ID == tasks["ID"] :
-                    tasks["Comments"].append(comment) 
+                    tasks["Comments"].append(comment.converting_to_str()) 
                      
     with open("save_username_password_email.json"  , "w") as json_file :
         json.dump(users_info , json_file , indent=4)
@@ -106,7 +109,7 @@ def assigning_task_to_member (ID) :
  
 
 
-Comment("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f" , "saeed")
+assigning_task_to_member("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f")
 
 
 
