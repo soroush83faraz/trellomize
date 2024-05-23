@@ -7,6 +7,23 @@ from printing_nocls import *
 from printing import *
 from tabulate import tabulate
 
+
+def justify_table_center(table):
+    # Split the table into lines
+    lines = table.split('\n')
+
+    # Find the maximum line length
+    max_length = max(len(line) for line in lines)
+
+    # Adjust each line to center justify it
+    centered_lines = [line.center(max_length) for line in lines]
+
+    # Join the lines back together
+    centered_table = '\n'.join(centered_lines)
+
+    return centered_table
+
+
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -23,7 +40,7 @@ def start(IDr , usernamer):
     proj_path_leads = finding_projects_leads(ID , username)
     while True:
         show_task_allways(ID , username)
-        lines_list = ["1_Create a new task" , "2_Move task" , "3_exit "]
+        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
@@ -31,9 +48,155 @@ def start(IDr , usernamer):
         elif Choice == '2':
             Move_task(ID , username)
         elif Choice == '3':
+            edit_task(ID , username)
+        elif Choice == '4':
             break
         
 #=================================================================================
+#This part is for editing tasks===================================================
+def edit_task(ID , username):
+    try :
+        with open("save_username_password_email.json" , "r") as json_file :
+            users_info = json.load(json_file)
+            json_file.close()
+            
+            
+    except FileNotFoundError:
+        users_info = []
+
+    Backlog_tasks = []
+    Todo_tasks = []
+    Doing_tasks = []
+    Done_tasks = []
+    Archived_tasks = []
+
+    owner_of_proj = finding_projects_leads(ID , username)
+
+    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+        if task['Status'] == 'BACKLOG':
+            Backlog_tasks.append(task)
+        elif task['Status'] == 'TODO':
+            Todo_tasks.append(task)
+        elif task['Status'] == 'DOING':
+            Doing_tasks.append(task)
+        elif task['Status'] == 'DONE':
+            Done_tasks.append(task)
+        elif task['Status'] == 'ARCHIVED':
+            Archived_tasks.append(task)
+
+    max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
+    for i in range(max_length - len(Backlog_tasks)):
+        Backlog_tasks.append({'Title' : ''})
+    for i in range(max_length - len(Todo_tasks)):
+        Todo_tasks.append({'Title' : ''})
+    for i in range(max_length - len(Doing_tasks)):
+        Doing_tasks.append({'Title' : ''})
+    for i in range(max_length - len(Done_tasks)):
+        Done_tasks.append({'Title' : ''})
+    for i in range(max_length - len(Archived_tasks)):
+        Archived_tasks.append({'Title' : ''})
+
+    column = 5
+    row = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
+
+    show_task_allways(ID , username)
+
+    current_row = 1
+    current_column = 1
+
+    console.print('Choose which one of tasks do you want to move 😊' , justify='center' , style='green bold')
+    rows , columns = (row , column)
+
+    array_2D = [[0, 0 , 0 , 0 , 0] for _ in range(rows)]
+    
+    for num in range(len(Backlog_tasks)):
+        array_2D[num][0] = Backlog_tasks[num]['Title']
+    for num in  range(len(Todo_tasks)):
+        array_2D[num][1] = Todo_tasks[num]['Title']
+    for num in range(len(Doing_tasks)):
+        array_2D[num][2] = Doing_tasks[num]['Title']
+    for num in range(len(Done_tasks)):
+        array_2D[num][3] = Done_tasks[num]['Title']
+    for num in range(len(Archived_tasks)):
+        array_2D[num][4] = Archived_tasks[num]['Title']
+    worked = True
+    moving_list = []
+    while True:
+        if worked == True:
+            array_2D_saved = array_2D[current_row-1][current_column-1]
+            array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '✏️'
+       
+        print(tabulate(array_2D , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
+                    
+        Chosen = input('                                                                                 Choose :')
+        if Chosen == 'w' and current_row > 1:
+            array_2D[current_row-1][current_column-1] = array_2D_saved
+            current_row -= 1
+            worked = True
+            clear_terminal()
+        elif Chosen == 's' and current_row < rows:
+            array_2D[current_row-1][current_column-1] = array_2D_saved
+            current_row += 1
+            worked = True
+            clear_terminal()
+        elif Chosen == 'a' and current_column > 1:
+            array_2D[current_row-1][current_column-1] = array_2D_saved
+            current_column -= 1
+            worked = True
+            clear_terminal()
+        elif Chosen == 'd' and current_column < columns:
+            array_2D[current_row-1][current_column-1] = array_2D_saved
+            current_column += 1
+            worked = True
+            clear_terminal()
+        elif Chosen == 'c' and len(array_2D[current_row-1][current_column-1]) > 1:
+            moving_list.append([current_row-1 , current_column-1])
+            # final_move(moving_list , array_2D , array_2D_saved)
+            edit_task(array_2D , [current_row-1 , current_column-1])
+            break
+
+        else:
+            worked = False
+            clear_terminal()
+
+#=================================================================================
+#edit task========================================================================
+def edit_task(array_2D , current_point_list):
+    owner_of_proj = finding_projects_leads(ID , username)
+    Id_we_wanna_edit = ''
+    try :
+        with open('save_username_password_email.json' , 'r') as file:
+            users_info = json.load(file)
+            file.close()
+    except FileExistsError:
+        users_info = []
+
+
+    Backlog_tasks = []
+    Todo_tasks = []
+    Doing_tasks = []
+    Done_tasks = []
+    Archived_tasks = []
+
+    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+        if task['Status'] == 'BACKLOG':
+            Backlog_tasks.append(task)
+        elif task['Status'] == 'TODO':
+            Todo_tasks.append(task)
+        elif task['Status'] == 'DOING':
+            Doing_tasks.append(task)
+        elif task['Status'] == 'DONE':
+            Done_tasks.append(task)
+        elif task['Status'] == 'ARCHIVED':
+            Archived_tasks.append(task)
+
+    all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]  
+    
+      
+    
+
+#=================================================================================
+
 #Function for finding user info by ID ============================================
 def finding_projects_leads (ID , username) :
     
@@ -124,7 +287,7 @@ def create_new_task (proj_path_leads) :
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
     
-    table = Table(title='Project' , )
+    table = Table(title='Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
     table.add_column("TODO" , justify='center' , style='green')
     table.add_column("DOING" , justify='center' , style='yellow')
@@ -180,7 +343,7 @@ def show_task_allways(ID , username):
         table.add_row(Backlog_tasks[i]['Title'] , Todo_tasks[i]['Title'] , Doing_tasks[i]['Title'] , Done_tasks[i]['Title'] , Archived_tasks[i]['Title'])
      
     
-    console.print(table)
+    console.print(table , justify='center')
 
 #=================================================================================
 def swap_task(origin_point , destination_point):
@@ -228,7 +391,6 @@ def swap_task(origin_point , destination_point):
         all_list[origin_point[1]][origin_point[0]]['Status'] = 'ARCHIVED'
 
     extended_list = Backlog_tasks + Todo_tasks + Doing_tasks + Done_tasks + Archived_tasks
-    print(extended_list)
     try:
         with open('save_username_password_email.json' , 'r') as file:
             users_info = json.load(file)
@@ -246,7 +408,6 @@ def swap_task(origin_point , destination_point):
         json.dump(users_info , file , indent=4)
 
 
-        print("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
 
 
 #Function for second part of movement=============================================
@@ -370,7 +531,7 @@ def Move_task(ID , username):
     while True:
         if worked == True:
             array_2D_saved = array_2D[current_row-1][current_column-1]
-            array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '👈'
+            array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '⚽'
        
         print(tabulate(array_2D , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
                     
@@ -399,6 +560,7 @@ def Move_task(ID , username):
             moving_list.append([current_row-1 , current_column-1])
             final_move(moving_list , array_2D , array_2D_saved)
             break
+
 
         else:
             worked = False
