@@ -483,3 +483,9 @@
 2024-05-23 21:11:40,495 | INFO | siina was logged in his account
 2024-05-23 21:12:39,672 | INFO | siina was logged in his account
 2024-05-23 21:12:39,672 | INFO | siina was logged in his account
+2024-05-23 21:14:58,134 | INFO | An account was made by aaaaa in save_account function and was saved in save_username_password_email.json
+2024-05-23 21:15:29,051 | INFO | An account was made by bbbbb in save_account function and was saved in save_username_password_email.json
+2024-05-23 21:15:50,892 | INFO | aaaaa was logged in his account
+2024-05-23 21:15:50,892 | INFO | aaaaa was logged in his account
+2024-05-23 21:18:46,081 | INFO | aaaaa was logged in his account
+2024-05-23 21:18:46,082 | INFO | aaaaa was logged in his account

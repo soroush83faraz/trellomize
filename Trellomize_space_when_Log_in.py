@@ -216,12 +216,12 @@ def show_all_projects():
     while True:
         console.print('Which project?' , justify='center' , style='cyan bold')
         proj_number = pro_print(proj_show)
+        if proj_number == '*':
+            break
         if int(proj_number) > 0 and int(proj_number) <= project_leads_counter:
             start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
         elif int(proj_number) > project_leads_counter and int(proj_number) < counter:
             start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
-        elif proj_number == '*':
-            break
         
 #===============================================================
 
