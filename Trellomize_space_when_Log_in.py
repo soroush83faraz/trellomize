@@ -4,7 +4,10 @@ from tasks import *
 from user import *
 from in_project_workplace import *
 from printing import *
-from saeed_mode_on import *
+from go_to_project_for_leader import *
+from go_to_project_for_member import *
+
+
 new_project = Projects(None , None)
 In_account_user = User(None , None , None , None , None)
 pre_list_of_members = []
@@ -31,7 +34,9 @@ def Add_member():
         member_name = input('                                                                                 Member name :')
         if member_name == '*':
             break
-
+        elif member_name == In_account_user.username:
+            console.print(f'{In_account_user.username} is leader of the project' , justify='center' , style='red bold italic')
+            break
         try: 
             with open('save_username_password_email.json' , 'r') as rfile:
                 data = json.load(rfile)
@@ -188,6 +193,7 @@ def show_all_projects():
         users_info = []
     counter = 1
 
+    project_leads_counter = 0
     proj_list = []
     proj_show = []
     for user in users_info:
@@ -197,6 +203,7 @@ def show_all_projects():
                 proj_list.append(project)
                 proj_show.append(f"{counter}_{project['name']}    (leader)")
                 counter += 1
+                project_leads_counter += 1
             for proj in user["projects_member"]:
                 # console.print(f"{counter}_{proj['name']}       (member)" , justify='center')
                 proj_list.append(proj)
@@ -209,8 +216,10 @@ def show_all_projects():
     while True:
         console.print('Which project?' , justify='center' , style='cyan bold')
         proj_number = pro_print(proj_show)
-        if int(proj_number) > 0 and int(proj_number) < counter:
+        if int(proj_number) > 0 and int(proj_number) <= project_leads_counter:
             start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
+        elif int(proj_number) > project_leads_counter and int(proj_number) < counter:
+            start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
         elif proj_number == '*':
             break
         

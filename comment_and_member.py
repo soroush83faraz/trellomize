@@ -1,4 +1,5 @@
 import json
+from printing import*
 # from projects import *
 # from tasks import * 
 # from user import *
@@ -99,7 +100,16 @@ def assigning_task_to_member (ID) :
  
 
 
-Comment("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f")
+
+def Start_Editing(ID):
+    
+    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task']
+    Chosen = pro_print(lines_list)
+
+    if Chosen == '1':
+        Comment(ID)
+    elif Chosen == '2':
+        assigning_task_to_member(ID)
 
 
 
