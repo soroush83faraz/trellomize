@@ -69,17 +69,17 @@ def sync_information(ID , username):
                 in_work_project.members_usernames.append(member)
             for task in project['tasks']:
                 rtask.comments = task['Comments']
-                for amember in task['Assignees']:
-                    rtask.assignees = amember
+                rtask.assignees = task['Assignees']
                 rtask.discription = task['Description']
                 rtask.end_time = task['End_time']
                 rtask.history = task['History']
                 rtask.ID = task['ID']
                 rtask.priority = task['Priority']
                 rtask.start_time = task['Start_time']
+                rtask.end_time = task['End_time']
                 rtask.status = task['Status']
                 rtask.title = task['Title']
-            in_work_project.tasks.append(rtask)
+                in_work_project.tasks.append(rtask)
 
 #=================================================================================
 #EVERYTHING STARTS HERE===========================================================
@@ -96,8 +96,10 @@ def start(IDr , usernamer):
         if Choice == '1':
             in_work_project.create_new_task()
         elif Choice == '2':
+            in_work_project.update_project()
             Move_task(in_work_project.ID , In_account_user.username)
         elif Choice == '3':
+            in_work_project.update_project()
             edit_task(in_work_project.ID , In_account_user.username)
         elif Choice == '4':
             in_work_project.show_all_members(In_account_user)
@@ -252,7 +254,7 @@ def edit_it(array_2D , current_point_list):
 
     Id_we_wanna_edit = all_list[current_point_list[1]][current_point_list[0]]
     
-    Start_Editing(Id_we_wanna_edit , In_account_user.username)
+    Start_Editing(Id_we_wanna_edit["ID"] , In_account_user.username)
 
 #=================================================================================
 
@@ -522,7 +524,11 @@ def Move_task(ID , username):
     worked = True
     moving_list = []
     while True:
-        if worked == True:
+        if row == 0:
+            console.print("There isn't any task to move" , justify='center' , style='violet bold italic')
+            break
+        
+        elif worked == True :
             array_2D_saved = array_2D[current_row-1][current_column-1]
             array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '⚽'
        
