@@ -8,12 +8,14 @@ from printing import *
 from tabulate import tabulate
 from comment_and_member import *
 from user import *
+from tasks import *
 from projects import *
 
 
 #INFORMATION===========================================================
 In_account_user = User(None , None , None , None , None)
 in_work_project = Projects(None , None)
+in_hand_task = Task(None , None , None , None)
 #======================================================================
 
 def justify_table_center(table):
@@ -35,13 +37,55 @@ def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
     show_task_allways(in_work_project.ID , In_account_user.username)
 
+
+
+#FUNCTION FOR SYNCING INFORMATION==================================================
+def sync_information(ID , username):
+    try:
+        with open('save_username_password_email.json' , 'r') as file:
+            users_info = json.load(file)
+            file .close()
+    except:
+        users_info = []
+
+    rtask = Task(None , None , None , None)
+    for user in users_info:
+        if user['username'] == username:
+            In_account_user.username = user['username']
+            In_account_user.password = user['password']
+            In_account_user.email = user['email']
+            In_account_user.IsActive = True
+            for project in user['projects_leads']:
+                In_account_user.projects_leads.append(project)
+            for project in user['projects_member']:
+                In_account_user.projects_member.append(project)
+    
+    for project in In_account_user.projects_leads:
+        if project['ID'] == ID:
+            in_work_project.name = project['name']
+            in_work_project.ID = project['ID']
+            in_work_project.leader = project['leader']
+            for member in project['members']:
+                in_work_project.members_usernames.append(member)
+            for task in project['tasks']:
+                rtask.comments = task['Comments']
+                for amember in task['Assignees']:
+                    rtask.assignees = amember
+                rtask.discription = task['Description']
+                rtask.end_time = task['End_time']
+                rtask.history = task['History']
+                rtask.ID = task['ID']
+                rtask.priority = task['Priority']
+                rtask.start_time = task['Start_time']
+                rtask.status = task['Status']
+                rtask.title = task['Title']
+            in_work_project.tasks.append(rtask)
+
+#=================================================================================
 #EVERYTHING STARTS HERE===========================================================
 def start(IDr , usernamer):
    
-    in_work_project.ID = IDr
-    In_account_user.username = usernamer
-    u=in_work_project.leader = In_account_user.username
-
+    sync_information(IDr , usernamer)
 
     proj_path_leads = in_work_project.finding_projects_leads()
     while True:

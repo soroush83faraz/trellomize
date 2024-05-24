@@ -47,6 +47,8 @@ def Work_inside_Trellomize(datalist):
     In_account_user.projects_leads = datalist['projects_leads']
     In_account_user.projects_member = datalist['projects_member']
 
+    
+
     while True:
         console.print(f'Dear [green][italic]{In_account_user.username}[/][/] Choose a number & [red](*)[/] to exit' , justify='center')
         

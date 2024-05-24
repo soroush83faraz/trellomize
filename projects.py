@@ -11,7 +11,7 @@ class Projects:
     leader = None
     members_usernames = []
     tasks = []
-    leader = None
+    
 
     def __init__(self , name , leader):
         self.name = name
