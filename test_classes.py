@@ -11,7 +11,7 @@ class TestTask(unittest.TestCase) :
     
     @classmethod
     def setUpClass(cls):
-        print("\nTASK :")
+        print("\nTASK ==========")
         
     
     def setUp(self) :
@@ -45,7 +45,7 @@ class TestProjects(unittest.TestCase) :
     
     @classmethod
     def setUpClass(cls):
-        print("\nPROJECTS :")
+        print("\nPROJECTS ==========")
        
     def setUp(self):
         self.project_1 = Projects("soroush" , "saleh")
@@ -70,7 +70,7 @@ class TestUser(unittest.TestCase) :
     
     @classmethod
     def setUpClass(cls):
-        print("\nUSER :")
+        print("\nUSER ==========")
        
     def setUp(self):
         self.user_1 = User("soroush" , "soroush@@2" , "soroush.faraz83@gmail.com" , True , [] )
@@ -106,7 +106,7 @@ class TestComment (unittest.TestCase) :
                
     @classmethod
     def setUpClass(cls):
-        print("\nCOMMENT :")
+        print("\nCOMMENT ==========")
        
     def setUp(self):
         self.comment_1 = Comment("soroush" , datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S") , "My comment-1")
