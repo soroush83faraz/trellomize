@@ -1,14 +1,23 @@
 import json
 from printing import*
+from comment import *
 # from projects import *
 # from tasks import * 
 # from user import *
 # from in_project_workplace import *
 # from printing import *
 # from saeed_mode_on import *
-def Comment(ID) :
-   
-    comment = input("please enter your comment here : ") 
+
+inhand_comment = Commento(None)
+
+
+def Comment(ID , writer):
+    comment = input("please enter your comment here : ")
+    
+    inhand_comment.writer = writer 
+    inhand_comment.content = comment
+    inhand_comment.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+    
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -22,12 +31,12 @@ def Comment(ID) :
         for proj in range(len(users_info[user]["projects_leads"])) :
             for tasks in users_info[user]["projects_leads"][proj]["tasks"] :
                 if ID == tasks["ID"] :
-                    tasks["Comments"].append(comment)    
+                    tasks["Comments"].append(inhand_comment.make_dict_of_comments()) 
     for user in range(len(users_info)) :
         for proj in range(len(users_info[user]["projects_member"])) :
             for tasks in users_info[user]["projects_member"][proj]["tasks"] :
                 if ID == tasks["ID"] :
-                    tasks["Comments"].append(comment) 
+                    tasks["Comments"].append(inhand_comment.make_dict_of_comments()) 
                      
     with open("save_username_password_email.json"  , "w") as json_file :
         json.dump(users_info , json_file , indent=4)
@@ -101,13 +110,13 @@ def assigning_task_to_member (ID) :
 
 
 
-def Start_Editing(ID):
+def Start_Editing(ID , writer):
     
     lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task']
     Chosen = pro_print(lines_list)
 
     if Chosen == '1':
-        Comment(ID)
+        Comment(ID , writer)
     elif Chosen == '2':
         assigning_task_to_member(ID)
 
