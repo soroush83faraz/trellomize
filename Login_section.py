@@ -32,6 +32,7 @@ def Log_in():
     username = None
     password = None
     while True:
+        clear_terminal()
         console.print('Enter [red]*[/] if you wanna exit each section' , justify='center' , style='violet bold')
         lines_list = [f'1_username :{username}' , f'2_password :{password}' , '3_Log_in' , '4_Exit']
         Choice = pro_print(lines_list)

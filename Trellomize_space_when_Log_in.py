@@ -6,13 +6,15 @@ from in_project_workplace import *
 from printing import *
 from go_to_project_for_leader import *
 from go_to_project_for_member import *
+import os
 
 
 new_project = Projects(None , None)
 In_account_user = User(None , None , None , None , None)
 pre_list_of_members = []
 
-
+def cpp_cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
 #Function for making new project in mainpage of App=============
 def Creat_new_project():
     
@@ -47,9 +49,10 @@ def Work_inside_Trellomize(datalist):
     In_account_user.projects_leads = datalist['projects_leads']
     In_account_user.projects_member = datalist['projects_member']
 
-    
+
 
     while True:
+        cpp_cls()
         console.print(f'Dear [green][italic]{In_account_user.username}[/][/] Choose a number & [red](*)[/] to exit' , justify='center')
         
 
@@ -61,9 +64,11 @@ def Work_inside_Trellomize(datalist):
             break
         
         elif chosen_option == '1':
+            cpp_cls()
             Creat_new_project()
 
         elif chosen_option == '2':
+            cpp_cls()
             show_all_projects()
 
 
@@ -74,6 +79,7 @@ def show_all_projects():
             file.close()
     except:
         users_info = []
+
     counter = 1
 
     project_leads_counter = 0
@@ -97,12 +103,15 @@ def show_all_projects():
     
     
     while True:
-        console.print('Which project?' , justify='center' , style='cyan bold')
-        proj_number = pro_print(proj_show)
-        if proj_number == '*':
+        if len(proj_list) > 0:
+            console.print('Which project?' , justify='center' , style='cyan bold')
+            proj_number = pro_print(proj_show)
+            if proj_number == '*':
+                break
+            if int(proj_number) > 0 and int(proj_number) <= project_leads_counter:
+                start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
+            elif int(proj_number) > project_leads_counter and int(proj_number) < counter:
+                start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
+        else:
+            console.print("There isn't any project to show" , justify='center' , style='violet bold')
             break
-        if int(proj_number) > 0 and int(proj_number) <= project_leads_counter:
-            start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
-        elif int(proj_number) > project_leads_counter and int(proj_number) < counter:
-            start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
-
