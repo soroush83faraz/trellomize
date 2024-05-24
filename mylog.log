@@ -489,3 +489,14 @@
 2024-05-23 21:15:50,892 | INFO | aaaaa was logged in his account
 2024-05-23 21:18:46,081 | INFO | aaaaa was logged in his account
 2024-05-23 21:18:46,082 | INFO | aaaaa was logged in his account
+2024-05-24 10:21:21,583 | INFO | An account was made by tupac in save_account function and was saved in save_username_password_email.json
+2024-05-24 10:37:09,107 | INFO | tupac was logged in his account
+2024-05-24 10:37:09,107 | INFO | tupac was logged in his account
+2024-05-24 10:43:30,768 | INFO | tupac was logged in his account
+2024-05-24 10:43:30,768 | INFO | tupac was logged in his account
+2024-05-24 11:28:14,924 | INFO | tupac was logged in his account
+2024-05-24 11:28:14,924 | INFO | tupac was logged in his account
+2024-05-24 11:29:20,693 | INFO | tupac was logged in his account
+2024-05-24 11:29:20,694 | WARNING | tupac tried to log in with false informations
+2024-05-24 11:29:31,388 | INFO | tupac was logged in his account
+2024-05-24 11:29:31,388 | INFO | tupac was logged in his account
