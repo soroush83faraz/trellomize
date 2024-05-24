@@ -252,7 +252,7 @@ def edit_it(array_2D , current_point_list):
 
     Id_we_wanna_edit = all_list[current_point_list[1]][current_point_list[0]]
     
-    Start_Editing(Id_we_wanna_edit)
+    Start_Editing(Id_we_wanna_edit , In_account_user.username)
 
 #=================================================================================
 
