@@ -90,7 +90,7 @@ def start(IDr , usernamer):
     proj_path_leads = in_work_project.finding_projects_leads()
     while True:
         show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_exit "]
+        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members" ,"5_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
@@ -100,6 +100,8 @@ def start(IDr , usernamer):
         elif Choice == '3':
             edit_task(in_work_project.ID , In_account_user.username)
         elif Choice == '4':
+            in_work_project.show_all_members(In_account_user)
+        elif Choice == '5':
             break
         
 #=================================================================================
@@ -147,7 +149,9 @@ def edit_task(ID , username):
         Archived_tasks.append({'Title' : ''})
 
     column = 5
+    
     row = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
+    
 
     show_task_allways(ID , username)
 
@@ -172,7 +176,11 @@ def edit_task(ID , username):
     worked = True
     moving_list = []
     while True:
-        if worked == True:
+        if row == 0:
+            clear_terminal()
+            console.print("There isn't any task you wanna edit" , justify='center' , style='purple bold')
+            break
+        elif worked == True:
             array_2D_saved = array_2D[current_row-1][current_column-1]
             array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '✏️'
        
@@ -251,7 +259,7 @@ def edit_it(array_2D , current_point_list):
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
     
-    table = Table(title='Project')
+    table = Table(title = 'Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
     table.add_column("TODO" , justify='center' , style='green')
     table.add_column("DOING" , justify='center' , style='yellow')
@@ -309,14 +317,14 @@ def show_task_allways(ID , username):
 
 #=================================================================================
 def swap_task(origin_point , destination_point):
-    try :
-        with open("save_username_password_email.json" , "r") as json_file :
-            users_info = json.load(json_file)
-            json_file.close()
+    # try :
+    #     with open("save_username_password_email.json" , "r") as json_file :
+    #         users_info = json.load(json_file)
+    #         json_file.close()
             
             
-    except FileNotFoundError:
-        users_info = []
+    # except FileNotFoundError:
+    #     users_info = []
 
     Backlog_tasks = []
     Todo_tasks = []
@@ -326,31 +334,31 @@ def swap_task(origin_point , destination_point):
 
     owner_of_proj = in_work_project.finding_projects_leads()
 
-    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
-        if task['Status'] == 'BACKLOG':
+    for task in in_work_project.tasks:
+        if task.status == 'BACKLOG':
             Backlog_tasks.append(task)
-        elif task['Status'] == 'TODO':
+        elif task.status == 'TODO':
             Todo_tasks.append(task)
-        elif task['Status'] == 'DOING':
+        elif task.status == 'DOING':
             Doing_tasks.append(task)
-        elif task['Status'] == 'DONE':
+        elif task.status == 'DONE':
             Done_tasks.append(task)
-        elif task['Status'] == 'ARCHIVED':
+        elif task.status == 'ARCHIVED':
             Archived_tasks.append(task)
 
     all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]
     
 
     if destination_point[1] == 0:
-        all_list[origin_point[1]][origin_point[0]]['Status'] = 'BACKLOG'
+        all_list[origin_point[1]][origin_point[0]].status = 'BACKLOG'
     elif destination_point[1] == 1:
-        all_list[origin_point[1]][origin_point[0]]['Status'] = 'TODO'
+        all_list[origin_point[1]][origin_point[0]].status = 'TODO'
     elif destination_point[1] == 2:
-        all_list[origin_point[1]][origin_point[0]]['Status'] = 'DOING'
+        all_list[origin_point[1]][origin_point[0]].status = 'DOING'
     elif destination_point[1] == 3:
-        all_list[origin_point[1]][origin_point[0]]['Status'] = 'DONE'
+        all_list[origin_point[1]][origin_point[0]].status = 'DONE'
     elif destination_point[1] == 4:
-        all_list[origin_point[1]][origin_point[0]]['Status'] = 'ARCHIVED'
+        all_list[origin_point[1]][origin_point[0]].status = 'ARCHIVED'
 
     extended_list = Backlog_tasks + Todo_tasks + Doing_tasks + Done_tasks + Archived_tasks
     try:
@@ -359,12 +367,30 @@ def swap_task(origin_point , destination_point):
             file.close()
     except : 
         users_info = []
+    want_to_change_list = [In_account_user.username]
 
     for user in users_info:
-        if user['username'] == In_account_user.username:
+        for project in user['projects_member']:
+            if project['ID'] == in_work_project.ID:
+                for member in project['members']:
+                    want_to_change_list.append(member)
+
+
+    for user in users_info:
+        if user['username'] in want_to_change_list:
             for project in user['projects_leads']:
                 if project['ID'] == in_work_project.ID:
-                    project['tasks'] = extended_list
+                    dicted_list = []
+                    for task in extended_list:
+                        dicted_list.append(task.make_dict_of_tasks())
+                    project['tasks'] = dicted_list
+            for project in user['projects_member']:
+                if project['ID'] == in_work_project.ID:
+                    dicted_list = []
+                    for task in extended_list:
+                        dicted_list.append(task.make_dict_of_tasks())
+                    project['tasks'] = dicted_list
+
 
     with open('save_username_password_email.json' , 'w') as file:
         json.dump(users_info , file , indent=4)
@@ -419,14 +445,14 @@ def final_move(movement_list , array_2D , text):
 #=================================================================================
 #Function for Moving task=========================================================
 def Move_task(ID , username):
-    try :
-        with open("save_username_password_email.json" , "r") as json_file :
-            users_info = json.load(json_file)
-            json_file.close()
+    # try :
+    #     with open("save_username_password_email.json" , "r") as json_file :
+    #         users_info = json.load(json_file)
+    #         json_file.close()
             
             
-    except FileNotFoundError:
-        users_info = []
+    # except FileNotFoundError:
+    #     users_info = []
 
     Backlog_tasks = []
     Todo_tasks = []
@@ -434,31 +460,41 @@ def Move_task(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
-    owner_of_proj = in_work_project.finding_projects_leads()
+    # owner_of_proj = in_work_project.finding_projects_leads()
 
-    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
-        if task['Status'] == 'BACKLOG':
+    for task in in_work_project.tasks:
+        if task.status == 'BACKLOG':
             Backlog_tasks.append(task)
-        elif task['Status'] == 'TODO':
+        elif task.status == 'TODO':
             Todo_tasks.append(task)
-        elif task['Status'] == 'DOING':
+        elif task.status == 'DOING':
             Doing_tasks.append(task)
-        elif task['Status'] == 'DONE':
+        elif task.status == 'DONE':
             Done_tasks.append(task)
-        elif task['Status'] == 'ARCHIVED':
+        elif task.status == 'ARCHIVED':
             Archived_tasks.append(task)
 
     max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
     for i in range(max_length - len(Backlog_tasks)):
-        Backlog_tasks.append({'Title' : ''})
+        ftask = Task(None , None , None , None)
+        ftask.title = ''
+        Backlog_tasks.append(ftask)
     for i in range(max_length - len(Todo_tasks)):
-        Todo_tasks.append({'Title' : ''})
+        ftask = Task(None , None , None , None)
+        ftask.title = ''
+        Todo_tasks.append(ftask)
     for i in range(max_length - len(Doing_tasks)):
-        Doing_tasks.append({'Title' : ''})
+        ftask = Task(None , None , None , None)
+        ftask.title = ''
+        Doing_tasks.append(ftask)
     for i in range(max_length - len(Done_tasks)):
-        Done_tasks.append({'Title' : ''})
+        ftask = Task(None , None , None , None)
+        ftask.title = ''
+        Done_tasks.append(ftask)
     for i in range(max_length - len(Archived_tasks)):
-        Archived_tasks.append({'Title' : ''})
+        ftask = Task(None , None , None , None)
+        ftask.title = ''
+        Archived_tasks.append(ftask)
 
     column = 5
     row = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
@@ -474,15 +510,15 @@ def Move_task(ID , username):
     array_2D = [[0, 0 , 0 , 0 , 0] for _ in range(rows)]
     
     for num in range(len(Backlog_tasks)):
-        array_2D[num][0] = Backlog_tasks[num]['Title']
+        array_2D[num][0] = Backlog_tasks[num].title
     for num in  range(len(Todo_tasks)):
-        array_2D[num][1] = Todo_tasks[num]['Title']
+        array_2D[num][1] = Todo_tasks[num].title
     for num in range(len(Doing_tasks)):
-        array_2D[num][2] = Doing_tasks[num]['Title']
+        array_2D[num][2] = Doing_tasks[num].title
     for num in range(len(Done_tasks)):
-        array_2D[num][3] = Done_tasks[num]['Title']
+        array_2D[num][3] = Done_tasks[num].title
     for num in range(len(Archived_tasks)):
-        array_2D[num][4] = Archived_tasks[num]['Title']
+        array_2D[num][4] = Archived_tasks[num].title
     worked = True
     moving_list = []
     while True:

@@ -2,6 +2,8 @@ from rich.console import Console
 import json
 from printing import *
 import tasks
+import time
+from datetime import datetime , timedelta
 console = Console()
 
 
@@ -34,6 +36,16 @@ class Projects:
 
     def Add_member(self , In_account_user):
         while True:
+            try: 
+                with open('save_username_password_email.json' , 'r') as rfile:
+                    data = json.load(rfile)
+                    rfile.close()
+            except:
+                data = []
+        
+            for user in data:
+                console.print(user['username'] , justify='center' , style='red italic')
+
             Added = False
             console.print("Enter member's name who you wanna add :" , justify='center' , style='green')
             member_name = input('                                                                                 Member name :')
@@ -42,17 +54,11 @@ class Projects:
             elif member_name == In_account_user.username:
                 console.print(f'{In_account_user.username} is leader of the project' , justify='center' , style='red bold italic')
                 break
-            try: 
-                with open('save_username_password_email.json' , 'r') as rfile:
-                    data = json.load(rfile)
-                    rfile.close()
-            except:
-                data = []
-        
+            
             for i in data:
                 if i['username'] == member_name:
                     self.members_usernames.append(i['username'])
-                    self.append(i['username'])
+                    
                     Added = True
                     console.print(f"[blue]{member_name}[/] [green]was added to project successfully[/]  ✅" , justify='center')
             
@@ -200,21 +206,46 @@ class Projects:
                         proj_path.append("tasks")
                         #print(proj_path)
                         return proj_path
+                    
+    def add_task_to_other_user(self , task):
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+        
+        for user in users_info:
+            if user['username'] in self.members_usernames:
+                for project in user['projects_member']:
+                    if project['ID'] == self.ID:
+                        dicted_task = task.make_dict_of_tasks()
+                        project['tasks'].append(dicted_task)
+        
+     
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file , indent=4)
+            file.close()
 
-    def create_new_task (self) :
-    
+
+        
+    def create_new_task (self):
+        
+        start_time = datetime.now()
         proj_path_leads = self.finding_projects_leads()
         Title = "Task"
         Description = "Put your discription here"
         Priority = "LOW"
         status = "BACKLOG"
+        Assignees = []
+        End_time = start_time + timedelta(hours = 24)
         while True :
-        
+            clear_terminal()
             console.print("[violet]Choose a number &[/] [red](*)[/] [violet]to exit[/]" , justify='center')
-            lines_list = [f"1-Title : {Title}" , f"2-Description : {Description}" , f"3-Priority : {Priority}" , f"4-status :{status}" , f"5-save Task" , '6_Exit']
+            lines_list = [f"1-Title : {Title}" , f"2-Description : {Description}" , f"3-Priority : {Priority}" , f"4-status :{status}" , f'5_Assignees{Assignees}' , f"6_End_time -> {End_time.strftime("%d/%m/%Y  %H:%M:%S")}" , f"7-save Task" , '8_Exit']
             choice = pro_print(lines_list)
         
-            if choice == '6' :
+            if choice == '8' :
                 break
         
             elif choice == "1" :
@@ -229,34 +260,95 @@ class Projects:
                     console.print("[violet][bold]You should choose a priority from [/][/][red][italic](CRITICAL , HIGH , MEDIUM , LOW)[/][/]  😊" , justify='center')
                     Priority = None
                 
-            if choice == "4" :
-                status = input("status :")
+            elif choice == "4" :
+                status = input("                                                                                 status :")
                 if status != "BACKLOG" and status != "TODO" and status != "DOING" and status != "DONE" and status != "ARCHIVED" :
                     console.print("[violet][bold]You should choose a status from[/][/][red][italic] (BACKLOG , TODO , DOING , DONE , ARCHIVED) [/][/]" , justify='center')
                     status = None
-                
-            elif choice == "5" :
+            elif choice == '5':
+                for member in self.members_usernames:
+                    console.print(f'[green]{member}[/]' , justify='center')
+                console.print('Who do you wanna assign to this task' , justify='center' , style='blue bold')
+                chosen_member = input("                                                                                 member's name:")
+                if chosen_member in self.members_usernames:
+                    Assignees.append(chosen_member)
+                else:
+                    console.print(f"[red][italic][bold]{chosen_member}[/][/][/] isn't member of the project" , justify='center')
+            elif choice == '6':
+                chosen_end_time = input("                                                                                 delta:")
+                if int(chosen_end_time) > 0:
+                    End_time = start_time + timedelta(hours  = int(chosen_end_time))
+            elif choice == "7" :
                 task = tasks.Task(Priority , Title , Description , status)
+                task.assignees = Assignees
+                task.start_time = start_time
+                task.end_time = End_time
                 dict_of_tasks = task.make_dict_of_tasks()
+                self.add_task_to_other_user(task)
                 # print(dict_of_tasks)
                 try :
                     with open("save_username_password_email.json" , "r") as json_file :
                         users_info = json.load(json_file)
                         json_file.close()
-
-
                 except FileNotFoundError:
                     users_info = []
+
                 # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0])
+                
                 users_info[proj_path_leads[0]][proj_path_leads[1]][proj_path_leads[2]][proj_path_leads[3]].append(dict_of_tasks)
                 with open("save_username_password_email.json"  , "w") as json_file :
                     json.dump(users_info , json_file , indent=4)
                     json_file.close()
                 break
-            
+
+                
             
 
             else :
                 print("your choice isnt valid please choose from 1 , 2 , 3 , 4 , 5")
+
+    def update_members(self):
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+
+        want_to_change_list = [self.leader] + self.members_usernames
+        for user in users_info:
+            if user['username'] in want_to_change_list:
+                for project in user['projects_leads']:
+                    if project['ID'] == self.ID:
+                        project['members'] = self.members_usernames
+                for project in user['projects_member']:
+                    if project['ID'] == self.ID:
+                        project['members'] = self.members_usernames
+        
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file)
+            file.close()
+            
+
+    
+    def remove_a_member(self):
+        lines_list = []
+        for member in self.members_usernames:
+            lines_list.append(member)
+        chosen_member = int(pro_print(lines_list))
+        self.members_usernames.pop(chosen_member-1)
+        self.update_members()
+
+    def show_all_members(self , user):
+        for member in self.members_usernames:
+            console.print(f"{member}" , justify='center' , style='red italic')
+
+        lines_list = ["1_Remove a member" , "2_Add member"]
+        Chosen_option = pro_print(lines_list)
+
+        if Chosen_option == '1' and (user.username == self.leader):
+            self.remove_a_member()
+        elif Chosen_option == '2':
+            self.Add_member(user)
             
 
