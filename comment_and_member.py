@@ -1,5 +1,6 @@
 import json
 import datetime
+from printing import*
 from comment import *
 # from projects import *
 # from tasks import * 
@@ -7,17 +8,17 @@ from comment import *
 # from in_project_workplace import *
 # from printing import *
 # from saeed_mode_on import *
-def Add_Comment(ID , name) :
-    
-    
-    text = input("please enter your comment here : ") 
-    time = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
-    comment = Comment(name , time , text)
-    
-    
 
+inhand_comment = Commento(None)
+
+
+def Comment(ID , writer):
+    comment = input("please enter your comment here : ")
     
-    comment.converting_to_str()
+    inhand_comment.writer = writer 
+    inhand_comment.content = comment
+    inhand_comment.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+    
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -110,6 +111,16 @@ def assigning_task_to_member (ID) :
 
 
 assigning_task_to_member("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f")
+
+def Start_Editing(ID , writer):
+    
+    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task']
+    Chosen = pro_print(lines_list)
+
+    if Chosen == '1':
+        Comment(ID , writer)
+    elif Chosen == '2':
+        assigning_task_to_member(ID)
 
 
 
