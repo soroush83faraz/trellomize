@@ -48,8 +48,10 @@ class TestAssigningTaskToMember(unittest.TestCase):
                         break
         
         if found_task == False :
+            print(f"Task hasnt been assigned for this member")
             self.assertFalse(found_task, f"Task hasnt been assigned for this member")
         if found_task :
+            print(f"Task has been assigned for this member")
             self.assertTrue(found_task, f"Task has been assigned for this member")
 
 
