@@ -16,8 +16,8 @@ def Comment(ID , writer):
     comment = input("please enter your comment here : ")
     
     inhand_comment.writer = writer 
-    inhand_comment.content = comment
-    inhand_comment.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+    inhand_comment.text = comment
+    inhand_comment.time = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
     
 
     try :
@@ -32,12 +32,12 @@ def Comment(ID , writer):
         for proj in range(len(users_info[user]["projects_leads"])) :
             for tasks in users_info[user]["projects_leads"][proj]["tasks"] :
                 if ID == tasks["ID"] :
-                    tasks["Comments"].append(comment.converting_to_str())    
+                    tasks["Comments"].append(inhand_comment.converting_to_dictionary())    
     for user in range(len(users_info)) :
         for proj in range(len(users_info[user]["projects_member"])) :
             for tasks in users_info[user]["projects_member"][proj]["tasks"] :
                 if ID == tasks["ID"] :
-                    tasks["Comments"].append(comment.converting_to_str()) 
+                    tasks["Comments"].append(inhand_comment.converting_to_dictionary()) 
                      
     with open("save_username_password_email.json"  , "w") as json_file :
         json.dump(users_info , json_file , indent=4)
@@ -45,7 +45,7 @@ def Comment(ID , writer):
                     
                       
 
-def assigning_task_to_member (ID) :
+def assigning_task_to_member (ID , in_acc_user) :
 
 
     try :
@@ -103,15 +103,6 @@ def assigning_task_to_member (ID) :
                     # print(users_info[user]["projects_leads"][proj]["ID"])
                     break
                     
-
-
-
-
- 
-
-
-assigning_task_to_member("2f951f25-a4b4-4d72-8fc1-d2e2eb932c6f")
-
 def Start_Editing(ID , writer):
     
     lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task']
@@ -120,7 +111,7 @@ def Start_Editing(ID , writer):
     if Chosen == '1':
         Comment(ID , writer)
     elif Chosen == '2':
-        assigning_task_to_member(ID)
+        assigning_task_to_member(ID , writer)
 
 
 

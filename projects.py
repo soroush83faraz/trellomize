@@ -1,6 +1,7 @@
 from rich.console import Console
 import json
 from printing import *
+from tasks import *
 import tasks
 import time
 from datetime import datetime , timedelta
@@ -284,7 +285,7 @@ class Projects:
                 task.start_time = start_time
                 task.end_time = End_time
                 dict_of_tasks = task.make_dict_of_tasks()
-                self.add_task_to_other_user(task)
+                
                 # print(dict_of_tasks)
                 try :
                     with open("save_username_password_email.json" , "r") as json_file :
@@ -299,8 +300,9 @@ class Projects:
                 with open("save_username_password_email.json"  , "w") as json_file :
                     json.dump(users_info , json_file , indent=4)
                     json_file.close()
+                    self.add_task_to_other_user(task)
                 break
-
+                
                 
             
 
@@ -315,18 +317,18 @@ class Projects:
         except:
             users_info = []
 
-        want_to_change_list = [self.leader] + self.members_usernames
+        
         for user in users_info:
-            if user['username'] in want_to_change_list:
-                for project in user['projects_leads']:
-                    if project['ID'] == self.ID:
-                        project['members'] = self.members_usernames
-                for project in user['projects_member']:
-                    if project['ID'] == self.ID:
-                        project['members'] = self.members_usernames
+            
+            for project in user['projects_leads']:
+                if project['ID'] == self.ID:
+                    project['members'] = self.members_usernames
+            for project in user['projects_member']:
+                if project['ID'] == self.ID:
+                    project['members'] = self.members_usernames
         
         with open('save_username_password_email.json' , 'w') as file:
-            json.dump(users_info , file)
+            json.dump(users_info , file , indent=4)
             file.close()
             
 
@@ -350,5 +352,41 @@ class Projects:
             self.remove_a_member()
         elif Chosen_option == '2':
             self.Add_member(user)
+            self.update_members()
             
 
+    def update_project(self):
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file .close()
+        except:
+            users_info = []
+
+        rtask = Task(None , None , None , None)
+        tsk_list = []
+        mm_list = []
+        for user in users_info:
+
+            for project in user['projects_leads']:
+                if project['ID'] == self.ID:
+                    self.name = project['name']
+                    self.ID = project['ID']
+                    self.leader = project['leader']
+                    for member in project['members']:
+                        mm_list.append(member)
+                    for task in project['tasks']:
+                        rtask.comments = task['Comments']
+                        rtask.assignees = task['Assignees']
+                        rtask.discription = task['Description']
+                        rtask.end_time = task['End_time']
+                        rtask.history = task['History']
+                        rtask.ID = task['ID']
+                        rtask.priority = task['Priority']
+                        rtask.start_time = task['Start_time']
+                        rtask.end_time = task['End_time']
+                        rtask.status = task['Status']
+                        rtask.title = task['Title']
+                        tsk_list.append(rtask)
+                    self.tasks = tsk_list
+                    self.members_usernames = mm_list
