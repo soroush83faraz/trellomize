@@ -131,25 +131,25 @@ def IsPasswordValid():
 
         
 #Section for saving data in CSV format=========================================
-def save_account():
-    try:
-        with open('save_username_password_email.json' , 'r') as reading_file:
-            existing_data = json.load(reading_file)
-    except:
-        existing_data = []
+# def save_account(user):
+#     try:
+#         with open('save_username_password_email.json' , 'r') as reading_file:
+#             existing_data = json.load(reading_file)
+#     except:
+#         existing_data = []
 
-    new_data = {"username" : user.username , "password" : user.password , "email" : user.email , 'projects_leads' : [] , 'projects_member' : []}
+#     new_data = {"username" : user.username , "password" : user.password , "email" : user.email , 'projects_leads' : [] , 'projects_member' : []}
 
-    existing_data.append(new_data)
+#     existing_data.append(new_data)
 
-    with open('save_username_password_email.json' , 'w') as writing_file:
-        json.dump(existing_data , writing_file , indent=4)
+#     with open('save_username_password_email.json' , 'w') as writing_file:
+#         json.dump(existing_data , writing_file , indent=4)
 
     
-    logging.info(f"An account was made by {user.username} in save_account function and was saved in save_username_password_email.json")
+#     logging.info(f"An account was made by {user.username} in save_account function and was saved in save_username_password_email.json")
     
-    console.print('Your Account was saved successfully  ✅✌️'  , style='green' , justify= 'center')
-#==============================================================================
+#     console.print('Your Account was saved successfully  ✅✌️'  , style='green' , justify= 'center')
+# #==============================================================================
 
 
 
@@ -174,7 +174,7 @@ def make_an_account():
            user.email = my_validate_email()
         elif Option == '4':
             if user.username != None and user.password != None and user.email != None:
-                save_account()
+                user.save_account()
                 break
             else:
                 console.print('Some field is empty' ,style= "bold yellow" , justify='center')

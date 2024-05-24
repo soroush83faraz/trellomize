@@ -7,6 +7,14 @@ from printing_nocls import *
 from printing import *
 from tabulate import tabulate
 from comment_and_member import *
+from user import *
+from projects import *
+
+
+#INFORMATION===========================================================
+In_account_user = User(None , None , None , None , None)
+in_work_project = Projects(None , None)
+#======================================================================
 
 def justify_table_center(table):
     # Split the table into lines
@@ -23,32 +31,30 @@ def justify_table_center(table):
 
     return centered_table
 
-
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+    show_task_allways(in_work_project.ID , In_account_user.username)
 
-def clear_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    show_task_allways(ID , username)
 #EVERYTHING STARTS HERE===========================================================
 def start(IDr , usernamer):
-    global ID
-    ID = IDr
-    global username
-    username = usernamer
+   
+    in_work_project.ID = IDr
+    In_account_user.username = usernamer
+    u=in_work_project.leader = In_account_user.username
 
-    proj_path_leads = finding_projects_leads(ID , username)
+
+    proj_path_leads = in_work_project.finding_projects_leads()
     while True:
-        show_task_allways(ID , username)
+        show_task_allways(in_work_project.ID , In_account_user.username)
         lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
-            create_new_task(proj_path_leads)
+            in_work_project.create_new_task()
         elif Choice == '2':
-            Move_task(ID , username)
+            Move_task(in_work_project.ID , In_account_user.username)
         elif Choice == '3':
-            edit_task(ID , username)
+            edit_task(in_work_project.ID , In_account_user.username)
         elif Choice == '4':
             break
         
@@ -70,7 +76,7 @@ def edit_task(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
-    owner_of_proj = finding_projects_leads(ID , username)
+    owner_of_proj = in_work_project.finding_projects_leads()
 
     for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
         if task['Status'] == 'BACKLOG':
@@ -162,7 +168,7 @@ def edit_task(ID , username):
 #=================================================================================
 #edit task========================================================================
 def edit_it(array_2D , current_point_list):
-    owner_of_proj = finding_projects_leads(ID , username)
+    owner_of_proj = in_work_project.finding_projects_leads()
     Id_we_wanna_edit = ''
     try :
         with open('save_username_password_email.json' , 'r') as file:
@@ -198,94 +204,6 @@ def edit_it(array_2D , current_point_list):
 
 #=================================================================================
 
-#Function for finding user info by ID ============================================
-def finding_projects_leads (ID , username) :
-    
-    try :
-        with open("save_username_password_email.json" , "r") as json_file :
-            users_info = json.load(json_file)
-            json_file.close()
-            
-            
-    except FileNotFoundError:
-        users_info = []
-        
-    proj_path = [] 
-    for user in range(len(users_info)) :
-        if users_info[user]['username'] == username:
-            for item in range(len(users_info[user]["projects_leads"])) :
-                if users_info[user]["projects_leads"][item]["ID"] == ID :
-                    proj_path.append(user)
-                    proj_path.append("projects_leads")
-                    proj_path.append(item)
-                    proj_path.append("tasks")
-                    #print(proj_path)
-                    return proj_path
-    
-                
-#=================================================================================
-#Function for creating new task===================================================
-def create_new_task (proj_path_leads) :
-    
-
-    Title = "Task"
-    Description = "Put your discription here"
-    Priority = "LOW"
-    status = "BACKLOG"
-    while True :
-        
-        console.print("[violet]Choose a number &[/] [red](*)[/] [violet]to exit[/]" , justify='center')
-        lines_list = [f"1-Title : {Title}" , f"2-Description : {Description}" , f"3-Priority : {Priority}" , f"4-status :{status}" , f"5-save Task" , '6_Exit']
-        choice = pro_print(lines_list)
-        
-        if choice == '6' :
-            break
-        
-        elif choice == "1" :
-            Title = input("                                                                                 Title : ")
-            
-        elif choice == "2" :
-            Description = input("                                                                                 Description : ")
-            
-        elif choice == "3" :
-            Priority = input("                                                                                 Priority : ")
-            if Priority != "CRITICAL" and Priority != "HIGH" and Priority != "MEDIUM" and Priority != "LOW" :
-                console.print("[violet][bold]You should choose a priority from [/][/][red][italic](CRITICAL , HIGH , MEDIUM , LOW)[/][/]  😊" , justify='center')
-                Priority = None
-                
-        if choice == "4" :
-            status = input("status :")
-            if status != "BACKLOG" and status != "TODO" and status != "DOING" and status != "DONE" and status != "ARCHIVED" :
-                console.print("[violet][bold]You should choose a status from[/][/][red][italic] (BACKLOG , TODO , DOING , DONE , ARCHIVED) [/][/]" , justify='center')
-                status = None
-                
-        elif choice == "5" :
-            task = tasks.Task(Priority , Title , Description , status)
-            dict_of_tasks = task.make_dict_of_tasks()
-            # print(dict_of_tasks)
-            try :
-                with open("save_username_password_email.json" , "r") as json_file :
-                    users_info = json.load(json_file)
-                    json_file.close()
-
-
-            except FileNotFoundError:
-                users_info = []
-            # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0])
-            users_info[proj_path_leads[0]][proj_path_leads[1]][proj_path_leads[2]][proj_path_leads[3]].append(dict_of_tasks)
-            with open("save_username_password_email.json"  , "w") as json_file :
-                json.dump(users_info , json_file , indent=4)
-                json_file.close()
-            break
-            
-            
-
-        else :
-            print("your choice isnt valid please choose from 1 , 2 , 3 , 4 , 5")
-            
-
-
-#=================================================================================
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
     
@@ -295,10 +213,8 @@ def show_task_allways(ID , username):
     table.add_column("DOING" , justify='center' , style='yellow')
     table.add_column("DONE" , justify='center' , style='purple')
     table.add_column("ARCHIVED" , justify='center' , style='red')
-    
-    
 
-    owner_of_proj = finding_projects_leads(ID , username)
+    owner_of_proj = in_work_project.finding_projects_leads()
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -364,7 +280,7 @@ def swap_task(origin_point , destination_point):
     Done_tasks = []
     Archived_tasks = []
 
-    owner_of_proj = finding_projects_leads(ID , username)
+    owner_of_proj = in_work_project.finding_projects_leads()
 
     for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
         if task['Status'] == 'BACKLOG':
@@ -401,16 +317,13 @@ def swap_task(origin_point , destination_point):
         users_info = []
 
     for user in users_info:
-        if user['username'] == username:
+        if user['username'] == In_account_user.username:
             for project in user['projects_leads']:
-                if project['ID'] == ID:
+                if project['ID'] == in_work_project.ID:
                     project['tasks'] = extended_list
 
     with open('save_username_password_email.json' , 'w') as file:
         json.dump(users_info , file , indent=4)
-
-
-
 
 #Function for second part of movement=============================================
 def final_move(movement_list , array_2D , text):
@@ -459,8 +372,6 @@ def final_move(movement_list , array_2D , text):
         else:
             work = False
             clear_terminal()
-
-
 #=================================================================================
 #Function for Moving task=========================================================
 def Move_task(ID , username):
@@ -479,7 +390,7 @@ def Move_task(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
-    owner_of_proj = finding_projects_leads(ID , username)
+    owner_of_proj = in_work_project.finding_projects_leads()
 
     for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
         if task['Status'] == 'BACKLOG':
@@ -567,13 +478,6 @@ def Move_task(ID , username):
         else:
             worked = False
             clear_terminal()
-        
-
-
-
 #=================================================================================
-
-
-
 
 
