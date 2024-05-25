@@ -211,7 +211,7 @@ class Projects:
                         #print(proj_path)
                         return proj_path
 
-    def finding_projects_member(self):
+    def finding_projects_member(self , username):
         try :
             with open("save_username_password_email.json" , "r") as json_file :
                 users_info = json.load(json_file)
@@ -219,19 +219,16 @@ class Projects:
         except FileNotFoundError:
             users_info = []
         
+        task_list = []
+        for user in users_info:
+            if user['username'] == username:
+                for project in user['projects_member']:
+                    if project['ID'] == self.ID:
+                        for task in project['tasks']:
+                            if username in task['Assignees']:
+                                task_list.append(task)
 
-        proj_path = [] 
-        for user in range(len(users_info)) :
-            if users_info[user]['username'] == self.leader:
-                for item in range(len(users_info[user]["projects_member"])) :
-                    if users_info[user]["projects_member"][item]["ID"] == self.ID :
-                        proj_path.append(user)
-                        proj_path.append("projects_member")
-                        proj_path.append(item)
-                        proj_path.append("tasks")
-                        #print(proj_path)
-                        return proj_path
-
+        return task_list
 
 
     def add_task_to_other_user(self , task):
