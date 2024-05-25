@@ -31,6 +31,25 @@ def justify_table_center(table):
 
     return centered_table
 
+def start_for_member(IDr , username):
+
+    while True:
+        sync_information(IDr , username)
+        show_task_allways(in_work_project.ID , In_account_user.username)
+        lines_list = [ "1_Move task" , '2_Edit task' , "3_See all members" , "4_exit "]
+        Choice = pro_print_nocls(lines_list)
+
+        if Choice == '1':
+            in_work_project.update_project()
+            Move_task(in_work_project.ID , In_account_user.username)
+        elif Choice == '2':
+            in_work_project.update_project()
+            edit_task(in_work_project.ID , In_account_user.username)
+        elif Choice == '3':
+            in_work_project.show_all_members(In_account_user)
+        elif Choice == '4':
+            break
+
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -59,7 +78,7 @@ def sync_information(ID , username):
             for project in user['projects_member']:
                 In_account_user.projects_member.append(project)
     
-    for project in In_account_user.projects_leads:
+    for project in In_account_user.projects_member:
         if project['ID'] == ID:
             in_work_project.name = project['name']
             in_work_project.ID = project['ID']
@@ -85,7 +104,6 @@ def sync_information(ID , username):
 #=================================================================================
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
-    
     table = Table(title = 'Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
     table.add_column("TODO" , justify='center' , style='green')
@@ -93,7 +111,7 @@ def show_task_allways(ID , username):
     table.add_column("DONE" , justify='center' , style='purple')
     table.add_column("ARCHIVED" , justify='center' , style='red')
 
-    owner_of_proj = in_work_project.finding_projects_member()
+    owner_of_proj = in_work_project.finding_projects_member(username)
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -111,7 +129,7 @@ def show_task_allways(ID , username):
     Archived_tasks = []
 
 
-    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+    for task in owner_of_proj:
         if task['Status'] == 'BACKLOG':
             Backlog_tasks.append(task)
         elif task['Status'] == 'TODO':
@@ -124,6 +142,7 @@ def show_task_allways(ID , username):
             Archived_tasks.append(task)
 
     max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
+
     for i in range(max_length - len(Backlog_tasks)):
         Backlog_tasks.append({'Title' : ''})
     for i in range(max_length - len(Todo_tasks)):
@@ -158,7 +177,7 @@ def swap_task(origin_point , destination_point):
     Done_tasks = []
     Archived_tasks = []
 
-    owner_of_proj = in_work_project.finding_projects_member()
+    # owner_of_proj = in_work_project.finding_projects_member()
 
     for task in in_work_project.tasks:
         if task.status == 'BACKLOG':
@@ -187,13 +206,14 @@ def swap_task(origin_point , destination_point):
         all_list[origin_point[1]][origin_point[0]].status = 'ARCHIVED'
 
     extended_list = Backlog_tasks + Todo_tasks + Doing_tasks + Done_tasks + Archived_tasks
+
     try:
         with open('save_username_password_email.json' , 'r') as file:
             users_info = json.load(file)
             file.close()
     except : 
         users_info = []
-    want_to_change_list = [In_account_user.username]
+    want_to_change_list = [in_work_project.leader]
 
     for user in users_info:
         for project in user['projects_member']:
@@ -409,9 +429,9 @@ def edit_task(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
-    owner_of_proj = in_work_project.finding_projects_member()
+    owner_of_proj = in_work_project.finding_projects_member(username)
 
-    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+    for task in owner_of_proj:
         if task['Status'] == 'BACKLOG':
             Backlog_tasks.append(task)
         elif task['Status'] == 'TODO':
@@ -507,9 +527,9 @@ def edit_task(ID , username):
 
 #edit task========================================================================
 def edit_it(array_2D , current_point_list):
-    owner_of_proj = in_work_project.finding_projects_member()
+    owner_of_proj = in_work_project.finding_projects_member(In_account_user.username)
     Id_we_wanna_edit = ''
-    try :
+    try:
         with open('save_username_password_email.json' , 'r') as file:
             users_info = json.load(file)
             file.close()
@@ -523,7 +543,7 @@ def edit_it(array_2D , current_point_list):
     Done_tasks = []
     Archived_tasks = []
 
-    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+    for task in owner_of_proj:
         if task['Status'] == 'BACKLOG':
             Backlog_tasks.append(task)
         elif task['Status'] == 'TODO':
@@ -540,29 +560,11 @@ def edit_it(array_2D , current_point_list):
     
     ftask = make_it_task(Id_we_wanna_edit)
 
-    Start_Editing(ftask , In_account_user , in_work_project)
+    Start_editing_for_member(ftask , In_account_user , in_work_project)
 
 #=================================================================================
 
 
-def start_for_member(IDr , username):
-
-    while True:
-        sync_information(IDr , username)
-        show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = [ "1_Move task" , '2_Edit task' , "3_See all members" , "4_exit "]
-        Choice = pro_print_nocls(lines_list)
-
-        if Choice == '1':
-            in_work_project.update_project()
-            Move_task(in_work_project.ID , In_account_user.username)
-        elif Choice == '2':
-            in_work_project.update_project()
-            edit_task(in_work_project.ID , In_account_user.username)
-        elif Choice == '3':
-            in_work_project.show_all_members(In_account_user)
-        elif Choice == '4':
-            break
 
 
             

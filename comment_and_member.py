@@ -105,9 +105,38 @@ def remove_assignees(gtask , inAccUser , gproj):
             
     in_hand_project.save_into_json()
 
+def change_priority(gtask , InAccUser , gproj):
+    in_hand_project.ID = gproj.ID
+    in_hand_project.update_project()
+    console.print(f'Here is the priority{gtask.status}' , justify='center' , style='bold')
+    priority_list = ['CRITICAL' , 'HIGH' , 'MEDIUM' , 'LOW']
+
+    chosen = pro_print(priority_list)
+
+    if chosen == '1':
+        for task in in_hand_project.tasks:
+            if task.ID == gtask.ID:
+                task.priority = "CRITICAL"
+    elif chosen == '2':
+        for task in in_hand_project.tasks:
+            if task.ID == gtask.ID:
+                task.priority = "HIGH"
+    elif chosen == '3':
+        for task in in_hand_project.tasks:
+            if task.ID == gtask.ID:
+                task.priority = "MEDIUM"
+    elif chosen == '4':
+        for task in in_hand_project.tasks:
+            if task.ID == gtask.ID:
+                task.priority = "LOW"
+
+    in_hand_project.save_into_json()
+
+
+
 def Start_Editing(gtask , InAccUser , gproj):
     
-    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee']
+    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee' , '4_Change priority of tasks']
     Chosen = pro_print(lines_list)
 
     if Chosen == '1':
@@ -116,5 +145,16 @@ def Start_Editing(gtask , InAccUser , gproj):
         assigning_task_to_member(gtask , InAccUser , gproj)
     elif Chosen == '3':
         remove_assignees(gtask , InAccUser , gproj)
+    elif Chosen == '4':
+        change_priority(gtask , InAccUser , gproj)
 
 
+def Start_editing_for_member(gtask , InAccUser , gproj):
+    lines_list = ['1_Add_comment_to_this_task' , '2_Change priority of tasks']
+    Chosen = pro_print(lines_list)
+
+    if Chosen == '1':
+        Comment(gtask , InAccUser , gproj)
+    elif Chosen == '2':
+        change_priority(gtask , InAccUser , gproj)
+   

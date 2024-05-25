@@ -18,20 +18,8 @@ in_work_project = Projects(None , None)
 in_hand_task = Task(None , None , None , None)
 #======================================================================
 
-def justify_table_center(table):
-    # Split the table into lines
-    lines = table.split('\n')
-
-    # Find the maximum line length
-    max_length = max(len(line) for line in lines)
-
-    # Adjust each line to center justify it
-    centered_lines = [line.center(max_length) for line in lines]
-
-    # Join the lines back together
-    centered_table = '\n'.join(centered_lines)
-
-    return centered_table
+def center_align(data):
+    return [[str(cell).center(len(cell) + 2) for cell in row] for row in data]
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -94,7 +82,7 @@ def start(IDr , usernamer):
     while True:
         sync_information(IDr , usernamer)
         show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members" ,"5_exit "]
+        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members" , "5_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
@@ -190,7 +178,7 @@ def edit_task(ID , username):
             array_2D_saved = array_2D[current_row-1][current_column-1]
             array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '✏️'
        
-        print(tabulate(array_2D , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
+        print(tabulate(center_align(array_2D) , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
                     
         Chosen = input('                                                                                 Choose :')
         if Chosen == 'w' and current_row > 1:
@@ -418,7 +406,7 @@ def final_move(movement_list , array_2D , text):
             array_2D_saved = array_2D[current_row-1][current_column-1]
             array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '🥅'
 
-        print(tabulate(array_2D , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
+        print(tabulate(center_align(array_2D) , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
                     
         Chosen = input('                                                                                 Choose :')
         if Chosen == 'w' and current_row > 1:
@@ -541,7 +529,7 @@ def Move_task(ID , username):
             array_2D_saved = array_2D[current_row-1][current_column-1]
             array_2D[current_row-1][current_column-1] = array_2D[current_row-1][current_column-1] + '⚽'
        
-        print(tabulate(array_2D , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
+        print(tabulate(center_align(array_2D) , headers=['BACKLOG' , 'TODO' , 'DOING' , 'DONE' , 'ARCHIVED']))
                     
         Chosen = input('                                                                                 Choose :')
         if Chosen == 'w' and current_row > 1:
