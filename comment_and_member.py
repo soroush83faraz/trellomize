@@ -5,6 +5,7 @@ from datetime import datetime
 from projects import Projects
 from tasks import Task ,  make_it_task
 from user import *
+from history import *
 # from projects import *
 # from tasks import * 
 # from user import *
@@ -36,12 +37,22 @@ def Comment(gtask , InAccUser , gproj):
         for proj in range(len(users_info[user]["projects_leads"])) :
             for tasks in users_info[user]["projects_leads"][proj]["tasks"] :
                 if gtask.ID == tasks["ID"] :
-                    tasks["Comments"].append(inhand_comment.converting_to_dictionary())    
+                    tasks["Comments"].append(inhand_comment.converting_to_dictionary())
+                    fhistory = History() 
+                    fhistory.doer = InAccUser.username
+                    fhistory.content = f"{InAccUser.username} wrote a comment for {gtask.title}"  
+                    fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                    tasks['History'].append(fhistory.make_dict_of_history())
     for user in range(len(users_info)) :
         for proj in range(len(users_info[user]["projects_member"])) :
             for tasks in users_info[user]["projects_member"][proj]["tasks"] :
                 if gtask.ID == tasks["ID"] :
-                    tasks["Comments"].append(inhand_comment.converting_to_dictionary()) 
+                    tasks["Comments"].append(inhand_comment.converting_to_dictionary())
+                    fhistory = History() 
+                    fhistory.doer = InAccUser.username
+                    fhistory.content = f"{InAccUser.username} wrote a comment for {gtask.title}"  
+                    fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                    tasks['History'].append(fhistory.make_dict_of_history()) 
                      
     with open("save_username_password_email.json"  , "w") as json_file :
         json.dump(users_info , json_file , indent=4)
@@ -117,18 +128,40 @@ def change_priority(gtask , InAccUser , gproj):
         for task in in_hand_project.tasks:
             if task.ID == gtask.ID:
                 task.priority = "CRITICAL"
+                fhistory = History() 
+                fhistory.doer = InAccUser.username
+                fhistory.content = f"{InAccUser.username} changed  {gtask.title}'s priority"  
+                fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                task.history.append(fhistory.make_dict_of_history())
     elif chosen == '2':
         for task in in_hand_project.tasks:
             if task.ID == gtask.ID:
                 task.priority = "HIGH"
+                fhistory = History() 
+                fhistory.doer = InAccUser.username
+                fhistory.content = f"{InAccUser.username} changed  {gtask.title}'s priority"  
+                fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                task.history.append(fhistory.make_dict_of_history())
     elif chosen == '3':
         for task in in_hand_project.tasks:
             if task.ID == gtask.ID:
                 task.priority = "MEDIUM"
+                fhistory = History() 
+                fhistory.doer = InAccUser.username
+                fhistory.content = f"{InAccUser.username} changed  {gtask.title}'s priority"  
+                fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                task.history.append(fhistory.make_dict_of_history())
     elif chosen == '4':
         for task in in_hand_project.tasks:
             if task.ID == gtask.ID:
                 task.priority = "LOW"
+                fhistory = History() 
+                fhistory.doer = InAccUser.username
+                fhistory.content = f"{InAccUser.username} changed  {gtask.title}'s priority"  
+                fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                task.history.append(fhistory.make_dict_of_history())
+
+    
 
     in_hand_project.save_into_json()
 
@@ -155,6 +188,7 @@ def Start_editing_for_member(gtask , InAccUser , gproj):
 
     if Chosen == '1':
         Comment(gtask , InAccUser , gproj)
+        b=b
     elif Chosen == '2':
         change_priority(gtask , InAccUser , gproj)
    
