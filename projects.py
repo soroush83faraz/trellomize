@@ -5,6 +5,7 @@ from tasks import *
 import tasks
 import time
 from datetime import datetime , timedelta
+from history import *   
 console = Console()
 
 
@@ -194,8 +195,6 @@ class Projects:
             with open("save_username_password_email.json" , "r") as json_file :
                 users_info = json.load(json_file)
                 json_file.close()
-            
-            
         except FileNotFoundError:
             users_info = []
         
@@ -305,6 +304,13 @@ class Projects:
                 task.assignees = Assignees
                 task.start_time = start_time
                 task.end_time = End_time
+
+                fhistory = History()
+                fhistory.date = datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
+                fhistory.content =  f"{self.leader} Made project: {self.name}"
+                fhistory.doer = self.leader 
+
+                task.history.append(fhistory.make_dict_of_history())
                 dict_of_tasks = task.make_dict_of_tasks()
                 
                 # print(dict_of_tasks)
@@ -438,15 +444,15 @@ class Projects:
 
         
         for user in users_info:
-            self.members_usernames.clear()
-            self.tasks.clear()
             for project in user['projects_leads']:
                 if project['ID'] == self.ID:
                     self.name = project['name']
                     self.ID = project['ID']
                     self.leader = project['leader']
+                    self.members_usernames.clear()
                     for member in project['members']:
                         self.members_usernames.append(member)
+                    self.tasks.clear()
                     for task in project['tasks']:
                         rtask = Task(None , None , None , None)
                         rtask.comments = task['Comments']

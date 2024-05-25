@@ -1,6 +1,7 @@
 import datetime
 import uuid
 from enum import Enum
+from history import *
 from datetime import timedelta
 
 
@@ -38,7 +39,7 @@ class Task:
     assignees = []
     priority = None
     status = None
-    history = None
+    history = []
     comments  = []
 
     def __init__(self , priority = Task_priority.LOW , title = "Task" , discription = "put your discription here" , status = Task_Status.BACKLOG ) :
@@ -52,8 +53,12 @@ class Task:
         self.ID  = str(make_unique_ID())
         
     def make_dict_of_tasks(self):
+        # for history in self.history:
+        #     if isinstance(history , History):
+        #         dicted = history.make_dict_of_history()
+        #         self.history.remove(history)
+        #         self.history.append(dicted)
         if not isinstance(self.end_time , str):
-
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time.strftime("%d/%m/%Y  %H:%M:%S") ,'End_time' : self.end_time.strftime("%d/%m/%Y  %H:%M:%S") , 'History' : self.history}
         else:
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time ,'End_time' : self.end_time , 'History' : self.history}

@@ -261,7 +261,7 @@ def show_task_allways(ID , username):
     table.add_column("DONE" , justify='center' , style='purple')
     table.add_column("ARCHIVED" , justify='center' , style='red')
 
-    owner_of_proj = in_work_project.finding_projects_leads()
+    
 
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -278,7 +278,7 @@ def show_task_allways(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
-
+    owner_of_proj = in_work_project.finding_projects_leads()
     for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
         if task['Status'] == 'BACKLOG':
             Backlog_tasks.append(task)
@@ -370,6 +370,12 @@ def swap_task(origin_point , destination_point):
                 for member in project['members']:
                     want_to_change_list.append(member)
 
+    fhistory = History()
+    fhistory.date = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+    fhistory.doer = in_work_project.leader
+    fhistory.content = f"{in_work_project.leader} Changed {all_list[origin_point[1]][origin_point[0]].title}'s status"
+
+    all_list[origin_point[1]][origin_point[0]].history.append(fhistory.make_dict_of_history())    
 
     for user in users_info:
         if user['username'] in want_to_change_list:
