@@ -20,6 +20,8 @@ if __name__ == "__main__":
             datalist = Log_in()
             if len(datalist) != 0:
                 Work_inside_Trellomize(datalist)
+        elif line == '3':
+            break
         
 
 

@@ -56,6 +56,10 @@ class Projects:
                 console.print(f'{In_account_user.username} is leader of the project' , justify='center' , style='red bold italic')
                 break
             
+            elif member_name in self.members_usernames:
+                console.print('This has benn already added' , justify='center' , style='cyan bold')
+                break
+
             for i in data:
                 if i['username'] == member_name:
                     self.members_usernames.append(i['username'])
@@ -83,7 +87,6 @@ class Projects:
                 break
             else:
                 console.print("The username was not found  🥲" , style='red' , justify='center')
-
 
     def get_ID(self , In_account_user):
         console.print("You should enter an unique [red]ID[/] for your project" , style='italic purple' , justify='center')
@@ -207,7 +210,30 @@ class Projects:
                         proj_path.append("tasks")
                         #print(proj_path)
                         return proj_path
-                    
+
+    def finding_projects_member(self):
+        try :
+            with open("save_username_password_email.json" , "r") as json_file :
+                users_info = json.load(json_file)
+                json_file.close()
+        except FileNotFoundError:
+            users_info = []
+        
+
+        proj_path = [] 
+        for user in range(len(users_info)) :
+            if users_info[user]['username'] == self.leader:
+                for item in range(len(users_info[user]["projects_member"])) :
+                    if users_info[user]["projects_member"][item]["ID"] == self.ID :
+                        proj_path.append(user)
+                        proj_path.append("projects_member")
+                        proj_path.append(item)
+                        proj_path.append("tasks")
+                        #print(proj_path)
+                        return proj_path
+
+
+
     def add_task_to_other_user(self , task):
         try:
             with open('save_username_password_email.json' , 'r') as file:
@@ -227,9 +253,7 @@ class Projects:
         with open('save_username_password_email.json' , 'w') as file:
             json.dump(users_info , file , indent=4)
             file.close()
-
-
-        
+   
     def create_new_task (self):
         
         start_time = datetime.now()
@@ -303,11 +327,37 @@ class Projects:
                     self.add_task_to_other_user(task)
                 break
                 
-                
-            
-
             else :
                 print("your choice isnt valid please choose from 1 , 2 , 3 , 4 , 5")
+
+    def add_proj_to_him(self ,usern):
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+            
+        for user in users_info:
+            if user['username'] == usern:
+ 
+                for task in self.tasks:
+                    if isinstance(task , Task):
+                        dicted = task.make_dict_of_tasks()
+                        self.tasks.remove(task)
+                        self.tasks.append(dicted)
+                user['projects_member'].append(self.make_dict_of_project())
+
+                # for proj in user['projects_member']:
+                #     for task in proj['tasks']:
+                #         if isinstance(task , Task):
+                #             dicted = task.make_dict_of_tasks()
+                #             proj['tasks'].remove(task)
+                #             proj['tasks'].append(dicted)
+
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file , indent=4)
+            file.close()
 
     def update_members(self):
         try:
@@ -327,12 +377,22 @@ class Projects:
                 if project['ID'] == self.ID:
                     project['members'] = self.members_usernames
         
+        
         with open('save_username_password_email.json' , 'w') as file:
             json.dump(users_info , file , indent=4)
             file.close()
-            
+        
 
-    
+        All_id_list = []
+        for user in users_info:
+            if user['username'] in self.members_usernames:
+                for project in user['projects_member']:
+                    All_id_list.append(project['ID'])
+                
+                if self.ID not in All_id_list:
+                    self.add_proj_to_him(user['username'])
+                All_id_list.clear()
+
     def remove_a_member(self):
         lines_list = []
         for member in self.members_usernames:
@@ -340,6 +400,22 @@ class Projects:
         chosen_member = int(pro_print(lines_list))
         self.members_usernames.pop(chosen_member-1)
         self.update_members()
+
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+
+        for user in users_info:
+            for project in user['projects_member']:
+                if project['ID'] == self.ID and user['username'] not in self.members_usernames:
+                    user['projects_member'].remove(project)
+        
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file , indent=4)
+            file.close()
 
     def show_all_members(self , user):
         for member in self.members_usernames:
@@ -354,7 +430,6 @@ class Projects:
             self.Add_member(user)
             self.update_members()
             
-
     def update_project(self):
         try:
             with open('save_username_password_email.json' , 'r') as file:
@@ -363,19 +438,20 @@ class Projects:
         except:
             users_info = []
 
-        rtask = Task(None , None , None , None)
-        tsk_list = []
-        mm_list = []
-        for user in users_info:
 
+        
+        for user in users_info:
+            self.members_usernames.clear()
+            self.tasks.clear()
             for project in user['projects_leads']:
                 if project['ID'] == self.ID:
                     self.name = project['name']
                     self.ID = project['ID']
                     self.leader = project['leader']
                     for member in project['members']:
-                        mm_list.append(member)
+                        self.members_usernames.append(member)
                     for task in project['tasks']:
+                        rtask = Task(None , None , None , None)
                         rtask.comments = task['Comments']
                         rtask.assignees = task['Assignees']
                         rtask.discription = task['Description']
@@ -387,6 +463,42 @@ class Projects:
                         rtask.end_time = task['End_time']
                         rtask.status = task['Status']
                         rtask.title = task['Title']
-                        tsk_list.append(rtask)
-                    self.tasks = tsk_list
-                    self.members_usernames = mm_list
+                        self.tasks.append(rtask)
+                break
+            break
+
+    def save_into_json(self):
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+
+        for user in users_info:
+            for project in user['projects_leads']:
+                if project['ID'] == self.ID:
+                    project['leader'] = self.leader
+                    project['members'] = self.members_usernames
+                    project['name'] = self.name
+                    project['tasks'].clear()
+                    for task in self.tasks:
+                        dected = task.make_dict_of_tasks()
+                        project['tasks'].append(dected)
+        for user in users_info:
+            for project in user['projects_member']:
+                if project['ID'] == self.ID:
+                    project['leader'] = self.leader
+                    project['members'] = self.members_usernames
+                    project['name'] = self.name
+                    project['tasks'].clear()
+                    for task in self.tasks:
+                        dected = task.make_dict_of_tasks()
+                        project['tasks'].append(dected)
+                    
+
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file , indent=4)
+            file.close()
+
+
