@@ -109,9 +109,9 @@ def show_all_projects():
             if proj_number == '*':
                 break
             if int(proj_number) > 0 and int(proj_number) <= project_leads_counter:
-                start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
+                start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username )
             elif int(proj_number) > project_leads_counter and int(proj_number) < counter:
-                start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username)
+                start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username )
         else:
             console.print("There isn't any project to show" , justify='center' , style='violet bold')
             break

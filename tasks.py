@@ -53,7 +53,23 @@ class Task:
         
     def make_dict_of_tasks(self):
         if not isinstance(self.end_time , str):
+
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time.strftime("%d/%m/%Y  %H:%M:%S") ,'End_time' : self.end_time.strftime("%d/%m/%Y  %H:%M:%S") , 'History' : self.history}
         else:
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time ,'End_time' : self.end_time , 'History' : self.history}
         return dicted_tasks
+    
+def make_it_task(dictionary):
+    ftask = Task(None , None , None , None)
+    ftask.assignees = dictionary['Assignees']
+    ftask.comments = dictionary['Comments']
+    ftask.discription = dictionary['Description']
+    ftask.end_time = dictionary['End_time']
+    ftask.history = dictionary['History']
+    ftask.ID = dictionary['ID']
+    ftask.priority = dictionary['Priority']
+    ftask.start_time = dictionary['Start_time']
+    ftask.status = dictionary['Status']
+    ftask.title = dictionary['Title']
+    return ftask
+

@@ -55,8 +55,10 @@ def sync_information(ID , username):
             In_account_user.password = user['password']
             In_account_user.email = user['email']
             In_account_user.IsActive = True
+            In_account_user.projects_leads.clear()
             for project in user['projects_leads']:
                 In_account_user.projects_leads.append(project)
+            In_account_user.projects_member.clear()
             for project in user['projects_member']:
                 In_account_user.projects_member.append(project)
     
@@ -65,8 +67,10 @@ def sync_information(ID , username):
             in_work_project.name = project['name']
             in_work_project.ID = project['ID']
             in_work_project.leader = project['leader']
+            in_work_project.members_usernames.clear()
             for member in project['members']:
                 in_work_project.members_usernames.append(member)
+            in_work_project.tasks.clear()
             for task in project['tasks']:
                 rtask.comments = task['Comments']
                 rtask.assignees = task['Assignees']
@@ -85,10 +89,10 @@ def sync_information(ID , username):
 #EVERYTHING STARTS HERE===========================================================
 def start(IDr , usernamer):
    
-    sync_information(IDr , usernamer)
 
     proj_path_leads = in_work_project.finding_projects_leads()
     while True:
+        sync_information(IDr , usernamer)
         show_task_allways(in_work_project.ID , In_account_user.username)
         lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members" ,"5_exit "]
         Choice = pro_print_nocls(lines_list)
@@ -251,10 +255,11 @@ def edit_it(array_2D , current_point_list):
             Archived_tasks.append(task)
 
     all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]  
-
     Id_we_wanna_edit = all_list[current_point_list[1]][current_point_list[0]]
     
-    Start_Editing(Id_we_wanna_edit["ID"] , In_account_user.username)
+    ftask = make_it_task(Id_we_wanna_edit)
+
+    Start_Editing(ftask , In_account_user , in_work_project)
 
 #=================================================================================
 
@@ -477,6 +482,7 @@ def Move_task(ID , username):
             Archived_tasks.append(task)
 
     max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
+
     for i in range(max_length - len(Backlog_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
@@ -499,6 +505,7 @@ def Move_task(ID , username):
         Archived_tasks.append(ftask)
 
     column = 5
+
     row = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
 
     show_task_allways(ID , username)
@@ -521,8 +528,10 @@ def Move_task(ID , username):
         array_2D[num][3] = Done_tasks[num].title
     for num in range(len(Archived_tasks)):
         array_2D[num][4] = Archived_tasks[num].title
+
     worked = True
     moving_list = []
+
     while True:
         if row == 0:
             console.print("There isn't any task to move" , justify='center' , style='violet bold italic')
