@@ -63,6 +63,10 @@ def purge_data () :
     with open('admin.json' , 'w') as json_file:
         json.dump(None, json_file)
         con.print("no more data" , style="blue")
+    with open('save_username_password_email.json' , 'w') as json_file:
+        json.dump(None, json_file)
+              
+        
                
 def clear():
     os.system('cls')
