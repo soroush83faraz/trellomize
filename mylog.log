@@ -1149,3 +1149,282 @@
 2024-05-27 11:43:13,916 | INFO | saeed was logged in his account
 2024-05-27 11:43:45,678 | INFO | siina was logged in his account
 2024-05-27 11:43:45,678 | INFO | siina was logged in his account
+2024-05-27 12:56:44,759 | INFO | Calling proprint function in main
+2024-05-27 12:56:45,779 | INFO | Returned from pro_print function
+2024-05-27 12:56:45,780 | CRITICAL | Log_in() called in main.py
+2024-05-27 12:56:48,792 | INFO | Returned from pro_print function
+2024-05-27 12:56:48,792 | WARNING | Log_in() returns []
+2024-05-27 12:56:48,794 | INFO | Calling proprint function in main
+2024-05-27 12:56:49,870 | INFO | Returned from pro_print function
+2024-05-27 12:56:49,870 | CRITICAL | make_an_account() called in main.py
+2024-05-27 12:56:51,366 | INFO | Returned from pro_print function
+2024-05-27 12:56:55,151 | WARNING | alpha_or_num_function retruns
+2024-05-27 12:56:55,616 | WARNING | alpha_or_num_function retruns
+2024-05-27 12:56:57,906 | WARNING | alpha_or_num_function retruns
+2024-05-27 12:57:03,117 | WARNING | alpha_or_num_function retruns
+2024-05-27 12:57:03,117 | WARNING | validating_username returnshaash
+2024-05-27 12:57:04,732 | INFO | Returned from pro_print function
+2024-05-27 12:57:09,877 | WARNING | find_strange function returns
+2024-05-27 12:57:09,877 | WARNING | IsPasswordValidFunction returns haash@@2
+2024-05-27 12:57:11,430 | INFO | Returned from pro_print function
+2024-05-27 12:57:16,495 | WARNING | my_validate_email_function returns
+2024-05-27 12:57:19,355 | INFO | Returned from pro_print function
+2024-05-27 12:57:49,029 | INFO | Calling proprint function in main
+2024-05-27 12:57:51,030 | INFO | Returned from pro_print function
+2024-05-27 12:57:51,031 | CRITICAL | make_an_account() called in main.py
+2024-05-27 12:57:53,983 | INFO | Returned from pro_print function
+2024-05-27 12:57:55,506 | WARNING | alpha_or_num_function retruns
+2024-05-27 12:57:55,506 | WARNING | validating_username returnshaash
+2024-05-27 12:57:57,053 | INFO | Returned from pro_print function
+2024-05-27 12:57:59,344 | WARNING | find_strange function returns
+2024-05-27 12:57:59,344 | WARNING | IsPasswordValidFunction returns haash@@2
+2024-05-27 12:58:00,697 | INFO | Returned from pro_print function
+2024-05-27 12:58:05,441 | WARNING | my_validate_email_function returns
+2024-05-27 12:58:06,966 | INFO | Returned from pro_print function
+2024-05-27 12:58:07,173 | INFO | An account was made by haash in save_account function and was saved in save_username_password_email.json
+2024-05-27 12:58:07,173 | WARNING | make_an_account() saved newAccount
+2024-05-27 12:58:07,173 | INFO | Calling proprint function in main
+2024-05-27 12:58:10,347 | INFO | Returned from pro_print function
+2024-05-27 12:58:10,347 | CRITICAL | Log_in() called in main.py
+2024-05-27 12:59:01,360 | INFO | Calling proprint function in main
+2024-05-27 12:59:03,677 | INFO | Returned from pro_print function
+2024-05-27 12:59:03,677 | CRITICAL | Log_in() called in main.py
+2024-05-27 12:59:09,178 | INFO | Returned from pro_print function
+2024-05-27 12:59:09,178 | WARNING | Log_in() returns []
+2024-05-27 12:59:09,178 | INFO | Calling proprint function in main
+2024-05-27 12:59:10,300 | INFO | Returned from pro_print function
+2024-05-27 12:59:10,300 | CRITICAL | make_an_account() called in main.py
+2024-05-27 12:59:16,879 | INFO | Returned from pro_print function
+2024-05-27 12:59:21,076 | WARNING | alpha_or_num_function retruns
+2024-05-27 12:59:21,076 | WARNING | validating_username returnshaash2
+2024-05-27 12:59:22,159 | INFO | Returned from pro_print function
+2024-05-27 12:59:25,646 | WARNING | find_strange function returns
+2024-05-27 12:59:25,646 | WARNING | IsPasswordValidFunction returns haash2@@2
+2024-05-27 12:59:26,989 | INFO | Returned from pro_print function
+2024-05-27 12:59:35,703 | WARNING | my_validate_email_function returns
+2024-05-27 12:59:37,328 | INFO | Returned from pro_print function
+2024-05-27 12:59:37,536 | INFO | An account was made by haash2 in save_account function and was saved in save_username_password_email.json
+2024-05-27 12:59:37,537 | WARNING | make_an_account() saved newAccount
+2024-05-27 12:59:37,538 | INFO | Calling proprint function in main
+2024-05-27 13:02:23,007 | INFO | Calling proprint function in main
+2024-05-27 13:02:24,448 | INFO | Returned from pro_print function
+2024-05-27 13:02:24,448 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:02:27,774 | INFO | Returned from pro_print function
+2024-05-27 13:02:30,431 | INFO | Returned from pro_print function
+2024-05-27 13:02:35,343 | INFO | Returned from pro_print function
+2024-05-27 13:02:51,640 | INFO | Calling proprint function in main
+2024-05-27 13:02:53,107 | INFO | Returned from pro_print function
+2024-05-27 13:02:53,107 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:02:57,247 | INFO | Returned from pro_print function
+2024-05-27 13:03:00,108 | INFO | Returned from pro_print function
+2024-05-27 13:03:03,398 | INFO | Returned from pro_print function
+2024-05-27 13:03:27,627 | INFO | Calling proprint function in main
+2024-05-27 13:03:29,230 | INFO | Returned from pro_print function
+2024-05-27 13:03:29,230 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:03:30,170 | INFO | Returned from pro_print function
+2024-05-27 13:03:33,335 | INFO | Returned from pro_print function
+2024-05-27 13:03:39,424 | INFO | Returned from pro_print function
+2024-05-27 13:05:41,588 | INFO | Calling proprint function in main
+2024-05-27 13:05:44,331 | INFO | Returned from pro_print function
+2024-05-27 13:05:44,332 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:05:47,804 | INFO | Returned from pro_print function
+2024-05-27 13:05:50,261 | INFO | Returned from pro_print function
+2024-05-27 13:05:53,920 | INFO | Returned from pro_print function
+2024-05-27 13:07:58,153 | INFO | Calling proprint function in main
+2024-05-27 13:07:59,414 | INFO | Returned from pro_print function
+2024-05-27 13:07:59,414 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:08:01,278 | INFO | Returned from pro_print function
+2024-05-27 13:08:05,040 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:08:05,040 | WARNING | validating_username returnshaash
+2024-05-27 13:08:06,386 | INFO | Returned from pro_print function
+2024-05-27 13:08:09,250 | WARNING | find_strange function returns
+2024-05-27 13:08:09,251 | WARNING | IsPasswordValidFunction returns haash@@2
+2024-05-27 13:08:10,690 | INFO | Returned from pro_print function
+2024-05-27 13:08:17,178 | WARNING | my_validate_email_function returns
+2024-05-27 13:08:19,603 | INFO | Returned from pro_print function
+2024-05-27 13:08:25,713 | WARNING | my_validate_email_function returns
+2024-05-27 13:08:27,368 | INFO | Returned from pro_print function
+2024-05-27 13:08:27,572 | INFO | An account was made by haash in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:08:27,572 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:08:27,577 | INFO | Calling proprint function in main
+2024-05-27 13:08:36,368 | INFO | Returned from pro_print function
+2024-05-27 13:08:36,368 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:08:37,420 | INFO | Returned from pro_print function
+2024-05-27 13:08:42,175 | INFO | Returned from pro_print function
+2024-05-27 13:08:49,649 | INFO | Returned from pro_print function
+2024-05-27 13:09:50,730 | INFO | Calling proprint function in main
+2024-05-27 13:09:52,086 | INFO | Returned from pro_print function
+2024-05-27 13:09:52,086 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:09:52,836 | INFO | Returned from pro_print function
+2024-05-27 13:09:55,225 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:09:55,225 | WARNING | validating_username returnshaash
+2024-05-27 13:09:56,385 | INFO | Returned from pro_print function
+2024-05-27 13:09:58,830 | WARNING | find_strange function returns
+2024-05-27 13:09:58,832 | WARNING | IsPasswordValidFunction returns haash@@2
+2024-05-27 13:10:00,103 | INFO | Returned from pro_print function
+2024-05-27 13:10:05,350 | WARNING | my_validate_email_function returns
+2024-05-27 13:10:06,900 | INFO | Returned from pro_print function
+2024-05-27 13:10:07,094 | INFO | An account was made by haash in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:10:07,110 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:10:07,110 | INFO | Calling proprint function in main
+2024-05-27 13:10:08,318 | INFO | Returned from pro_print function
+2024-05-27 13:10:08,318 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:10:14,885 | INFO | Returned from pro_print function
+2024-05-27 13:10:18,467 | INFO | Returned from pro_print function
+2024-05-27 13:10:22,217 | INFO | Returned from pro_print function
+2024-05-27 13:13:41,595 | INFO | Calling proprint function in main
+2024-05-27 13:13:44,546 | INFO | Returned from pro_print function
+2024-05-27 13:13:44,546 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:13:45,432 | INFO | Returned from pro_print function
+2024-05-27 13:13:46,955 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:13:46,970 | WARNING | validating_username returnshaash
+2024-05-27 13:13:48,830 | INFO | Returned from pro_print function
+2024-05-27 13:13:50,945 | WARNING | find_strange function returns
+2024-05-27 13:13:50,945 | WARNING | IsPasswordValidFunction returns haash@@2
+2024-05-27 13:13:52,098 | INFO | Returned from pro_print function
+2024-05-27 13:13:56,303 | WARNING | my_validate_email_function returns
+2024-05-27 13:13:57,889 | INFO | Returned from pro_print function
+2024-05-27 13:13:58,091 | INFO | An account was made by haash in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:13:58,096 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:13:58,096 | INFO | Calling proprint function in main
+2024-05-27 13:14:00,576 | INFO | Returned from pro_print function
+2024-05-27 13:14:00,579 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:14:01,530 | INFO | Returned from pro_print function
+2024-05-27 13:14:04,295 | INFO | Returned from pro_print function
+2024-05-27 13:14:09,799 | INFO | Returned from pro_print function
+2024-05-27 13:16:12,722 | INFO | Calling proprint function in main
+2024-05-27 13:16:13,849 | INFO | Returned from pro_print function
+2024-05-27 13:16:13,849 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:16:17,066 | INFO | Returned from pro_print function
+2024-05-27 13:16:17,070 | INFO | Calling proprint function in main
+2024-05-27 13:16:19,121 | INFO | Returned from pro_print function
+2024-05-27 13:16:19,122 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:16:19,943 | INFO | Returned from pro_print function
+2024-05-27 13:16:22,394 | INFO | Returned from pro_print function
+2024-05-27 13:16:25,669 | INFO | Returned from pro_print function
+2024-05-27 13:18:24,673 | INFO | Calling proprint function in main
+2024-05-27 13:18:32,216 | INFO | Returned from pro_print function
+2024-05-27 13:18:32,217 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:18:33,375 | INFO | Returned from pro_print function
+2024-05-27 13:18:36,368 | INFO | Returned from pro_print function
+2024-05-27 13:18:40,417 | INFO | Returned from pro_print function
+2024-05-27 13:21:01,339 | INFO | Calling proprint function in main
+2024-05-27 13:21:02,550 | INFO | Returned from pro_print function
+2024-05-27 13:21:02,551 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:21:03,531 | INFO | Returned from pro_print function
+2024-05-27 13:21:07,111 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:21:07,111 | WARNING | validating_username returnsaaaaa
+2024-05-27 13:21:08,156 | INFO | Returned from pro_print function
+2024-05-27 13:21:10,038 | WARNING | find_strange function returns
+2024-05-27 13:21:10,038 | WARNING | IsPasswordValidFunction returns aaaaa@@2
+2024-05-27 13:21:11,605 | INFO | Returned from pro_print function
+2024-05-27 13:21:18,117 | WARNING | my_validate_email_function returns
+2024-05-27 13:21:19,518 | INFO | Returned from pro_print function
+2024-05-27 13:21:19,733 | INFO | An account was made by aaaaa in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:21:19,733 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:21:19,733 | INFO | Calling proprint function in main
+2024-05-27 13:21:20,826 | INFO | Returned from pro_print function
+2024-05-27 13:21:20,827 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:21:27,075 | INFO | Returned from pro_print function
+2024-05-27 13:21:30,273 | INFO | Returned from pro_print function
+2024-05-27 13:21:33,700 | INFO | Returned from pro_print function
+2024-05-27 13:21:36,061 | INFO | Returned from pro_print function
+2024-05-27 13:21:41,802 | INFO | Returned from pro_print function
+2024-05-27 13:23:43,276 | INFO | Calling proprint function in main
+2024-05-27 13:23:45,889 | INFO | Returned from pro_print function
+2024-05-27 13:23:45,890 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:24:01,853 | INFO | Calling proprint function in main
+2024-05-27 13:24:02,940 | INFO | Returned from pro_print function
+2024-05-27 13:24:02,940 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:24:06,906 | INFO | Returned from pro_print function
+2024-05-27 13:24:08,227 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:24:08,229 | WARNING | validating_username returnssaeed
+2024-05-27 13:24:08,822 | INFO | Returned from pro_print function
+2024-05-27 13:24:11,067 | WARNING | find_strange function returns
+2024-05-27 13:24:11,067 | WARNING | IsPasswordValidFunction returns saeed@@2
+2024-05-27 13:24:12,370 | INFO | Returned from pro_print function
+2024-05-27 13:24:16,994 | WARNING | my_validate_email_function returns
+2024-05-27 13:24:19,031 | INFO | Returned from pro_print function
+2024-05-27 13:24:19,231 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:24:19,243 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:24:19,243 | INFO | Calling proprint function in main
+2024-05-27 13:24:24,259 | INFO | Returned from pro_print function
+2024-05-27 13:24:24,259 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:24:25,222 | INFO | Returned from pro_print function
+2024-05-27 13:24:27,018 | INFO | Returned from pro_print function
+2024-05-27 13:24:30,921 | INFO | Returned from pro_print function
+2024-05-27 13:24:40,120 | INFO | Calling proprint function in main
+2024-05-27 13:24:48,596 | INFO | Returned from pro_print function
+2024-05-27 13:24:48,596 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:24:49,470 | INFO | Returned from pro_print function
+2024-05-27 13:24:50,386 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:24:50,386 | WARNING | validating_username returnssaeed
+2024-05-27 13:24:51,019 | INFO | Returned from pro_print function
+2024-05-27 13:24:53,205 | WARNING | find_strange function returns
+2024-05-27 13:24:53,217 | WARNING | IsPasswordValidFunction returns saeed@@2
+2024-05-27 13:24:54,347 | INFO | Returned from pro_print function
+2024-05-27 13:24:59,731 | WARNING | my_validate_email_function returns
+2024-05-27 13:25:01,122 | INFO | Returned from pro_print function
+2024-05-27 13:25:29,447 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:25:29,454 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:25:29,458 | INFO | Calling proprint function in main
+2024-05-27 13:25:33,687 | INFO | Returned from pro_print function
+2024-05-27 13:25:33,687 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:25:34,458 | INFO | Returned from pro_print function
+2024-05-27 13:25:36,106 | INFO | Returned from pro_print function
+2024-05-27 13:25:39,280 | INFO | Returned from pro_print function
+2024-05-27 13:26:57,372 | INFO | Calling proprint function in main
+2024-05-27 13:26:58,819 | INFO | Returned from pro_print function
+2024-05-27 13:26:58,819 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:26:59,827 | INFO | Returned from pro_print function
+2024-05-27 13:27:01,228 | INFO | Returned from pro_print function
+2024-05-27 13:27:04,402 | INFO | Returned from pro_print function
+2024-05-27 13:27:09,495 | INFO | saeed was logged in his account
+2024-05-27 13:27:09,495 | WARNING | check_combinations() returns{'username': 'saeed', 'password': 'JDJiJDEyJHJUSzhEN0JReFRVZW1NaVR5dGVXRE8yQTZSYzhXZEVpZzVUNlJQSGU2RnpHSXJrcG5SR1dD', 'email': 'saeed@gamil.com', 'projects_leads': [], 'projects_member': []}
+2024-05-27 13:27:12,725 | INFO | saeed was logged in his account
+2024-05-27 13:27:12,725 | WARNING | check_combinations() returns{'username': 'saeed', 'password': 'JDJiJDEyJHJUSzhEN0JReFRVZW1NaVR5dGVXRE8yQTZSYzhXZEVpZzVUNlJQSGU2RnpHSXJrcG5SR1dD', 'email': 'saeed@gamil.com', 'projects_leads': [], 'projects_member': []}
+2024-05-27 13:27:12,725 | WARNING | Log_in() returns {'username': 'saeed', 'password': 'JDJiJDEyJHJUSzhEN0JReFRVZW1NaVR5dGVXRE8yQTZSYzhXZEVpZzVUNlJQSGU2RnpHSXJrcG5SR1dD', 'email': 'saeed@gamil.com', 'projects_leads': [], 'projects_member': []}
+2024-05-27 13:27:12,725 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-27 13:27:12,725 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-27 13:27:21,468 | INFO | Calling proprint function in main
+2024-05-27 13:27:23,902 | INFO | Returned from pro_print function
+2024-05-27 13:27:23,903 | CRITICAL | make_an_account() called in main.py
+2024-05-27 13:27:24,906 | INFO | Returned from pro_print function
+2024-05-27 13:27:27,075 | WARNING | alpha_or_num_function retruns
+2024-05-27 13:27:27,075 | WARNING | validating_username returnssoroush
+2024-05-27 13:27:27,880 | INFO | Returned from pro_print function
+2024-05-27 13:27:29,017 | WARNING | find_strange function returns
+2024-05-27 13:27:33,904 | WARNING | find_strange function returns
+2024-05-27 13:27:33,904 | WARNING | IsPasswordValidFunction returns soroush@@2
+2024-05-27 13:27:35,416 | INFO | Returned from pro_print function
+2024-05-27 13:27:40,559 | WARNING | my_validate_email_function returns
+2024-05-27 13:27:42,033 | INFO | Returned from pro_print function
+2024-05-27 13:27:50,596 | INFO | An account was made by soroush in save_account function and was saved in save_username_password_email.json
+2024-05-27 13:27:50,596 | WARNING | make_an_account() saved newAccount
+2024-05-27 13:27:50,596 | INFO | Calling proprint function in main
+2024-05-27 13:27:52,367 | INFO | Returned from pro_print function
+2024-05-27 13:27:52,367 | CRITICAL | Log_in() called in main.py
+2024-05-27 13:27:57,860 | INFO | Returned from pro_print function
+2024-05-27 13:28:02,022 | INFO | Returned from pro_print function
+2024-05-27 13:28:07,117 | INFO | Returned from pro_print function
+2024-05-27 13:28:07,327 | INFO | soroush was logged in his account
+2024-05-27 13:28:07,327 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHdPWGRJTHJtVi5tQklMRWIzNjFZLi4wY3BIdFZpNE9PQWx3cHJTcGQ2N0U4TE4wNk5GMFpL', 'email': 'soroush@gmail.com', 'projects_leads': [], 'projects_member': []}
+2024-05-27 13:28:07,514 | INFO | soroush was logged in his account
+2024-05-27 13:28:07,514 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHdPWGRJTHJtVi5tQklMRWIzNjFZLi4wY3BIdFZpNE9PQWx3cHJTcGQ2N0U4TE4wNk5GMFpL', 'email': 'soroush@gmail.com', 'projects_leads': [], 'projects_member': []}
+2024-05-27 13:28:07,530 | WARNING | Log_in() returns {'username': 'soroush', 'password': 'JDJiJDEyJHdPWGRJTHJtVi5tQklMRWIzNjFZLi4wY3BIdFZpNE9PQWx3cHJTcGQ2N0U4TE4wNk5GMFpL', 'email': 'soroush@gmail.com', 'projects_leads': [], 'projects_member': []}
+2024-05-27 13:28:07,530 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-27 13:28:07,530 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-27 13:28:09,266 | INFO | Returned from pro_print function
+2024-05-27 13:28:09,284 | CRITICAL | Creat_new_project() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 13:28:09,284 | INFO | Arrived in Creat_new_project() in Trellomize_space_when_log_in.py
+2024-05-27 13:28:10,322 | INFO | Returned from pro_print function
+2024-05-27 13:28:13,217 | INFO | Returned from pro_print function
+2024-05-27 13:28:13,217 | CRITICAL | Add_member() called in Trellomize_space_when_log_in.py
+2024-05-27 13:28:13,217 | INFO | Arrived in Add_member(<user.User object at 0x0000018E4E997FB0>) in project.py
+2024-05-27 13:28:15,872 | INFO | Returned from pro_print function
+2024-05-27 13:28:15,872 | CRITICAL | get_ID() called in Trellomize_space_when_log_in.py
+2024-05-27 13:28:15,872 | INFO | Arrived in get_ID(<user.User object at 0x0000018E4E997FB0>) in project.py
+2024-05-27 13:28:24,724 | INFO | Returned from pro_print function
+2024-05-27 13:28:24,724 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
+2024-05-27 13:28:24,724 | INFO | Arrived inn save_my_project(<user.User object at 0x0000018E4E997FB0> in project.py)
+2024-05-27 13:28:26,548 | INFO | Returned from pro_print function

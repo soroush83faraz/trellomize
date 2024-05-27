@@ -3,6 +3,9 @@ from validate_email_address import validate_email
 import logging
 from user import *
 from printing import *
+import bcrypt
+import base64
+
 
 user = User(None , None , None , None , None)
 logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
