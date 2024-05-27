@@ -10,6 +10,10 @@ from comment_and_member import *
 from user import *
 from tasks import *
 from projects import *
+import logging
+
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+
 
 #INFORMATION===========================================================
 In_account_user = User(None , None , None , None , None)
@@ -32,20 +36,26 @@ def justify_table_center(table):
     return centered_table
 
 def start_for_member(IDr , username):
-
+    logging.info(f"Arrived in start_for_member({IDr} , {username})")
     while True:
+        logging.critical(f"sync_information({IDr} , {username}) called in go_to_project_for_member.py")
         sync_information(IDr , username)
         show_task_allways(in_work_project.ID , In_account_user.username)
         lines_list = [ "1_Move task" , '2_Edit task' , "3_See all members" , "4_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
+            logging.critical(f"in_work_project.update_project() called in go_to_project_fof_member.py")
             in_work_project.update_project()
+            logging.critical(f"Move_task({in_work_project.ID} , {In_account_user.username}) called in go_to_project_for_member")
             Move_task(in_work_project.ID , In_account_user.username)
         elif Choice == '2':
+            logging.critical(f"in_work_project.update_project() called in start_for_member({IDr} , {username}) in go_to_project_for_member.py")
             in_work_project.update_project()
+            logging.critical(f"edit_task({in_work_project.ID} , {In_account_user.username}) is called in start_for_member({IDr} , {username} in go_to_project_for_member.py)")
             edit_task(in_work_project.ID , In_account_user.username)
         elif Choice == '3':
+            logging.critical(f"in_work_project.show_all_members({In_account_user}) is called in start_for_member({IDr} , {username} in go_t_project_for_leader.py)")
             in_work_project.show_all_members(In_account_user)
         elif Choice == '4':
             break
@@ -57,6 +67,7 @@ def clear_terminal():
 
 #FUNCTION FOR SYNCING INFORMATION==================================================
 def sync_information(ID , username):
+    logging.info(f"sync_information({ID} , {username}) in go_to_project_for_member.py")
     try:
         with open('save_username_password_email.json' , 'r') as file:
             users_info = json.load(file)
@@ -104,6 +115,7 @@ def sync_information(ID , username):
 #=================================================================================
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
+    logging.info(f"show_task_allways({ID} , {username}) in go_to_project_for_member.py")
     table = Table(title = 'Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
     table.add_column("TODO" , justify='center' , style='green')
@@ -242,6 +254,7 @@ def swap_task(origin_point , destination_point):
         json.dump(users_info , file , indent=4)
 #=================================================================================
 def final_move(movement_list , array_2D , text):
+    logging.info(f"Arrived in final_move({movement_list} , {array_2D} , {text}) in go_to_project_or_member.py")
     origin_point_row = movement_list[0][0]
     origin_point_column = movement_list[0][1]
     
@@ -289,6 +302,7 @@ def final_move(movement_list , array_2D , text):
             clear_terminal()
 #=================================================================================
 def Move_task(ID , username):
+    logging.info(f"Arrived in Move_task({ID} , {username}) in go_to_project_for_member.py")
     # try :
     #     with open("save_username_password_email.json" , "r") as json_file :
     #         users_info = json.load(json_file)
@@ -414,6 +428,7 @@ def Move_task(ID , username):
 #=================================================================================
 
 def edit_task(ID , username):
+    
     try :
         with open("save_username_password_email.json" , "r") as json_file :
             users_info = json.load(json_file)

@@ -17,7 +17,7 @@ def cpp_cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 #Function for making new project in mainpage of App=============
 def Creat_new_project():
-    
+    logging.info("Arrived in Creat_new_project() in Trellomize_space_when_log_in.py")
     while True:
         member_list = []
         for i in new_project.members_usernames:
@@ -32,10 +32,13 @@ def Creat_new_project():
             new_project.name_project()
 
         elif chosen_option == '2':
+            logging.critical(f"Add_member() called in Trellomize_space_when_log_in.py")
             new_project.Add_member(In_account_user)
         elif chosen_option == '3':
+            logging.critical(f"get_ID() called in Trellomize_space_when_log_in.py")
             new_project.get_ID(In_account_user)
         elif chosen_option == '4':
+            logging.critical(f"save_my_project() called in Trellomize_space_when_log_in.py")
             new_project.save_my_project(In_account_user)
         elif chosen_option == '5':
             break
@@ -43,6 +46,7 @@ def Creat_new_project():
 #===============================================================
 
 def Work_inside_Trellomize(datalist):
+    logging.info("Arrived in Work_inside_Trellomize()")
     In_account_user.username = datalist['username']
     In_account_user.password = datalist['password']
     In_account_user.email = datalist['email']
@@ -65,14 +69,17 @@ def Work_inside_Trellomize(datalist):
         
         elif chosen_option == '1':
             cpp_cls()
+            logging.critical(f"Creat_new_project() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py")
             Creat_new_project()
 
         elif chosen_option == '2':
             cpp_cls()
+            logging.critical(f"shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py")
             show_all_projects()
 
 
 def show_all_projects():
+    logging.info("Arrived in show_all_projects() in Trellomize_space_when_log_in.py")
     try:
         with open('save_username_password_email.json' , 'r') as file:
             users_info = json.load(file)
@@ -109,8 +116,10 @@ def show_all_projects():
             if proj_number == '*':
                 break
             if int(proj_number) > 0 and int(proj_number) <= project_leads_counter:
+                logging.critical(f'start({proj_list[int(proj_number)-1]['ID']} , {In_account_user.username}) called in Trellomize_space_when_Log_in.py')
                 start(proj_list[int(proj_number)-1]['ID'] , In_account_user.username )
             elif int(proj_number) > project_leads_counter and int(proj_number) < counter:
+                logging.critical(f"start_for_member({proj_list[int(proj_number)-1]['ID']} , { In_account_user.username } ) called in Trellomize_space_when_Log_in.py")
                 start_for_member(proj_list[int(proj_number)-1]['ID'] , In_account_user.username )
         else:
             console.print("There isn't any project to show" , justify='center' , style='violet bold')

@@ -34,6 +34,7 @@ def my_validate_email():
         if not problem:
             print("Emailaddress was accepted")
             break
+    logging.warning('my_validate_email_function returns')
     return emailaddress
 #==============================================================================
 #Function for checking if username just include alphabet and numbers===========
@@ -45,8 +46,9 @@ def alpha_or_num(username):
         elif letter.isdigit(): numnum += 1
 
     if (alphanum + numnum) == len(username):
+        logging.warning('alpha_or_num_function retruns')
         return True
-
+    logging.warning('alpha_or_num_function retruns')
     return False
 #==============================================================================
 #Functiom for finding forbidden chatacter for password=========================
@@ -54,8 +56,9 @@ def find_strange(password):
     checklist = ['@', '#' , '$' , '&']
     for letter in password:
         if not letter.isalpha() and not letter.isdigit() and letter not in checklist:
+            logging.warning('find_strange function returns')
             return  letter
-
+    logging.warning('find_strange function returns')
     return None
 
 
@@ -67,6 +70,7 @@ def validating_username():
         console.print("[italic][green]Username must include at least 5 letter or number \t if you wanna Exit enter[/][/] [red]*[/]" , justify='center')
         username = input('                                                                                 Username :')
         if username == '*':
+            logging.warning('validating_username function returns None')
             return None
         if len(username) < 5:
             console.print('[bold][green]Your username must at least include [red]5[/] letters[/][/]' , justify='center')
@@ -94,6 +98,7 @@ def validating_username():
         if not problem:        
             console.print("Username was acceped" , style='green bold' , justify='center')
             break
+    logging.warning(f'validating_username returns{username}')
     return username
         
 #==============================================================================
@@ -106,6 +111,7 @@ def IsPasswordValid():
         problem = False
         password = input('                                                                                 Password :')
         if password == '*':
+            logging.warning('IsPasswordValid function returns None')
             return None
         if len(password) < 8:
             console.print('your password should be longer .😊' , style= 'bold violet' , justify='center')
@@ -126,7 +132,7 @@ def IsPasswordValid():
         if not problem:
             console.print('[italic][green]]Password accepted[/][/] ✅' , justify='center')
             break
-
+    logging.warning(f"IsPasswordValidFunction returns {password}")
     return password            
 
         
@@ -175,6 +181,7 @@ def make_an_account():
         elif Option == '4':
             if user.username != None and user.password != None and user.email != None:
                 user.save_account()
+                logging.warning('make_an_account() saved newAccount')
                 break
             else:
                 console.print('Some field is empty' ,style= "bold yellow" , justify='center')
