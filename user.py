@@ -19,7 +19,7 @@ class User:
     username = None
     password = None
     email = None
-    IsActive = None
+    IsActive = True
     projects_member = []
     projects_leads = []
 
@@ -39,7 +39,7 @@ class User:
             existing_data = []
 
 
-        new_data = {"username" : self.username , "password" : hash_password(self.password) , "email" : self.email , 'projects_leads' : [] , 'projects_member' : []}
+        new_data = {"username" : self.username , "password" : hash_password(self.password) , "email" : self.email , 'projects_leads' : [] , 'projects_member' : [] , 'IsActive' : True}
 
         existing_data.append(new_data)
 
