@@ -93,9 +93,14 @@ def assigning_task_to_member (gtask , InAccUser , gproj) :
 
 
                     for task in in_hand_project.tasks:
-                        if task.ID == gtask.ID:
+                        if task.ID == gtask.ID and members[choosen_numer - 1] not in task.assignees:
                             task.assignees.append(members[choosen_numer - 1])
 
+                    fhistory = History()
+                    fhistory.content = f"{InAccUser.username} assign {members[choosen_numer - 1]} to the task"
+                    fhistory.doer = InAccUser.username
+                    fhistory.date = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+                    task.history.append(fhistory.make_dict_of_history())
                     in_hand_project.save_into_json()
                     break
 
@@ -115,6 +120,8 @@ def remove_assignees(gtask , inAccUser , gproj):
             task.assignees.pop(chosen-1)
             
     in_hand_project.save_into_json()
+
+
 
 def change_priority(gtask , InAccUser , gproj):
     in_hand_project.ID = gproj.ID
@@ -169,7 +176,7 @@ def change_priority(gtask , InAccUser , gproj):
 
 def Start_Editing(gtask , InAccUser , gproj):
     
-    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee' , '4_Change priority of tasks']
+    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee' , '4_Change priority of tasks' , '5_View history of the task']
     Chosen = pro_print(lines_list)
 
     if Chosen == '1':
@@ -180,10 +187,11 @@ def Start_Editing(gtask , InAccUser , gproj):
         remove_assignees(gtask , InAccUser , gproj)
     elif Chosen == '4':
         change_priority(gtask , InAccUser , gproj)
-
+    elif Chosen == '5':
+        gtask.visit_history()
 
 def Start_editing_for_member(gtask , InAccUser , gproj):
-    lines_list = ['1_Add_comment_to_this_task' , '2_Change priority of tasks']
+    lines_list = ['1_Add_comment_to_this_task' , '2_Change priority of tasks' , '3_View history of the task']
     Chosen = pro_print(lines_list)
 
     if Chosen == '1':
@@ -191,4 +199,5 @@ def Start_editing_for_member(gtask , InAccUser , gproj):
         b=b
     elif Chosen == '2':
         change_priority(gtask , InAccUser , gproj)
-   
+    elif Chosen == '3':
+        gtask.visit_history()

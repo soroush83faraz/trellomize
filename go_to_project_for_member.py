@@ -558,6 +558,7 @@ def edit_it(array_2D , current_point_list):
     all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]  
     Id_we_wanna_edit = all_list[current_point_list[1]][current_point_list[0]]
     
+    
     ftask = make_it_task(Id_we_wanna_edit)
 
     Start_editing_for_member(ftask , In_account_user , in_work_project)

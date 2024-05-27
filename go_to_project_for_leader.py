@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.table import Table
+from rich.align import Align
 import os
 import json
 import tasks
@@ -74,6 +75,68 @@ def sync_information(ID , username):
                 in_work_project.tasks.append(rtask)
 
 #=================================================================================
+def show_big_table():
+        try :
+            with open("save_username_password_email.json" , "r") as json_file :
+                users_info = json.load(json_file)
+                json_file.close()
+               
+        except FileNotFoundError:
+            users_info = []
+    
+        # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]]) 
+    
+        table = Table(title="TASKS" , )
+        table.add_column("Index" , justify="center" , style="bold white")
+        table.add_column("Title" , justify="center" , style="cyan")
+        table.add_column("Description" , justify="center" , style="green")
+        table.add_column("Priority" , justify="center" , style="magenta")
+        table.add_column("Status" , justify="center" , style="yellow")
+        table.add_column("Comments" , justify="center" , style="blue")
+        table.add_column("ID" , justify="center" , style="red")
+
+        
+        CRITICAL = []
+        HIGH = []
+        MEDIUM = []
+        LOW = []  
+        all = []  
+
+        owner_of_proj = in_work_project.finding_projects_leads()
+        for i in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+            # print(i["Title"])
+            if i["Priority"] == "CRITICAL" :
+                CRITICAL.append(i)
+            if i["Priority"] == "HIGH" :
+                HIGH.append(i)
+            if i["Priority"] == "MEDIUM" :
+                MEDIUM.append(i)
+            if i["Priority"] == "LOW" :
+                LOW.append(i)            
+        if len(CRITICAL) != 0 :
+            all.append(CRITICAL)
+        if len(HIGH) != 0 :         
+            all.append(HIGH)        
+        if len(MEDIUM) !=0 :   
+            all.append(MEDIUM)        
+        if len(LOW) != 0 :        
+            all.append(LOW)  
+    
+        tasks = []
+        index = 0 
+        for j in all : 
+            for i in j :
+                tasks.append(i)
+                # table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+        for i in tasks :     
+            index = index + 1 
+            table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+        clear_terminal()     
+        table = Align.center(table , vertical='bottom')   
+        console = Console()
+        console.print(table)   
+        return tasks
+
 #EVERYTHING STARTS HERE===========================================================
 def start(IDr , usernamer):
    
@@ -82,7 +145,7 @@ def start(IDr , usernamer):
     while True:
         sync_information(IDr , usernamer)
         show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members" , "5_exit "]
+        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members", '5 Watch everything' , "6_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
@@ -94,8 +157,12 @@ def start(IDr , usernamer):
             in_work_project.update_project()
             edit_task(in_work_project.ID , In_account_user.username)
         elif Choice == '4':
+            in_work_project.update_project()
             in_work_project.show_all_members(In_account_user)
         elif Choice == '5':
+            in_work_project.update_project()
+            show_big_table()
+        elif Choice == '6':
             break
         
 #=================================================================================

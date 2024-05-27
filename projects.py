@@ -503,5 +503,3 @@ class Projects:
         with open('save_username_password_email.json' , 'w') as file:
             json.dump(users_info , file , indent=4)
             file.close()
-
-

@@ -3,7 +3,10 @@ import uuid
 from enum import Enum
 from history import *
 from datetime import timedelta
-
+from rich.console import Console
+from rich.panel import Panel
+from rich.align import Align
+from rich.text import Text
 
 
 #Enum class for Task_Status ========================================
@@ -63,6 +66,23 @@ class Task:
         else:
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time ,'End_time' : self.end_time , 'History' : self.history}
         return dicted_tasks
+    
+
+    def visit_history(self):
+        console = Console()
+        for text in self.history:
+
+            custom_text = Text( f'Date :{text['Date']}'+'\n' +f'Doer :{text['Doer']}'+ '\n' + text['Content'] , style="bold magenta")
+            panel = Panel(
+                custom_text,
+                title="History",
+                title_align="center",
+                border_style="bright_green",
+                expand=False 
+            )
+            centered_panel = Align.center(panel)
+            console.print(centered_panel)
+
     
 def make_it_task(dictionary):
     ftask = Task(None , None , None , None)
