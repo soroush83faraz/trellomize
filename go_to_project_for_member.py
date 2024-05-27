@@ -41,7 +41,7 @@ def start_for_member(IDr , username):
         logging.critical(f"sync_information({IDr} , {username}) called in go_to_project_for_member.py")
         sync_information(IDr , username)
         show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = [ "1_Move task" , '2_Edit task' , "3_See all members" , "4_exit "]
+        lines_list = [ "1_Move task" , '2_Edit task' , "3_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
@@ -54,10 +54,10 @@ def start_for_member(IDr , username):
             in_work_project.update_project()
             logging.critical(f"edit_task({in_work_project.ID} , {In_account_user.username}) is called in start_for_member({IDr} , {username} in go_to_project_for_member.py)")
             edit_task(in_work_project.ID , In_account_user.username)
+        # elif Choice == '3':
+        #     logging.critical(f"in_work_project.show_all_members({In_account_user}) is called in start_for_member({IDr} , {username} in go_t_project_for_leader.py)")
+        #     in_work_project.show_all_members(In_account_user)
         elif Choice == '3':
-            logging.critical(f"in_work_project.show_all_members({In_account_user}) is called in start_for_member({IDr} , {username} in go_t_project_for_leader.py)")
-            in_work_project.show_all_members(In_account_user)
-        elif Choice == '4':
             break
 
 
@@ -321,17 +321,17 @@ def Move_task(ID , username):
     # owner_of_proj = in_work_project.finding_projects_leads()
 
     for task in in_work_project.tasks:
-        if username in task.assignees:
-            if task.status == 'BACKLOG':
-                Backlog_tasks.append(task)
-            elif task.status == 'TODO':
-                Todo_tasks.append(task)
-            elif task.status == 'DOING':
-                Doing_tasks.append(task)
-            elif task.status == 'DONE':
-                Done_tasks.append(task)
-            elif task.status == 'ARCHIVED':
-                Archived_tasks.append(task)
+        
+        if task.status == 'BACKLOG':
+            Backlog_tasks.append(task)
+        elif task.status == 'TODO':
+            Todo_tasks.append(task)
+        elif task.status == 'DOING':
+            Doing_tasks.append(task)
+        elif task.status == 'DONE':
+            Done_tasks.append(task)
+        elif task.status == 'ARCHIVED':
+            Archived_tasks.append(task)
 
     max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
 
@@ -368,7 +368,7 @@ def Move_task(ID , username):
     console.print('Choose which one of tasks do you want to move 😊' , justify='center' , style='green bold')
     rows , columns = (row , column)
 
-    array_2D = [[0, 0 , 0 , 0 , 0] for _ in range(rows)]
+    array_2D = [[0 , 0 , 0 , 0 , 0] for _ in range(rows)]
     
     for num in range(len(Backlog_tasks)):
         array_2D[num][0] = Backlog_tasks[num].title
