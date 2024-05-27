@@ -1,6 +1,13 @@
 import json
 import logging
 from printing import *
+import bcrypt
+import base64
+def check_password(password, encoded_hashed_password):
+    # Decode the Base64 string to get the original hashed password
+    hashed_password = base64.b64decode(encoded_hashed_password)
+    # Verify the password
+    return bcrypt.checkpw(password.encode('utf-8'), hashed_password)
 
 
 logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -14,7 +21,7 @@ def check_combinations(username , password):
 
 
         for row in reader_list:
-            if username == row['username'] and password == row['password']:
+            if username == row['username'] and check_password(password, row['password']):
                 data_list = row 
                 break
     

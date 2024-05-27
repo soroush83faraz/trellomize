@@ -3,6 +3,17 @@ import logging
 from rich.console import Console
 from printing import *
 console = Console()
+import bcrypt
+import base64
+
+def hash_password(password):
+    # Generate a salt
+    salt = bcrypt.gensalt()
+    # Hash the password
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
+    # Encode the hashed password to a Base64 string
+    encoded_hashed_password = base64.b64encode(hashed_password).decode('utf-8')
+    return encoded_hashed_password
 
 class User:
     username = None
@@ -27,7 +38,8 @@ class User:
         except:
             existing_data = []
 
-        new_data = {"username" : self.username , "password" : self.password , "email" : self.email , 'projects_leads' : [] , 'projects_member' : []}
+
+        new_data = {"username" : self.username , "password" : hash_password(self.password) , "email" : self.email , 'projects_leads' : [] , 'projects_member' : []}
 
         existing_data.append(new_data)
 
