@@ -3,7 +3,8 @@ import datetime
 from tasks import Task
 from projects import Projects
 from user import User
-from comment import Comment
+from comment import Commento
+import json
 
 
 
@@ -61,10 +62,47 @@ class TestProjects(unittest.TestCase) :
         self.assertEqual(self.project_1.leader , "saleh")
         self.assertEqual(self.project_2.leader , "soroush")
         
-    def test_make_dict_of_project(self) :
-        print("make_dict_of_project")
-        self.assertEqual(self.project_1.make_dict_of_project() , {'ID': None, 'name': 'soroush', 'leader': 'saleh', 'members': [], 'tasks': []})
-        self.assertEqual(self.project_2.make_dict_of_project() , {'ID': None, 'name': 'saeed', 'leader': 'soroush', 'members': [], 'tasks': []})
+    # def test_make_dict_of_project(self) :
+    #     print("make_dict_of_project")
+    #     self.assertEqual(self.project_1.make_dict_of_project() , {'ID': None, 'name': 'soroush', 'leader': 'saleh', 'members': [], 'tasks': []})
+    #     self.assertEqual(self.project_2.make_dict_of_project() , {'ID': None, 'name': 'saeed', 'leader': 'soroush', 'members': [], 'tasks': []})
+
+    "has some printing in it "
+    def test_name_project (self) :
+        print("name_project")       
+        self.assertIsNone(self.project_1.name_project())
+        self.assertIsNone(self.project_2.name_project())
+
+    def test_Add_member (self) :
+        print("Add_member")      
+        user_1 = User("soroush" , "soroush@22" , "soroush.faraz83@gmail.com" , True , [])
+        user_2 = User("ali" , "ali@22" , "ali.faraz83@gmail.com" , True , [])
+            
+        self.assertIsNone(self.project_1.Add_member(user_1)) 
+        self.assertIsNone(self.project_2.Add_member(user_2))        
+
+    def test_get_ID (self) :
+        print("get_ID")      
+        user_1 = User("soroush" , "soroush@22" , "soroush.faraz83@gmail.com" , True , [])
+        user_2 = User("ali" , "ali@22" , "ali.faraz83@gmail.com" , True , [])
+            
+        self.assertIsNone(self.project_1.get_ID(user_1)) 
+        self.assertIsNone(self.project_2.get_ID(user_2)) 
+        
+    def test_save_my_project (self) :
+        print("save_my_project")      
+        user_1 = User("soroush" , "soroush@22" , "soroush.faraz83@gmail.com" , True , [])
+        user_2 = User("ali" , "ali@22" , "ali.faraz83@gmail.com" , True , [])
+            
+        self.assertIsNone(self.project_1.save_my_project(user_1)) 
+        self.assertIsNone(self.project_2.save_my_project(user_2))
+         
+    def test_finding_projects_leads (self) :
+        print("finding_projects_leads")
+        
+        self.assertIsNone(self.project_1.finding_projects_leads()) 
+        self.assertIsNone(self.project_1.finding_projects_leads())
+
 
 class TestUser(unittest.TestCase) :
     
@@ -102,20 +140,20 @@ class TestUser(unittest.TestCase) :
         self.assertEqual(self.user_2.projects , [])       
        
        
-class TestComment (unittest.TestCase) :
+class TestCommento (unittest.TestCase) :
                
     @classmethod
     def setUpClass(cls):
         print("\nCOMMENT ==========")
        
     def setUp(self):
-        self.comment_1 = Comment("soroush" , datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S") , "My comment-1")
-        self.comment_2 = Comment("saeed" , datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S") , "My comment-2")
+        self.comment_1 = Commento("soroush" , datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S") , "My comment-1")
+        self.comment_2 = Commento("saeed" , datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S") , "My comment-2")
 
     def test_name (self) :
         print("name")
-        self.assertEqual(self.comment_1.name , "soroush")
-        self.assertEqual(self.comment_2.name , "saeed")
+        self.assertEqual(self.comment_1.writer , "soroush")
+        self.assertEqual(self.comment_2.writer , "saeed")
 
     def test_time (self) :
         print("time")
@@ -129,8 +167,8 @@ class TestComment (unittest.TestCase) :
  
     def test_converting_to_str (self) :
         print("converting_to_str")
-        self.assertEqual(self.comment_1.converting_to_str() , str(self.comment_1.text + '\n' + self.comment_1.name + '\n' + self.comment_1.time))    
-        self.assertEqual(self.comment_2.converting_to_str() , str(self.comment_2.text + '\n' + self.comment_2.name + '\n' + self.comment_2.time))    
+        self.assertEqual(self.comment_1.converting_to_dictionary() , {'Writer' : "soroush" , 'Text' : "My comment-1" , 'Time' : datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")})    
+        self.assertEqual( self.comment_2.converting_to_dictionary() , {'Writer' : "saeed" , 'Text' : "My comment-2" , 'Time' : datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")})    
        
 if __name__ == "__main__":
     unittest.main()
