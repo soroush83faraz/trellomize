@@ -114,7 +114,7 @@ def changing_is_active (username) :
                 user["IsActive"] = True
                 print(f"{username} Is Active")
             with open('save_username_password_email.json' , 'w') as json_file:
-                json.dump(user_info, json_file)               
+                json.dump(user_info, json_file , indent = 4)               
         
     
     
