@@ -1466,3 +1466,246 @@
 2024-05-27 16:44:46,353 | WARNING | make_an_account() saved newAccount
 2024-05-27 16:44:46,354 | INFO | Calling proprint function in main
 2024-05-27 16:44:50,208 | INFO | Returned from pro_print function
+2024-05-27 17:25:26,346 | INFO | Calling proprint function in main
+2024-05-27 17:25:34,489 | INFO | Returned from pro_print function
+2024-05-27 17:25:34,489 | CRITICAL | Log_in() called in main.py
+2024-05-27 17:25:49,993 | INFO | Returned from pro_print function
+2024-05-27 17:25:49,993 | WARNING | Log_in() returns []
+2024-05-27 17:25:49,996 | INFO | Calling proprint function in main
+2024-05-27 17:25:51,773 | INFO | Returned from pro_print function
+2024-05-27 17:25:51,773 | CRITICAL | make_an_account() called in main.py
+2024-05-27 17:25:54,273 | INFO | Returned from pro_print function
+2024-05-27 17:25:57,904 | WARNING | alpha_or_num_function retruns
+2024-05-27 17:25:57,909 | WARNING | validating_username returnssoroush
+2024-05-27 17:26:01,657 | INFO | Returned from pro_print function
+2024-05-27 17:26:07,254 | WARNING | find_strange function returns
+2024-05-27 17:26:07,258 | WARNING | IsPasswordValidFunction returns soroush@@2
+2024-05-27 17:26:11,160 | INFO | Returned from pro_print function
+2024-05-27 17:26:25,773 | WARNING | my_validate_email_function returns
+2024-05-27 17:26:30,236 | INFO | Returned from pro_print function
+2024-05-27 17:26:30,611 | INFO | An account was made by soroush in save_account function and was saved in save_username_password_email.json
+2024-05-27 17:26:30,613 | WARNING | make_an_account() saved newAccount
+2024-05-27 17:26:30,614 | INFO | Calling proprint function in main
+2024-05-27 17:26:35,353 | INFO | Returned from pro_print function
+2024-05-27 17:26:35,353 | CRITICAL | Log_in() called in main.py
+2024-05-27 17:26:41,662 | INFO | Returned from pro_print function
+2024-05-27 17:26:47,256 | INFO | Returned from pro_print function
+2024-05-27 17:26:57,763 | INFO | Returned from pro_print function
+2024-05-27 17:26:58,123 | INFO | soroush was logged in his account
+2024-05-27 17:26:58,123 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJE1pdXdZS0FobjJkSHRpNVhrc0U1ci44TU9SaTBpNWVkamhUNW1pZEVRTzV4QVpWLzR1dHoy', 'email': 'ssss.sss@gmail.com', 'projects_leads': [], 'projects_member': [], 'IsActive': True}
+2024-05-27 17:26:58,456 | INFO | soroush was logged in his account
+2024-05-27 17:26:58,457 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJE1pdXdZS0FobjJkSHRpNVhrc0U1ci44TU9SaTBpNWVkamhUNW1pZEVRTzV4QVpWLzR1dHoy', 'email': 'ssss.sss@gmail.com', 'projects_leads': [], 'projects_member': [], 'IsActive': True}
+2024-05-27 17:26:58,458 | WARNING | Log_in() returns {'username': 'soroush', 'password': 'JDJiJDEyJE1pdXdZS0FobjJkSHRpNVhrc0U1ci44TU9SaTBpNWVkamhUNW1pZEVRTzV4QVpWLzR1dHoy', 'email': 'ssss.sss@gmail.com', 'projects_leads': [], 'projects_member': [], 'IsActive': True}
+2024-05-27 17:26:58,458 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-27 17:26:58,458 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-27 17:27:03,305 | INFO | Returned from pro_print function
+2024-05-27 17:27:03,355 | CRITICAL | Creat_new_project() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:27:03,356 | INFO | Arrived in Creat_new_project() in Trellomize_space_when_log_in.py
+2024-05-27 17:27:07,035 | INFO | Returned from pro_print function
+2024-05-27 17:27:08,448 | INFO | Returned from pro_print function
+2024-05-27 17:27:08,498 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:27:08,498 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-27 17:27:10,090 | INFO | Returned from pro_print function
+2024-05-27 17:27:10,136 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:27:10,136 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-27 17:27:11,300 | INFO | Returned from pro_print function
+2024-05-27 17:27:11,344 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:27:11,345 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-27 17:27:12,255 | INFO | Returned from pro_print function
+2024-05-27 17:27:12,298 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:27:12,298 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-27 17:27:14,665 | INFO | Returned from pro_print function
+2024-05-27 17:27:14,710 | CRITICAL | Creat_new_project() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:27:14,710 | INFO | Arrived in Creat_new_project() in Trellomize_space_when_log_in.py
+2024-05-27 17:27:18,112 | INFO | Returned from pro_print function
+2024-05-27 17:27:19,632 | INFO | Returned from pro_print function
+2024-05-27 17:27:24,364 | INFO | Returned from pro_print function
+2024-05-27 17:27:24,365 | CRITICAL | get_ID() called in Trellomize_space_when_log_in.py
+2024-05-27 17:27:24,365 | INFO | Arrived in get_ID(<user.User object at 0x000002781BB2F740>) in project.py
+2024-05-27 17:27:32,744 | INFO | Returned from pro_print function
+2024-05-27 17:27:32,745 | CRITICAL | Add_member() called in Trellomize_space_when_log_in.py
+2024-05-27 17:27:32,745 | INFO | Arrived in Add_member(<user.User object at 0x000002781BB2F740>) in project.py
+2024-05-27 17:27:45,724 | INFO | Returned from pro_print function
+2024-05-27 17:27:45,724 | CRITICAL | Add_member() called in Trellomize_space_when_log_in.py
+2024-05-27 17:27:45,724 | INFO | Arrived in Add_member(<user.User object at 0x000002781BB2F740>) in project.py
+2024-05-27 17:27:52,994 | INFO | Returned from pro_print function
+2024-05-27 17:27:52,994 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
+2024-05-27 17:27:52,995 | INFO | Arrived inn save_my_project(<user.User object at 0x000002781BB2F740> in project.py)
+2024-05-27 17:27:55,891 | INFO | Returned from pro_print function
+2024-05-27 17:27:55,891 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
+2024-05-27 17:27:55,891 | INFO | Arrived inn save_my_project(<user.User object at 0x000002781BB2F740> in project.py)
+2024-05-27 17:27:58,164 | INFO | Returned from pro_print function
+2024-05-27 17:27:58,165 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
+2024-05-27 17:27:58,165 | INFO | Arrived inn save_my_project(<user.User object at 0x000002781BB2F740> in project.py)
+2024-05-27 17:28:00,525 | INFO | Returned from pro_print function
+2024-05-27 17:28:03,141 | INFO | Returned from pro_print function
+2024-05-27 17:28:03,192 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-27 17:28:03,192 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-27 17:28:05,100 | INFO | Returned from pro_print function
+2024-05-27 17:28:05,100 | CRITICAL | start(12 , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-27 17:28:05,100 | INFO | Arrived in start(12 , soroush)
+2024-05-27 17:28:05,101 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:28:05,101 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:28:05,102 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:28:05,102 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:28:05,109 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:29:03,703 | INFO | Returned from pro_print function
+2024-05-27 17:29:03,704 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:03,704 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:03,704 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:03,705 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:03,711 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:29:07,252 | CRITICAL | inwork_project.update_project is calling in start(12 , soroush)
+2024-05-27 17:29:07,254 | CRITICAL | Move_task(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:07,254 | INFO | Arrived in Move_task(12 , soroush)
+2024-05-27 17:29:07,254 | CRITICAL | show_task_allways(12 , soroush) called in go_to_project_for_leader.py
+2024-05-27 17:29:07,254 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:07,263 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:07,263 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:07,264 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:07,264 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:07,270 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:29:18,633 | INFO | Returned from pro_print function
+2024-05-27 17:29:18,641 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:18,641 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:18,644 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:18,644 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:18,679 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:29:27,459 | INFO | Returned from pro_print function
+2024-05-27 17:29:27,465 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:27,465 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:27,467 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:27,467 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:27,474 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:29:37,324 | INFO | Returned from pro_print function
+2024-05-27 17:29:37,324 | CRITICAL | start(12 , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-27 17:29:37,324 | INFO | Arrived in start(12 , soroush)
+2024-05-27 17:29:37,325 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:37,325 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:37,326 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:37,326 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:37,333 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:29:39,591 | CRITICAL | inwork_project.update_project is calling in start(12 , soroush)
+2024-05-27 17:29:39,592 | CRITICAL | Move_task(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:39,592 | INFO | Arrived in Move_task(12 , soroush)
+2024-05-27 17:29:39,593 | CRITICAL | show_task_allways(12 , soroush) called in go_to_project_for_leader.py
+2024-05-27 17:29:39,593 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:40,940 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:42,963 | INFO | final_move([[1, 0]] , [['Task', '', '', '', ''], ['Task\u26bd', '', '', '', '']] , Task) in go_to_project_for_leader.py
+2024-05-27 17:29:44,494 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:44,676 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:44,860 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:45,036 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:45,205 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:46,761 | INFO | Arrived in swap_task([1, 0] , [0, 4])
+2024-05-27 17:29:46,765 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:46,765 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:29:46,767 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:29:46,767 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:29:46,775 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:30:00,604 | INFO | Returned from pro_print function
+2024-05-27 17:30:05,290 | INFO | Returned from pro_print function
+2024-05-27 17:30:05,298 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:05,299 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:05,300 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:30:05,300 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:05,307 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:30:08,039 | CRITICAL | inwork_project.update_project is calling in start(12 , soroush)
+2024-05-27 17:30:08,040 | CRITICAL | Move_task(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:30:08,040 | INFO | Arrived in Move_task(12 , soroush)
+2024-05-27 17:30:08,040 | CRITICAL | show_task_allways(12 , soroush) called in go_to_project_for_leader.py
+2024-05-27 17:30:08,040 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:09,289 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:10,627 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:10,972 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:11,193 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:11,401 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:11,797 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:12,029 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:12,221 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:12,379 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:12,555 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:12,729 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:12,927 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:13,085 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:13,272 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:13,406 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:13,617 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:13,780 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:13,965 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:14,142 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:14,320 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:14,521 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:14,681 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:14,884 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:15,070 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:15,249 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:15,411 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:15,611 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:15,818 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:15,982 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:17,289 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:18,156 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:18,354 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:19,389 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:19,653 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:19,842 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:20,089 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:20,835 | INFO | final_move([[2, 0]] , [['dsdsdsds', '', '', '', ''], ['dsdsdsds', '', '', '', ''], ['dsdsdsds\u26bd', '', '', '', '']] , dsdsdsds) in go_to_project_for_leader.py
+2024-05-27 17:30:21,878 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:22,467 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:23,019 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:23,418 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:24,072 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:24,624 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:25,012 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:25,408 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:25,855 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:26,087 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:26,466 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:26,782 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:28,589 | INFO | Arrived in swap_task([2, 0] , [0, 4])
+2024-05-27 17:30:28,593 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:28,593 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:28,596 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:30:28,596 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:28,607 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:30:39,144 | CRITICAL | inwork_project.update_project is calling in start(12 , soroush)
+2024-05-27 17:30:39,145 | CRITICAL | show_big_table is calling in start(12 , soroush)
+2024-05-27 17:30:39,146 | INFO | show_big_table() called in go_to_project_for_leader.py
+2024-05-27 17:30:39,184 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:39,209 | WARNING | show big table returns [{'Title': 'dsdsdsds', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': 'e3d8ffc0-4dfb-4209-97e2-474f08906ee3', 'Start_time': '27/05/2024  17:29:56', 'End_time': '28/05/2024  17:29:56', 'History': [{'Doer': 'soroush', 'Date': '27/05/2024  17:29:18', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:29:27', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:30:05', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024, 17:30:28', 'Content': "soroush Changed dsdsdsds's status"}]}, {'Title': 'dsdsdsds', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': 'e3d8ffc0-4dfb-4209-97e2-474f08906ee3', 'Start_time': '27/05/2024  17:29:56', 'End_time': '28/05/2024  17:29:56', 'History': [{'Doer': 'soroush', 'Date': '27/05/2024  17:29:18', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:29:27', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:30:05', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024, 17:30:28', 'Content': "soroush Changed dsdsdsds's status"}]}, {'Title': 'dsdsdsds', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': 'e3d8ffc0-4dfb-4209-97e2-474f08906ee3', 'Start_time': '27/05/2024  17:29:56', 'End_time': '28/05/2024  17:29:56', 'History': [{'Doer': 'soroush', 'Date': '27/05/2024  17:29:18', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:29:27', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:30:05', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024, 17:30:28', 'Content': "soroush Changed dsdsdsds's status"}]}]
+2024-05-27 17:30:39,210 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:39,211 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:39,214 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:30:39,214 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:39,223 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:30:46,192 | CRITICAL | inwork_project.update_project is calling in start(12 , soroush)
+2024-05-27 17:30:46,193 | CRITICAL | edit_task(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:30:46,193 | INFO | arrived in edit_task(12 , soroush)
+2024-05-27 17:30:46,193 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(12 , soroush)
+2024-05-27 17:30:46,194 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:46,194 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:47,950 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:48,149 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:48,334 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:48,499 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:48,687 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:49,425 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:50,280 | INFO | Arrived in edit_it(([['', '', '', '', 'dsdsdsds\u270f\ufe0f'], ['', '', '', '', 'dsdsdsds'], ['', '', '', '', 'dsdsdsds']], [0, 4])) in go to_project_for_leader
+2024-05-27 17:30:50,283 | CRITICAL | make_it_task({'Title': 'dsdsdsds', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': 'e3d8ffc0-4dfb-4209-97e2-474f08906ee3', 'Start_time': '27/05/2024  17:29:56', 'End_time': '28/05/2024  17:29:56', 'History': [{'Doer': 'soroush', 'Date': '27/05/2024  17:29:18', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:29:27', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024  17:30:05', 'Content': 'soroush Made project: s'}, {'Doer': 'soroush', 'Date': '27/05/2024, 17:30:28', 'Content': "soroush Changed dsdsdsds's status"}]}) called in edit_it([['', '', '', '', 'dsdsdsds\u270f\ufe0f'], ['', '', '', '', 'dsdsdsds'], ['', '', '', '', 'dsdsdsds']] , [0, 4])
+2024-05-27 17:30:50,284 | CRITICAL | Start_Editing(<tasks.Task object at 0x000002781BD77800> , <user.User object at 0x000002781BB42E10> , <projects.Projects object at 0x000002781BB42E40>) called in edit_it([['', '', '', '', 'dsdsdsds\u270f\ufe0f'], ['', '', '', '', 'dsdsdsds'], ['', '', '', '', 'dsdsdsds']] , [0, 4] in go_to_project_for_leader.py)
+2024-05-27 17:30:56,329 | INFO | Returned from pro_print function
+2024-05-27 17:30:56,346 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:56,346 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:30:56,347 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:30:56,347 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:30:56,355 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
+2024-05-27 17:31:07,752 | INFO | Returned from pro_print function
+2024-05-27 17:31:07,752 | CRITICAL | start(12 , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-27 17:31:07,752 | INFO | Arrived in start(12 , soroush)
+2024-05-27 17:31:07,754 | CRITICAL | sync_information(12 , soroush) is calling in start(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:31:07,754 | INFO | Arrived in sync_information(12 , soroush) in go_to_project_for_leader.py
+2024-05-27 17:31:07,755 | CRITICAL | show_task_allways(12 , soroush) is calling in start(12 , soroush)
+2024-05-27 17:31:07,755 | INFO | Arrived in show_task_allways(12 , soroush)  in go_to_project_for_leader.py
+2024-05-27 17:31:07,770 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , soroush)
