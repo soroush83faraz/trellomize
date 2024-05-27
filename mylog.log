@@ -1428,3 +1428,41 @@
 2024-05-27 13:28:24,724 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
 2024-05-27 13:28:24,724 | INFO | Arrived inn save_my_project(<user.User object at 0x0000018E4E997FB0> in project.py)
 2024-05-27 13:28:26,548 | INFO | Returned from pro_print function
+2024-05-27 16:33:23,034 | INFO | Arrived in Add_member(<user.User object at 0x0000026E748A8590>) in project.py
+2024-05-27 16:33:30,079 | INFO | Arrived in Add_member(<user.User object at 0x0000026E748A8830>) in project.py
+2024-05-27 16:33:31,898 | INFO | Arrived in get_ID(<user.User object at 0x0000026E7488ED80>) in project.py
+2024-05-27 16:33:32,885 | INFO | Arrived in get_ID(<user.User object at 0x0000026E7488EBA0>) in project.py
+2024-05-27 16:33:33,931 | INFO | Arrived inn save_my_project(<user.User object at 0x0000026E7488E6F0> in project.py)
+2024-05-27 16:33:33,966 | INFO | Arrived inn save_my_project(<user.User object at 0x0000026E7488FBC0> in project.py)
+2024-05-27 16:36:27,929 | INFO | Arrived in Add_member(<user.User object at 0x0000018E88748CB0>) in project.py
+2024-05-27 16:36:36,025 | INFO | Arrived in Add_member(<user.User object at 0x0000018E88748D10>) in project.py
+2024-05-27 16:36:38,389 | INFO | Arrived in get_ID(<user.User object at 0x0000018E8872C050>) in project.py
+2024-05-27 16:36:39,275 | INFO | Arrived in get_ID(<user.User object at 0x0000018E8872FF20>) in project.py
+2024-05-27 16:36:42,730 | INFO | Arrived inn save_my_project(<user.User object at 0x0000018E886F4DA0> in project.py)
+2024-05-27 16:36:42,733 | INFO | Arrived inn save_my_project(<user.User object at 0x0000018E886F6AE0> in project.py)
+2024-05-27 16:38:08,401 | INFO | Arrived in Add_member(<user.User object at 0x0000026D426E8AA0>) in project.py
+2024-05-27 16:38:11,048 | INFO | Arrived in Add_member(<user.User object at 0x0000026D426E8500>) in project.py
+2024-05-27 16:38:27,646 | INFO | Arrived in get_ID(<user.User object at 0x0000026D426C7EF0>) in project.py
+2024-05-27 16:38:28,950 | INFO | Arrived in get_ID(<user.User object at 0x0000026D426C7E90>) in project.py
+2024-05-27 16:38:29,664 | INFO | Arrived inn save_my_project(<user.User object at 0x0000026D426C7EF0> in project.py)
+2024-05-27 16:38:29,668 | INFO | Arrived inn save_my_project(<user.User object at 0x0000026D426C7E90> in project.py)
+2024-05-27 16:39:18,296 | INFO | Arrived in get_ID(<user.User object at 0x0000017C5E358080>) in project.py
+2024-05-27 16:39:19,979 | INFO | Arrived in get_ID(<user.User object at 0x0000017C5E33E900>) in project.py
+2024-05-27 16:39:20,603 | INFO | Arrived inn save_my_project(<user.User object at 0x0000017C5E33F980> in project.py)
+2024-05-27 16:39:20,606 | INFO | Arrived inn save_my_project(<user.User object at 0x0000017C5E33FB60> in project.py)
+2024-05-27 16:43:42,345 | INFO | Calling proprint function in main
+2024-05-27 16:43:48,203 | INFO | Returned from pro_print function
+2024-05-27 16:43:48,203 | CRITICAL | make_an_account() called in main.py
+2024-05-27 16:43:50,526 | INFO | Returned from pro_print function
+2024-05-27 16:43:54,112 | WARNING | alpha_or_num_function retruns
+2024-05-27 16:43:54,116 | WARNING | validating_username returnshamid
+2024-05-27 16:44:01,373 | INFO | Returned from pro_print function
+2024-05-27 16:44:07,030 | WARNING | find_strange function returns
+2024-05-27 16:44:07,034 | WARNING | IsPasswordValidFunction returns hamid@@2
+2024-05-27 16:44:11,899 | INFO | Returned from pro_print function
+2024-05-27 16:44:37,498 | WARNING | my_validate_email_function returns
+2024-05-27 16:44:46,026 | INFO | Returned from pro_print function
+2024-05-27 16:44:46,326 | INFO | An account was made by hamid in save_account function and was saved in save_username_password_email.json
+2024-05-27 16:44:46,353 | WARNING | make_an_account() saved newAccount
+2024-05-27 16:44:46,354 | INFO | Calling proprint function in main
+2024-05-27 16:44:50,208 | INFO | Returned from pro_print function
