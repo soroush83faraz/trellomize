@@ -1,7 +1,9 @@
 from rich.console import Console
 import os
+import logging
 console = Console()
 
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -26,5 +28,6 @@ def pro_print(lines_list):
         elif choice == 's' and line < len(lines_list):
             line += 1
         elif choice == 'c':
+            logging.info('Returned from pro_print function')
             return str(line)
         clear_terminal()

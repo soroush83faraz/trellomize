@@ -19,7 +19,7 @@ def check_combinations(username , password):
                 break
     
     logging.info(f"{username} was logged in his account")
-
+    logging.warning(f"check_combinations() returns{data_list}")
     return data_list
 
     
@@ -61,7 +61,7 @@ def Log_in():
                 logging.warning(f"{username} tried to log in with false informations")
         elif Choice == '4':
             break      
-
+    logging.warning(f"Log_in() returns {datalist}")
     return datalist
                 
                 

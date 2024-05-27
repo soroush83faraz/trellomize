@@ -6,8 +6,10 @@ import tasks
 import time
 from datetime import datetime , timedelta
 from history import *   
+import logging
 console = Console()
 
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 class Projects:
     ID = None
@@ -37,6 +39,7 @@ class Projects:
                 break
 
     def Add_member(self , In_account_user):
+        logging.info(f"Arrived in Add_member({In_account_user}) in project.py")
         while True:
             try: 
                 with open('save_username_password_email.json' , 'r') as rfile:
@@ -90,6 +93,7 @@ class Projects:
                 console.print("The username was not found  🥲" , style='red' , justify='center')
 
     def get_ID(self , In_account_user):
+        logging.info(f"Arrived in get_ID({In_account_user}) in project.py")
         console.print("You should enter an unique [red]ID[/] for your project" , style='italic purple' , justify='center')
         while True:
             ID = input("                                                                                 ID :")
@@ -123,6 +127,7 @@ class Projects:
                 break
 
     def save_my_project(self , In_account_user):
+        logging.info(f"Arrived inn save_my_project({In_account_user} in project.py)")
         proj_ID = []
         if self.name == None:
             console.print("You should pick a title for your project" , justify='center')

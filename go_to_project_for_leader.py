@@ -11,7 +11,9 @@ from comment_and_member import *
 from user import *
 from tasks import *
 from projects import *
+import logging
 
+logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 #INFORMATION===========================================================
 In_account_user = User(None , None , None , None , None)
@@ -30,6 +32,7 @@ def clear_terminal():
 
 #FUNCTION FOR SYNCING INFORMATION==================================================
 def sync_information(ID , username):
+    logging.info(f"Arrived in sync_information({ID} , {username}) in go_to_project_for_leader.py")
     try:
         with open('save_username_password_email.json' , 'r') as file:
             users_info = json.load(file)
@@ -76,6 +79,7 @@ def sync_information(ID , username):
 
 #=================================================================================
 def show_big_table():
+        logging.info("show_big_table() called in go_to_project_for_leader.py")
         try :
             with open("save_username_password_email.json" , "r") as json_file :
                 users_info = json.load(json_file)
@@ -134,33 +138,45 @@ def show_big_table():
         clear_terminal()     
         table = Align.center(table , vertical='bottom')   
         console = Console()
-        console.print(table)   
+        console.print(table)  
+        logging.warning(f"show big table returns {tasks}") 
         return tasks
 
 #EVERYTHING STARTS HERE===========================================================
 def start(IDr , usernamer):
-   
+    logging.info(f"Arrived in start({IDr} , {usernamer})")
 
     proj_path_leads = in_work_project.finding_projects_leads()
     while True:
+        logging.critical(f"sync_information({IDr} , {usernamer}) is calling in start({IDr} , {usernamer}) in go_to_project_for_leader.py")
         sync_information(IDr , usernamer)
+        logging.critical(f"show_task_allways({in_work_project.ID} , {In_account_user.username}) is calling in start({IDr} , {usernamer})")
         show_task_allways(in_work_project.ID , In_account_user.username)
         lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members", '5 Watch everything' , "6_exit "]
+        logging.critical(f"pro_print_nocls({lines_list}) is calling in start({IDr} , {usernamer})")
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
             in_work_project.create_new_task()
         elif Choice == '2':
+            logging.critical(f"inwork_project.update_project is calling in start({IDr} , {usernamer})")
             in_work_project.update_project()
+            logging.critical(f"Move_task({in_work_project.ID} , {In_account_user.username}) is calling in start({IDr} , {usernamer})")
             Move_task(in_work_project.ID , In_account_user.username)
         elif Choice == '3':
+            logging.critical(f"inwork_project.update_project is calling in start({IDr} , {usernamer})")
             in_work_project.update_project()
+            logging.critical(f"edit_task({in_work_project.ID} , {In_account_user.username}) is calling in start({IDr} , {usernamer})")
             edit_task(in_work_project.ID , In_account_user.username)
         elif Choice == '4':
+            logging.critical(f"inwork_project.update_project is calling in start({IDr} , {usernamer})")
             in_work_project.update_project()
+            logging.critical(f"in_work_project.show_all_members({In_account_user}) is calling in start({IDr} , {usernamer})")
             in_work_project.show_all_members(In_account_user)
         elif Choice == '5':
+            logging.critical(f"inwork_project.update_project is calling in start({IDr} , {usernamer})")
             in_work_project.update_project()
+            logging.critical(f"show_big_table is calling in start({IDr} , {usernamer})")
             show_big_table()
         elif Choice == '6':
             break
@@ -168,6 +184,7 @@ def start(IDr , usernamer):
 #=================================================================================
 #This part is for editing tasks===================================================
 def edit_task(ID , username):
+    logging.info(f"arrived in edit_task({ID} , {username})")
     try :
         with open("save_username_password_email.json" , "r") as json_file :
             users_info = json.load(json_file)
@@ -183,6 +200,7 @@ def edit_task(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
+    logging.critical(f"in_work_project.finding_projects_leads() is calling in edit_task({ID} , {username})")
     owner_of_proj = in_work_project.finding_projects_leads()
 
     for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
@@ -213,7 +231,7 @@ def edit_task(ID , username):
     
     row = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
     
-
+    logging.critical(f"show_task_allways(ID , username) is calling in edit_task({ID} , {username}) in go_to_project_for_leader.py")
     show_task_allways(ID , username)
 
     current_row = 1
@@ -281,6 +299,7 @@ def edit_task(ID , username):
 #=================================================================================
 #edit task========================================================================
 def edit_it(array_2D , current_point_list):
+    logging.info(f"Arrived in edit_it({array_2D , current_point_list}) in go to_project_for_leader")
     owner_of_proj = in_work_project.finding_projects_leads()
     Id_we_wanna_edit = ''
     try :
@@ -311,16 +330,16 @@ def edit_it(array_2D , current_point_list):
 
     all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]  
     Id_we_wanna_edit = all_list[current_point_list[1]][current_point_list[0]]
-    
+    logging.critical(f"make_it_task({Id_we_wanna_edit}) called in edit_it({array_2D} , {current_point_list})")
     ftask = make_it_task(Id_we_wanna_edit)
-
+    logging.critical(f"Start_Editing({ftask} , {In_account_user} , {in_work_project}) called in edit_it({array_2D} , {current_point_list} in go_to_project_for_leader.py)")
     Start_Editing(ftask , In_account_user , in_work_project)
 
 #=================================================================================
 
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
-    
+    logging.info(f"Arrived in show_task_allways({ID} , {username})  in go_to_project_for_leader.py")
     table = Table(title = 'Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
     table.add_column("TODO" , justify='center' , style='green')
@@ -379,6 +398,7 @@ def show_task_allways(ID , username):
 
 #=================================================================================
 def swap_task(origin_point , destination_point):
+    logging.info(f"Arrived in swap_task({origin_point} , {destination_point})")
     # try :
     #     with open("save_username_password_email.json" , "r") as json_file :
     #         users_info = json.load(json_file)
@@ -465,6 +485,7 @@ def swap_task(origin_point , destination_point):
 
 #Function for second part of movement=============================================
 def final_move(movement_list , array_2D , text):
+    logging.info(f"final_move({movement_list} , {array_2D} , {text}) in go_to_project_for_leader.py")
     origin_point_row = movement_list[0][0]
     origin_point_column = movement_list[0][1]
     
@@ -513,6 +534,7 @@ def final_move(movement_list , array_2D , text):
 #=================================================================================
 #Function for Moving task=========================================================
 def Move_task(ID , username):
+    logging.info(f"Arrived in Move_task({ID} , {username})")
     # try :
     #     with open("save_username_password_email.json" , "r") as json_file :
     #         users_info = json.load(json_file)
@@ -568,7 +590,7 @@ def Move_task(ID , username):
     column = 5
 
     row = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
-
+    logging.critical(f"show_task_allways({ID} , {username}) called in go_to_project_for_leader.py")
     show_task_allways(ID , username)
 
     current_row = 1
