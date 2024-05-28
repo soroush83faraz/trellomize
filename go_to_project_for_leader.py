@@ -570,23 +570,23 @@ def Move_task(ID , username):
     for i in range(max_length - len(Backlog_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Backlog_tasks.append(ftask)
+        Backlog_tasks.append({'Title' : ''})
     for i in range(max_length - len(Todo_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Todo_tasks.append(ftask)
+        Todo_tasks.append({'Title' : ''})
     for i in range(max_length - len(Doing_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Doing_tasks.append(ftask)
+        Doing_tasks.append({'Title' : ''})
     for i in range(max_length - len(Done_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Done_tasks.append(ftask)
+        Done_tasks.append({'Title' : ''})
     for i in range(max_length - len(Archived_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Archived_tasks.append(ftask)
+        Archived_tasks.append({'Title' : ''})
 
     column = 5
 
