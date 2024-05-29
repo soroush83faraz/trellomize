@@ -34,6 +34,20 @@ def make_unique_ID():
 #==================================================================
 
 class Task:
+    
+    """
+    Task class representing a task.
+    Attributes:
+        ID (str): The task's ID.
+        title (str): The task's main title.
+        discription (str): The task's discription that you want to add.
+        start_time (str): The task's time of start .
+        end_time (str): The task's time of end that you give (default : 24 hours later).
+        assignees (list): The task's assignments.   
+        status (str): The task's status (BACKLOG , TODO , DOING , DONE , ARCHIVED) 
+
+    """
+       
     ID = None
     title = None
     discription = None
@@ -47,6 +61,25 @@ class Task:
 
     def __init__(self , priority = Task_priority.LOW , title = "Task" , discription = "put your discription here" , status = Task_Status.BACKLOG ) :
         
+        """
+        Initializes a new task.
+
+        Args:
+            priority (str): The priority level of the task (e.g., 'LOW', 'MEDIUM', 'HIGH').
+            title (str): The title of the task.
+            description (str): The description of the task.
+            status (str): The status of the task (e.g., 'BACKLOG', 'TODO', 'DOING', 'DONE', 'ARCHIVED').
+
+        Attributes:
+            status (str): The status of the task.
+            description (str): The description of the task.
+            priority (str): The priority level of the task.
+            title (str): The title of the task.
+            start_time (str): The start time of the task (formatted as '%Y-%m-%d %H:%M:%S').
+            end_time (str): The end time of the task (formatted as '%Y-%m-%d %H:%M:%S').
+            ID (str): The unique identifier for the task.
+        """
+        
         self.status = status
         self.discription = discription
         self.priority = priority
@@ -56,11 +89,15 @@ class Task:
         self.ID  = str(make_unique_ID())
         
     def make_dict_of_tasks(self):
-        # for history in self.history:
-        #     if isinstance(history , History):
-        #         dicted = history.make_dict_of_history()
-        #         self.history.remove(history)
-        #         self.history.append(dicted)
+        
+        """
+        Creates a dictionary representation of the task.
+    
+        Returns:
+            dict: A dictionary containing task information.
+        """
+
+
         if not isinstance(self.end_time , str):
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time.strftime("%d/%m/%Y  %H:%M:%S") ,'End_time' : self.end_time.strftime("%d/%m/%Y  %H:%M:%S") , 'History' : self.history}
         else:
@@ -69,6 +106,15 @@ class Task:
     
 
     def visit_history(self):
+        
+        """
+        Displays the task's history.
+
+        Note:
+            This method prints the history information for the task.
+
+        """
+        
         console = Console()
         for text in self.history:
 
@@ -85,6 +131,17 @@ class Task:
 
     
 def make_it_task(dictionary):
+    
+    """
+    Creates a Task instance from a dictionary representation.
+
+    Args:
+        dictionary (dict): A dictionary containing task information.
+
+    Returns:
+        Task: An instance of the Task class.
+    """
+    
     ftask = Task(None , None , None , None)
     ftask.assignees = dictionary['Assignees']
     ftask.comments = dictionary['Comments']

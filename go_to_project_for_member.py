@@ -192,30 +192,30 @@ def swap_task(origin_point , destination_point):
     # owner_of_proj = in_work_project.finding_projects_member()
 
     for task in in_work_project.tasks:
-        if task.status == 'BACKLOG':
+        if task.status == Task_Status.BACKLOG.name:
             Backlog_tasks.append(task)
-        elif task.status == 'TODO':
+        elif task.status == Task_Status.TODO.name:
             Todo_tasks.append(task)
-        elif task.status == 'DOING':
+        elif task.status == Task_Status.DOING.name:
             Doing_tasks.append(task)
-        elif task.status == 'DONE':
+        elif task.status == Task_Status.DOING.name:
             Done_tasks.append(task)
-        elif task.status == 'ARCHIVED':
+        elif task.status == Task_Status.ARCHIVED.name:
             Archived_tasks.append(task)
 
     all_list = [Backlog_tasks , Todo_tasks , Doing_tasks , Done_tasks , Archived_tasks]
     
 
     if destination_point[1] == 0:
-        all_list[origin_point[1]][origin_point[0]].status = 'BACKLOG'
+        all_list[origin_point[1]][origin_point[0]].status = Task_Status.BACKLOG.name
     elif destination_point[1] == 1:
-        all_list[origin_point[1]][origin_point[0]].status = 'TODO'
+        all_list[origin_point[1]][origin_point[0]].status = Task_Status.TODO.name
     elif destination_point[1] == 2:
-        all_list[origin_point[1]][origin_point[0]].status = 'DOING'
+        all_list[origin_point[1]][origin_point[0]].status = Task_Status.DOING.name
     elif destination_point[1] == 3:
-        all_list[origin_point[1]][origin_point[0]].status = 'DONE'
+        all_list[origin_point[1]][origin_point[0]].status = Task_Status.DOING.name
     elif destination_point[1] == 4:
-        all_list[origin_point[1]][origin_point[0]].status = 'ARCHIVED'
+        all_list[origin_point[1]][origin_point[0]].status = Task_Status.ARCHIVED.name
 
     extended_list = Backlog_tasks + Todo_tasks + Doing_tasks + Done_tasks + Archived_tasks
 
@@ -322,15 +322,15 @@ def Move_task(ID , username):
 
     for task in in_work_project.tasks:
         
-        if task.status == 'BACKLOG':
+        if task.status == Task_Status.BACKLOG.name:
             Backlog_tasks.append(task)
-        elif task.status == 'TODO':
+        elif task.status == Task_Status.TODO.name:
             Todo_tasks.append(task)
-        elif task.status == 'DOING':
+        elif task.status == Task_Status.DOING.name:
             Doing_tasks.append(task)
-        elif task.status == 'DONE':
+        elif task.status == Task_Status.DONE.name:
             Done_tasks.append(task)
-        elif task.status == 'ARCHIVED':
+        elif task.status == Task_Status.ARCHIVED.name:
             Archived_tasks.append(task)
 
     max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
@@ -542,6 +542,21 @@ def edit_task(ID , username):
 
 #edit task========================================================================
 def edit_it(array_2D , current_point_list):
+    
+    """
+    Initiates the process of editing a task within the project.
+
+    Args:
+        array_2D (list): A 2D array representing the project board.
+        current_point_list (list): The current position of the cursor on the board.
+
+    Note:
+        - This method identifies the task to be edited based on the cursor position.
+        - It then calls the appropriate editing function (e.g., Start_editing_for_member).
+
+    """
+
+    
     owner_of_proj = in_work_project.finding_projects_member(In_account_user.username)
     Id_we_wanna_edit = ''
     try:

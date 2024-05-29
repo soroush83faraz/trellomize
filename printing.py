@@ -10,6 +10,17 @@ def clear_terminal():
 
 
 def pro_print(lines_list):
+    
+    """
+    Displays a list of options and allows the user to choose one.
+
+    Args:
+        lines_list (list): A list of strings representing the available options.
+
+    Returns:
+        str: The chosen option (or '*' if the user cancels).
+    """
+    
     line = 1
     while True:
         for strnum in range(len(lines_list)):

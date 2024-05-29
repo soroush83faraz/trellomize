@@ -97,6 +97,19 @@ def show_is_active () :
         print(user["username"] , "IsActive =" , user["IsActive"] )    
         
 def changing_is_active (username) :
+    
+    """
+    Toggles the 'IsActive' status of a user account.
+
+    Args:
+        username (str): The username of the account to modify.
+
+    Note:
+        - This method modifies the 'IsActive' attribute in user data.
+        - If the account is currently active, it will be deactivated, and vice versa.
+
+    """
+    
     try :
         with open ("save_username_password_email.json" , "r") as json_file :
             user_info = json.load(json_file)
