@@ -5798,3 +5798,411 @@
 2024-05-29 12:33:01,407 | INFO | Arrived in get_ID(<user.User object at 0x0000024F13DE12E0>) in project.py
 2024-05-29 12:33:01,424 | INFO | Arrived inn save_my_project(<user.User object at 0x0000024F15FAD8E0> in project.py)
 2024-05-29 12:33:01,427 | INFO | Arrived inn save_my_project(<user.User object at 0x0000024F15FAD700> in project.py)
+2024-05-29 12:55:15,589 | INFO | Calling proprint function in main
+2024-05-29 12:55:19,818 | INFO | Returned from pro_print function
+2024-05-29 12:55:19,818 | CRITICAL | Log_in() called in main.py
+2024-05-29 12:55:21,584 | INFO | Returned from pro_print function
+2024-05-29 12:55:27,549 | INFO | Returned from pro_print function
+2024-05-29 12:55:34,934 | INFO | Returned from pro_print function
+2024-05-29 12:55:35,279 | INFO | soroush was logged in his account
+2024-05-29 12:55:35,279 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': [], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 12:55:35,563 | INFO | soroush was logged in his account
+2024-05-29 12:55:35,563 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': [], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 12:55:35,564 | WARNING | Log_in() returns {'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': [], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 12:55:35,564 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 12:55:35,565 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 12:55:38,895 | INFO | Returned from pro_print function
+2024-05-29 12:55:38,927 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 12:55:38,927 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 12:55:40,072 | INFO | Returned from pro_print function
+2024-05-29 12:55:40,072 | CRITICAL | start(None , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-29 12:55:40,072 | INFO | Arrived in start(None , soroush)
+2024-05-29 12:55:40,073 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:55:40,073 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:55:40,074 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:55:40,074 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:55:40,107 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:56:21,232 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 12:56:21,234 | CRITICAL | in_work_project.show_all_members(<user.User object at 0x000001898530EED0>) is calling in start(None , soroush)
+2024-05-29 12:56:23,688 | INFO | Returned from pro_print function
+2024-05-29 12:56:23,689 | INFO | Arrived in Add_member(<user.User object at 0x000001898530EED0>) in project.py
+2024-05-29 12:56:29,798 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:29,798 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:29,799 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:29,799 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:29,805 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:56:37,211 | INFO | Returned from pro_print function
+2024-05-29 12:56:37,211 | CRITICAL | start(None , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-29 12:56:37,212 | INFO | Arrived in start(None , soroush)
+2024-05-29 12:56:37,212 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:37,212 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:37,213 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:37,213 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:37,217 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:56:40,142 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 12:56:40,143 | CRITICAL | show_big_table is calling in start(None , soroush)
+2024-05-29 12:56:40,143 | INFO | show_big_table() called in go_to_project_for_leader.py
+2024-05-29 12:56:40,176 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:40,187 | WARNING | show big table returns []
+2024-05-29 12:56:40,188 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:40,188 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:40,189 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:40,189 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:40,194 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:56:50,921 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 12:56:50,922 | CRITICAL | edit_task(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:50,922 | INFO | arrived in edit_task(None , soroush)
+2024-05-29 12:56:50,924 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(None , soroush)
+2024-05-29 12:56:50,924 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:50,924 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:50,965 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:50,971 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:50,971 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:50,972 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:50,972 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:50,977 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:56:53,645 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 12:56:53,646 | CRITICAL | Move_task(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:53,647 | INFO | Arrived in Move_task(None , soroush)
+2024-05-29 12:56:53,647 | CRITICAL | show_task_allways(None , soroush) called in go_to_project_for_leader.py
+2024-05-29 12:56:53,647 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:53,656 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:53,656 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:56:53,657 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:56:53,657 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:56:53,664 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:57:00,566 | INFO | Returned from pro_print function
+2024-05-29 12:57:00,566 | CRITICAL | start(None , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-29 12:57:00,566 | INFO | Arrived in start(None , soroush)
+2024-05-29 12:57:00,568 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:57:00,568 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:57:00,569 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:57:00,569 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:57:00,581 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 12:57:09,679 | INFO | Calling proprint function in main
+2024-05-29 12:57:11,367 | INFO | Calling proprint function in main
+2024-05-29 12:57:12,434 | INFO | Calling proprint function in main
+2024-05-29 12:57:14,996 | INFO | Returned from pro_print function
+2024-05-29 12:58:17,253 | INFO | Calling proprint function in main
+2024-05-29 12:58:20,198 | INFO | Returned from pro_print function
+2024-05-29 12:58:20,199 | CRITICAL | Log_in() called in main.py
+2024-05-29 12:58:28,156 | INFO | Returned from pro_print function
+2024-05-29 12:58:35,570 | INFO | Returned from pro_print function
+2024-05-29 12:58:44,195 | INFO | Returned from pro_print function
+2024-05-29 12:58:44,504 | INFO | saleh was logged in his account
+2024-05-29 12:58:44,504 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 12:58:44,805 | INFO | saleh was logged in his account
+2024-05-29 12:58:44,805 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 12:58:44,807 | WARNING | Log_in() returns {'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 12:58:44,807 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 12:58:44,807 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 12:58:47,032 | INFO | Returned from pro_print function
+2024-05-29 12:58:47,060 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 12:58:47,060 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 12:58:49,901 | INFO | Returned from pro_print function
+2024-05-29 12:58:49,901 | CRITICAL | start_for_member(None , saleh ) called in Trellomize_space_when_Log_in.py
+2024-05-29 12:58:49,902 | INFO | Arrived in start_for_member(None , saleh)
+2024-05-29 12:58:49,902 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 12:58:49,902 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:49,903 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:53,331 | CRITICAL | in_work_project.update_project() called in start_for_member(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:53,332 | CRITICAL | edit_task(None , saleh) is called in start_for_member(None , saleh in go_to_project_for_member.py)
+2024-05-29 12:58:53,333 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:53,375 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:53,380 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 12:58:53,380 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:53,381 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:56,541 | CRITICAL | in_work_project.update_project() called in start_for_member(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:56,542 | CRITICAL | edit_task(None , saleh) is called in start_for_member(None , saleh in go_to_project_for_member.py)
+2024-05-29 12:58:56,542 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:56,570 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:56,575 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 12:58:56,575 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:58:56,575 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 12:59:05,762 | INFO | Calling proprint function in main
+2024-05-29 12:59:08,587 | INFO | Returned from pro_print function
+2024-05-29 12:59:08,588 | CRITICAL | Log_in() called in main.py
+2024-05-29 12:59:11,557 | INFO | Returned from pro_print function
+2024-05-29 12:59:16,183 | INFO | Returned from pro_print function
+2024-05-29 12:59:20,625 | INFO | Returned from pro_print function
+2024-05-29 12:59:20,924 | INFO | soroush was logged in his account
+2024-05-29 12:59:20,925 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 12:59:21,218 | INFO | soroush was logged in his account
+2024-05-29 12:59:21,218 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 12:59:21,219 | WARNING | Log_in() returns {'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 12:59:21,219 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 12:59:21,219 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 12:59:24,975 | INFO | Returned from pro_print function
+2024-05-29 12:59:25,008 | CRITICAL | Creat_new_project() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 12:59:25,008 | INFO | Arrived in Creat_new_project() in Trellomize_space_when_log_in.py
+2024-05-29 12:59:30,995 | INFO | Returned from pro_print function
+2024-05-29 12:59:36,918 | INFO | Returned from pro_print function
+2024-05-29 12:59:36,918 | CRITICAL | get_ID() called in Trellomize_space_when_log_in.py
+2024-05-29 12:59:36,919 | INFO | Arrived in get_ID(<user.User object at 0x000002499FD43500>) in project.py
+2024-05-29 12:59:41,347 | INFO | Returned from pro_print function
+2024-05-29 12:59:41,347 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
+2024-05-29 12:59:41,347 | INFO | Arrived inn save_my_project(<user.User object at 0x000002499FD43500> in project.py)
+2024-05-29 12:59:47,667 | INFO | Returned from pro_print function
+2024-05-29 12:59:50,883 | INFO | Returned from pro_print function
+2024-05-29 12:59:50,922 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 12:59:50,922 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 12:59:57,811 | INFO | Returned from pro_print function
+2024-05-29 12:59:57,811 | CRITICAL | start(None , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-29 12:59:57,811 | INFO | Arrived in start(None , soroush)
+2024-05-29 12:59:57,812 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:59:57,812 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 12:59:57,813 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 12:59:57,813 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 12:59:57,820 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:00,262 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:00:00,263 | CRITICAL | edit_task(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:00,263 | INFO | arrived in edit_task(None , soroush)
+2024-05-29 13:00:00,263 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(None , soroush)
+2024-05-29 13:00:00,263 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:00,263 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:00,296 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:00,303 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:00,303 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:00,303 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:00,303 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:00,307 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:12,724 | INFO | Returned from pro_print function
+2024-05-29 13:00:12,733 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:12,733 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:12,734 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:12,735 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:12,771 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:21,217 | INFO | Returned from pro_print function
+2024-05-29 13:00:21,225 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:21,225 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:21,227 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:21,227 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:21,233 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:27,405 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:00:27,406 | CRITICAL | Move_task(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:27,406 | INFO | Arrived in Move_task(None , soroush)
+2024-05-29 13:00:27,408 | CRITICAL | show_task_allways(None , soroush) called in go_to_project_for_leader.py
+2024-05-29 13:00:27,408 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:28,610 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:29,866 | INFO | final_move([[1, 0]] , [['Task', '', '', '', ''], ['Task\u26bd', '', '', '', '']] , Task) in go_to_project_for_leader.py
+2024-05-29 13:00:30,603 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:30,863 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:31,043 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:31,201 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:31,404 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:32,387 | INFO | Arrived in swap_task([1, 0] , [0, 4])
+2024-05-29 13:00:32,391 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:32,391 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:32,393 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:32,393 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:32,398 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:37,515 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:00:37,516 | CRITICAL | show_big_table is calling in start(None , soroush)
+2024-05-29 13:00:37,516 | INFO | show_big_table() called in go_to_project_for_leader.py
+2024-05-29 13:00:37,553 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:37,567 | WARNING | show big table returns [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]
+2024-05-29 13:00:37,568 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:37,568 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:37,569 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:37,569 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:37,573 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:43,788 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:00:43,790 | CRITICAL | in_work_project.show_all_members(<user.User object at 0x000002499FD52720>) is calling in start(None , soroush)
+2024-05-29 13:00:47,243 | INFO | Returned from pro_print function
+2024-05-29 13:00:47,243 | INFO | Arrived in Add_member(<user.User object at 0x000002499FD52720>) in project.py
+2024-05-29 13:00:51,084 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:51,084 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:51,085 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:00:51,085 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:51,093 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:00:58,516 | INFO | Returned from pro_print function
+2024-05-29 13:00:58,516 | CRITICAL | start(11111 , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-29 13:00:58,516 | INFO | Arrived in start(11111 , soroush)
+2024-05-29 13:00:58,517 | CRITICAL | sync_information(11111 , soroush) is calling in start(11111 , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:58,517 | INFO | Arrived in sync_information(11111 , soroush) in go_to_project_for_leader.py
+2024-05-29 13:00:58,518 | CRITICAL | show_task_allways(11111 , soroush) is calling in start(11111 , soroush)
+2024-05-29 13:00:58,518 | INFO | Arrived in show_task_allways(11111 , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:00:58,522 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(11111 , soroush)
+2024-05-29 13:01:07,147 | INFO | Calling proprint function in main
+2024-05-29 13:01:07,773 | INFO | Calling proprint function in main
+2024-05-29 13:01:10,581 | INFO | Returned from pro_print function
+2024-05-29 13:01:10,582 | CRITICAL | Log_in() called in main.py
+2024-05-29 13:01:13,256 | INFO | Returned from pro_print function
+2024-05-29 13:01:16,723 | INFO | Returned from pro_print function
+2024-05-29 13:01:26,731 | INFO | Returned from pro_print function
+2024-05-29 13:01:27,036 | INFO | saleh was logged in his account
+2024-05-29 13:01:27,057 | WARNING | check_combinations() returns{}
+2024-05-29 13:01:27,059 | WARNING | saleh tried to log in with false informations
+2024-05-29 13:01:30,440 | INFO | Returned from pro_print function
+2024-05-29 13:01:40,790 | INFO | Returned from pro_print function
+2024-05-29 13:01:41,073 | INFO | saleh was logged in his account
+2024-05-29 13:01:41,074 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:01:41,345 | INFO | saleh was logged in his account
+2024-05-29 13:01:41,345 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:01:41,346 | WARNING | Log_in() returns {'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:01:41,346 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 13:01:41,346 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 13:01:43,916 | INFO | Returned from pro_print function
+2024-05-29 13:01:43,950 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 13:01:43,950 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 13:01:45,998 | INFO | Returned from pro_print function
+2024-05-29 13:01:45,998 | CRITICAL | start_for_member(None , saleh ) called in Trellomize_space_when_Log_in.py
+2024-05-29 13:01:45,998 | INFO | Arrived in start_for_member(None , saleh)
+2024-05-29 13:01:45,998 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 13:01:45,998 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:01:46,000 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:01:52,948 | CRITICAL | in_work_project.update_project() called in start_for_member(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:01:52,950 | CRITICAL | edit_task(None , saleh) is called in start_for_member(None , saleh in go_to_project_for_member.py)
+2024-05-29 13:01:52,951 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:01:53,002 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:01:53,007 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 13:01:53,008 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:01:53,008 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:02:22,850 | CRITICAL | in_work_project.update_project() called in start_for_member(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:02:22,851 | CRITICAL | edit_task(None , saleh) is called in start_for_member(None , saleh in go_to_project_for_member.py)
+2024-05-29 13:02:22,853 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:02:22,893 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:02:22,897 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 13:02:22,898 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:02:22,899 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:03:16,995 | INFO | Calling proprint function in main
+2024-05-29 13:03:21,147 | INFO | Returned from pro_print function
+2024-05-29 13:03:21,147 | CRITICAL | Log_in() called in main.py
+2024-05-29 13:03:27,820 | INFO | Returned from pro_print function
+2024-05-29 13:03:32,723 | INFO | Returned from pro_print function
+2024-05-29 13:03:40,143 | INFO | Returned from pro_print function
+2024-05-29 13:03:40,431 | INFO | saleh was logged in his account
+2024-05-29 13:03:40,431 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:03:40,723 | INFO | saleh was logged in his account
+2024-05-29 13:03:40,723 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:03:40,724 | WARNING | Log_in() returns {'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:03:40,724 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 13:03:40,724 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 13:03:43,814 | INFO | Returned from pro_print function
+2024-05-29 13:03:43,848 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 13:03:43,848 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 13:04:08,322 | INFO | Returned from pro_print function
+2024-05-29 13:04:08,323 | CRITICAL | start_for_member(None , saleh ) called in Trellomize_space_when_Log_in.py
+2024-05-29 13:04:08,323 | INFO | Arrived in start_for_member(None , saleh)
+2024-05-29 13:04:08,323 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 13:04:08,323 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:04:08,325 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:04:41,082 | INFO | Calling proprint function in main
+2024-05-29 13:04:51,094 | INFO | Returned from pro_print function
+2024-05-29 13:04:51,095 | CRITICAL | Log_in() called in main.py
+2024-05-29 13:04:56,817 | INFO | Returned from pro_print function
+2024-05-29 13:05:02,589 | INFO | Returned from pro_print function
+2024-05-29 13:05:08,082 | INFO | Returned from pro_print function
+2024-05-29 13:05:08,377 | INFO | soroush was logged in his account
+2024-05-29 13:05:08,377 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 13:05:08,654 | INFO | soroush was logged in his account
+2024-05-29 13:05:08,654 | WARNING | check_combinations() returns{'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 13:05:08,655 | WARNING | Log_in() returns {'username': 'soroush', 'password': 'JDJiJDEyJHouR1ExMXBRVkEweHBqZHNJaEJTSi5nUkdvVFFZbktZa1FDRjFZc3R4SHZmc25LTjZzeHou', 'email': 'soroush@gmail.com', 'projects_leads': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'projects_member': [], 'IsActive': True}
+2024-05-29 13:05:08,656 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 13:05:08,656 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 13:05:10,785 | INFO | Returned from pro_print function
+2024-05-29 13:05:10,819 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 13:05:10,819 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 13:05:13,032 | INFO | Returned from pro_print function
+2024-05-29 13:05:13,032 | CRITICAL | start(None , soroush) called in Trellomize_space_when_Log_in.py
+2024-05-29 13:05:13,032 | INFO | Arrived in start(None , soroush)
+2024-05-29 13:05:13,033 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:13,033 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:13,034 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:05:13,034 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:05:13,041 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:05:27,138 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:05:27,139 | CRITICAL | in_work_project.show_all_members(<user.User object at 0x000002AD91292990>) is calling in start(None , soroush)
+2024-05-29 13:05:31,575 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:31,576 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:31,577 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:05:31,577 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:05:31,584 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:05:34,326 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:05:34,327 | CRITICAL | edit_task(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:05:34,327 | INFO | arrived in edit_task(None , soroush)
+2024-05-29 13:05:34,328 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(None , soroush)
+2024-05-29 13:05:34,329 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:34,329 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:05:40,947 | INFO | Arrived in edit_it(([['Task\u270f\ufe0f', '', '', '', 'Task']], [0, 0])) in go to_project_for_leader
+2024-05-29 13:05:40,949 | CRITICAL | make_it_task({'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}]}) called in edit_it([['Task\u270f\ufe0f', '', '', '', 'Task']] , [0, 0])
+2024-05-29 13:05:40,950 | CRITICAL | Start_Editing(<tasks.Task object at 0x000002AD914C0650> , <user.User object at 0x000002AD91292990> , <projects.Projects object at 0x000002AD912929C0>) called in edit_it([['Task\u270f\ufe0f', '', '', '', 'Task']] , [0, 0] in go_to_project_for_leader.py)
+2024-05-29 13:05:48,587 | INFO | Returned from pro_print function
+2024-05-29 13:05:53,336 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:53,336 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:53,337 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:05:53,337 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:05:53,344 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:05:59,282 | CRITICAL | inwork_project.update_project is calling in start(None , soroush)
+2024-05-29 13:05:59,285 | CRITICAL | edit_task(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:05:59,285 | INFO | arrived in edit_task(None , soroush)
+2024-05-29 13:05:59,286 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(None , soroush)
+2024-05-29 13:05:59,288 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:05:59,288 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:02,185 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:04,114 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:04,711 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:05,660 | INFO | Arrived in edit_it(([['Task\u270f\ufe0f', '', '', '', 'Task']], [0, 0])) in go to_project_for_leader
+2024-05-29 13:06:05,661 | CRITICAL | make_it_task({'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': [], 'Comments': [{'Writer': 'soroush', 'Text': 'sss', 'Time': '29/05/2024  13:05:53'}], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:05:53', 'Content': 'soroush wrote a comment for Task'}]}) called in edit_it([['Task\u270f\ufe0f', '', '', '', 'Task']] , [0, 0])
+2024-05-29 13:06:05,661 | CRITICAL | Start_Editing(<tasks.Task object at 0x000002AD914C09B0> , <user.User object at 0x000002AD91292990> , <projects.Projects object at 0x000002AD912929C0>) called in edit_it([['Task\u270f\ufe0f', '', '', '', 'Task']] , [0, 0] in go_to_project_for_leader.py)
+2024-05-29 13:06:13,283 | INFO | Returned from pro_print function
+2024-05-29 13:06:26,388 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:06:26,388 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:06:26,389 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:06:26,389 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:26,394 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:06:37,589 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:06:37,589 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:06:37,590 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:06:37,590 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:37,597 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:06:38,541 | CRITICAL | sync_information(None , soroush) is calling in start(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:06:38,541 | INFO | Arrived in sync_information(None , soroush) in go_to_project_for_leader.py
+2024-05-29 13:06:38,542 | CRITICAL | show_task_allways(None , soroush) is calling in start(None , soroush)
+2024-05-29 13:06:38,542 | INFO | Arrived in show_task_allways(None , soroush)  in go_to_project_for_leader.py
+2024-05-29 13:06:38,548 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Edit task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(None , soroush)
+2024-05-29 13:06:45,107 | INFO | Calling proprint function in main
+2024-05-29 13:06:48,353 | INFO | Returned from pro_print function
+2024-05-29 13:06:48,353 | CRITICAL | Log_in() called in main.py
+2024-05-29 13:06:58,794 | INFO | Returned from pro_print function
+2024-05-29 13:07:15,982 | INFO | Returned from pro_print function
+2024-05-29 13:07:23,357 | INFO | Returned from pro_print function
+2024-05-29 13:07:23,646 | INFO | saleh was logged in his account
+2024-05-29 13:07:23,647 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['saleh'], 'Comments': [{'Writer': 'soroush', 'Text': 'sss', 'Time': '29/05/2024  13:05:53'}], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:05:53', 'Content': 'soroush wrote a comment for Task'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:06:26', 'Content': 'soroush assign saleh to the task'}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:07:23,928 | INFO | saleh was logged in his account
+2024-05-29 13:07:23,928 | WARNING | check_combinations() returns{'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['saleh'], 'Comments': [{'Writer': 'soroush', 'Text': 'sss', 'Time': '29/05/2024  13:05:53'}], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:05:53', 'Content': 'soroush wrote a comment for Task'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:06:26', 'Content': 'soroush assign saleh to the task'}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:07:23,931 | WARNING | Log_in() returns {'username': 'saleh', 'password': 'JDJiJDEyJGMzNnJrR01VUS4wZWRBNXlOQXVISWVlN0kzTG1uT2htOENpbTVxZjZmci53NjAxRlZKTkNT', 'email': 'saleh@gmail.com', 'projects_leads': [{'ID': '144', 'name': 'testproj', 'leader': 'saleh', 'members': ['saeed'], 'tasks': [{'Title': 'testTask', 'Description': 'Put your discription here', 'Priority': 'HIGH', 'Status': 'DONE', 'Assignees': ['saeed'], 'Comments': [{'Writer': 'saleh', 'Text': 'AA', 'Time': '28/05/2024  18:33:06'}], 'ID': 'a0b193af-f7e3-41b3-9f23-fee6609260bd', 'Start_time': '28/05/2024  18:08:08', 'End_time': '29/05/2024  18:08:08', 'History': [{'Doer': 'saleh', 'Date': '28/05/2024  18:08:19', 'Content': 'saleh Made project: testproj'}, {'Doer': 'saleh', 'Date': '28/05/2024, 18:08:27', 'Content': "saleh Changed testTask's status"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:33:06', 'Content': 'saleh wrote a comment for testTask'}, {'Doer': 'saleh', 'Date': '28/05/2024  18:43:13', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saleh', 'Date': '28/05/2024  18:44:10', 'Content': "saleh changed  testTask's priority"}, {'Doer': 'saeed', 'Date': '28/05/2024  18:45:23', 'Content': "saeed changed  testTask's priority"}]}]}], 'projects_member': [{'ID': None, 'name': 'soroush', 'leader': 'soroush', 'members': ['saleh', 'siina'], 'tasks': [{'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['saleh'], 'Comments': [{'Writer': 'soroush', 'Text': 'sss', 'Time': '29/05/2024  13:05:53'}], 'ID': '0943190e-f7c7-49b9-8a42-1fc20bca1248', 'Start_time': '29/05/2024  13:00:02', 'End_time': '30/05/2024  13:00:02', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:05:53', 'Content': 'soroush wrote a comment for Task'}]}, {'Title': 'Task', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'ARCHIVED', 'Assignees': [], 'Comments': [], 'ID': '35f7fd91-c0f5-46eb-aedf-a1e05f89c2b2', 'Start_time': '29/05/2024  13:00:17', 'End_time': '30/05/2024  13:00:17', 'History': [{'Doer': 'soroush', 'Date': '29/05/2024  13:00:12', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024  13:00:21', 'Content': 'soroush Made project: soroush'}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:00:32', 'Content': "soroush Changed Task's status"}, {'Doer': 'soroush', 'Date': '29/05/2024, 13:06:26', 'Content': 'soroush assign saleh to the task'}]}]}, {'ID': '11111', 'name': 'sasa', 'leader': 'soroush', 'members': ['saleh'], 'tasks': []}], 'IsActive': True}
+2024-05-29 13:07:23,931 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-29 13:07:23,931 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-29 13:07:26,131 | INFO | Returned from pro_print function
+2024-05-29 13:07:26,162 | CRITICAL | shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-29 13:07:26,162 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-29 13:07:27,773 | INFO | Returned from pro_print function
+2024-05-29 13:07:27,773 | CRITICAL | start_for_member(None , saleh ) called in Trellomize_space_when_Log_in.py
+2024-05-29 13:07:27,773 | INFO | Arrived in start_for_member(None , saleh)
+2024-05-29 13:07:27,773 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 13:07:27,773 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:27,774 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:31,819 | CRITICAL | in_work_project.update_project() called in go_to_project_fof_member.py
+2024-05-29 13:07:31,821 | CRITICAL | Move_task(None , saleh) called in go_to_project_for_member
+2024-05-29 13:07:31,821 | INFO | Arrived in Move_task(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:31,821 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:34,142 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:34,498 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:34,754 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:35,079 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:35,665 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:35,955 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:36,612 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:38,531 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:39,355 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:39,795 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:40,845 | INFO | Arrived in final_move([[0, 0]] , [['Task\u26bd', '', '', '', 'Task']] , Task) in go_to_project_or_member.py
+2024-05-29 13:07:41,835 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:42,835 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:43,006 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:43,176 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:43,367 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:43,856 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
+2024-05-29 13:07:43,856 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
+2024-05-29 13:07:43,858 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
