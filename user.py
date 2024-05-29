@@ -24,9 +24,7 @@ class User:
         IsActive (bool): The person's state.
         projects_member (list): The person's project's that he is a member.
         projects_leads (list): The person's project's that he is a leader.   
-    functions :
-    
-         
+        
     """
     username = None
     password = None
@@ -43,6 +41,15 @@ class User:
         self.projects = projects
 
     def save_account(self):
+        
+        """
+        Saves the account information to the user data file.
+
+        Note:
+            - This method creates a new account entry or updates an existing one.
+            - It stores the username, hashed password, email, and other account details.
+
+        """
 
         try:
             with open('save_username_password_email.json' , 'r') as reading_file:

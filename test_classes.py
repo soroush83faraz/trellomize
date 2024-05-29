@@ -3,6 +3,7 @@ import datetime
 from tasks import Task
 from projects import Projects
 from user import User
+from unittest.mock import patch
 from comment import Commento
 import json
 
@@ -51,6 +52,8 @@ class TestProjects(unittest.TestCase) :
     def setUp(self):
         self.project_1 = Projects("soroush" , "saleh")
         self.project_2 = Projects("saeed" , "soroush")
+        self.user_1 = User("soroush" , "soroush@@2" , "soroush.faraz83@gmail.com" , True , [] )
+        self.user_2 = User("saeed" , "saeed@@2" , "saeed.geshani84@gmail.com" , False , [] )
         
     def test_name (self) :
         print("name")
@@ -68,26 +71,57 @@ class TestProjects(unittest.TestCase) :
         self.assertEqual(self.project_2.make_dict_of_project() , {'ID': None, 'name': 'saeed', 'leader': 'soroush', 'members': [], 'tasks': []})
 
     "has some printing in it "
-    def test_name_project (self) :
+    @patch('builtins.input', side_effect=['My Project']) 
+    def test_name_project (self , mock_input) :
         print("name_project")       
-        self.assertIsNone(self.project_1.name_project())
-        self.assertIsNone(self.project_2.name_project())
+        
+        self.project_1.name_project()
+        self.assertEqual(self.project_1.name, 'My Project')
 
-    # def test_Add_member (self) :
-    #     print("Add_member")      
-    #     user_1 = User("soroush" , "soroush@22" , "soroush.faraz83@gmail.com" , True , [])
-    #     user_2 = User("ali" , "ali@22" , "ali.faraz83@gmail.com" , True , [])
-            
-    #     self.assertIsNone(self.project_1.Add_member(user_1)) 
-    #     self.assertIsNone(self.project_2.Add_member(user_2))        
+    @patch('builtins.input', side_effect=['*'])
+    def test_name_project_cancel(self, mock_input):
+        print("name_project")       
+        self.project_1.name_project()
+        self.assertEqual(self.project_1.name, "soroush")
 
-    def test_get_ID (self) :
-        print("get_ID")      
-        user_1 = User("soroush" , "soroush@22" , "soroush.faraz83@gmail.com" , True , [])
-        user_2 = User("ali" , "ali@22" , "ali.faraz83@gmail.com" , True , [])
-            
-        self.assertIsNone(self.project_1.get_ID(user_1)) 
-        self.assertIsNone(self.project_2.get_ID(user_2)) 
+    @patch('builtins.input', side_effect=['saleh', '*'])
+    def test_add_member_existing(self, mock_input):
+        # Test when the entered member name already exists
+        In_account_user = self.user_1   # Replace with an actual user instance
+        self.project_1.members_usernames = ['saleh']  # Existing members
+        self.project_1.Add_member(In_account_user)
+        self.assertEqual(self.project_1.members_usernames, ['saleh'])
+
+    @patch('builtins.input', side_effect=['NewUser', 'saleh', '*'])
+    def test_add_member_new(self, mock_input):
+
+        In_account_user = self.user_1 
+        self.project_1.members_usernames = ['saleh'] 
+        self.project_1.Add_member(In_account_user)
+        self.assertEqual(self.project_1.members_usernames, ['saleh'])
+
+    @patch('builtins.input', side_effect=['*', 'saleh'])
+    def test_add_member_cancel(self, mock_input):
+
+        In_account_user = self.user_1  
+        self.project_1.Add_member(In_account_user)
+        self.assertEqual(self.project_1.members_usernames, [])
+
+    @patch('builtins.input', side_effect=['123', '*'])
+    def test_get_ID_unique(self, mock_input):       
+        print("get_ID")         
+        In_account_user = self.user_1  
+        self.project_1.get_ID(In_account_user)
+        self.assertEqual(self.project_1.ID, '123')
+
+    @patch('builtins.input', side_effect=['456', '123', '*'])
+    def test_get_ID_not_unique(self, mock_input):   
+        print("get_ID")         
+        In_account_user = self.user_1  
+        self.project_1.ID = '456'
+        self.project_1.get_ID(In_account_user)
+        self.assertEqual(self.project_1.ID, '456')
+
         
     def test_save_my_project (self) :
         print("save_my_project")      

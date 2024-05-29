@@ -12,6 +12,20 @@ console = Console()
 logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 class Projects:
+    
+    """
+    Represents a project with members, tasks, and a leader.
+
+    Attributes:
+        ID (str): The project's unique identifier.
+        name (str): The name of the project.
+        leader (str): The username of the project leader.
+        members_usernames (list): List of usernames of project members.
+        tasks (list): List of tasks associated with the project.
+        
+    """
+    
+    
     ID = None
     name = None
     leader = None
@@ -20,14 +34,36 @@ class Projects:
     
 
     def __init__(self , name , leader):
+
+        """
+        Initializes a new project.
+
+        Args:
+            name (str): The name of the project.
+            leader (str): The username of the project leader.
+        """
+         
         self.name = name
         self.leader = leader
 
     def make_dict_of_project(self):
+        
+        """
+        Creates a dictionary representation of the project.
+
+        Returns:
+            dict: A dictionary containing project information.
+        """
+        
         dicted_project = {'ID' : self.ID , 'name' : self.name , 'leader' : self.leader , 'members' : self.members_usernames , 'tasks' : self.tasks}
         return dicted_project
 
     def name_project(self):
+        
+        """
+        Prompts the user to enter a title for the project.
+        """
+        
         console.print('Enter a title for your project  😊' , justify='center' , style= 'violet bold')
     
         while True:
@@ -39,6 +75,18 @@ class Projects:
                 break
 
     def Add_member(self , In_account_user):
+        
+        """
+        Adds a member to the project.
+    
+        Args:
+            In_account_user: An instance of the user account.
+    
+        Note:
+            This method modifies the `members_usernames` attribute of the project.
+    
+        """
+        
         logging.info(f"Arrived in Add_member({In_account_user}) in project.py")
         while True:
             try: 
@@ -93,6 +141,19 @@ class Projects:
                 console.print("The username was not found  🥲" , style='red' , justify='center')
 
     def get_ID(self , In_account_user):
+        
+        """
+        Sets a unique ID for the project.
+
+        Args:
+            In_account_user: An instance of the user account.
+
+        Note:
+            - This method modifies the project's ID.
+            - It ensures that the chosen ID is unique among all projects.
+
+        """
+        
         logging.info(f"Arrived in get_ID({In_account_user}) in project.py")
         console.print("You should enter an unique [red]ID[/] for your project" , style='italic purple' , justify='center')
         while True:
@@ -127,6 +188,18 @@ class Projects:
                 break
 
     def save_my_project(self , In_account_user):
+        
+        """
+        Saves the project information and updates user data.
+
+        Args:
+            In_account_user: An instance of the user account.
+
+        Note:
+            This method modifies the project's attributes and updates user data.
+        """
+        
+        
         logging.info(f"Arrived inn save_my_project({In_account_user} in project.py)")
         proj_ID = []
         if self.name == None:
@@ -195,7 +268,15 @@ class Projects:
                 wfile.close()
 
     def finding_projects_leads (self) :
-    
+
+        """
+        Finds the path to the project's lead information in the user data.
+
+        Returns:
+            list: A list representing the path to the project's lead information.
+                  The format is [user_index, 'projects_leads', project_index, 'tasks'].
+        """
+
         try :
             with open("save_username_password_email.json" , "r") as json_file :
                 users_info = json.load(json_file)
@@ -216,6 +297,17 @@ class Projects:
                         return proj_path
 
     def finding_projects_member(self , username):
+        
+        """
+        Finds tasks associated with the specified username in the project.
+
+        Args:
+            username (str): The username to search for.
+
+        Returns:
+            list: A list of tasks associated with the given username in the project.
+        """    
+    
         try :
             with open("save_username_password_email.json" , "r") as json_file :
                 users_info = json.load(json_file)
@@ -235,6 +327,17 @@ class Projects:
         return task_list
 
     def add_task_to_other_user(self , task):
+        
+        """
+        Adds a task to the project for other users.
+
+        Args:
+            task: An instance of the task to be added.
+
+        Note:
+            This method modifies the project's task list for other users.
+        """
+        
         try:
             with open('save_username_password_email.json' , 'r') as file:
                 users_info = json.load(file)
@@ -255,6 +358,11 @@ class Projects:
             file.close()
    
     def create_new_task (self):
+        
+        """
+        Creates a new task for the project.
+
+        """
         
         start_time = datetime.now()
         proj_path_leads = self.finding_projects_leads()
@@ -338,6 +446,17 @@ class Projects:
                 print("your choice isnt valid please choose from 1 , 2 , 3 , 4 , 5")
 
     def add_proj_to_him(self ,usern):
+        
+        """
+        Adds the project to the specified user's list of projects.
+
+        Args:
+            usern (str): The username of the user.
+
+        Note:
+            This method modifies the user's projects and tasks.
+        """
+        
         try:
             with open('save_username_password_email.json' , 'r') as file:
                 users_info = json.load(file)
@@ -367,6 +486,17 @@ class Projects:
             file.close()
 
     def update_members(self):
+        
+        """
+        Updates the list of project members in user data.
+
+        Note:
+            This method modifies the 'members' attribute of projects in user data.
+
+        Returns:
+            None
+        """
+        
         try:
             with open('save_username_password_email.json' , 'r') as file:
                 users_info = json.load(file)
@@ -401,6 +531,18 @@ class Projects:
                 All_id_list.clear()
 
     def remove_a_member(self):
+        
+        """
+        Removes a member from the project.
+
+        Note:
+            - This method modifies the project's list of members.
+            - It also updates associated tasks and user data.
+
+        Returns:
+            None
+        """
+        
         lines_list = []
         for member in self.members_usernames:
             lines_list.append(member)
@@ -445,6 +587,21 @@ class Projects:
             file.close()
 
     def show_all_members(self , user):
+
+        """
+        Displays all project members and provides options to add or remove members.
+
+        Args:
+            user: An instance of the user account.
+
+        Note:
+            - This method interacts with the project's member list.
+            - If the user is the project leader, they can remove a member.
+            - Otherwise, they can add a member.
+
+        """
+
+        
         for member in self.members_usernames:
             console.print(f"{member}" , justify='center' , style='red italic')
 
@@ -458,6 +615,16 @@ class Projects:
             self.update_members()
             
     def update_project(self):
+        
+        """
+        Updates the project information based on user data.
+    
+        Note:
+            - This method modifies the project's attributes (name, ID, leader, members, tasks).
+            - It retrieves information from user data.
+
+        """
+        
         try:
             with open('save_username_password_email.json' , 'r') as file:
                 users_info = json.load(file)
@@ -494,6 +661,17 @@ class Projects:
                
 
     def save_into_json(self):
+        
+        """
+        Saves the updated project information into the user data file.
+
+        Note:
+            - This method modifies the project's attributes (leader, members, name, tasks).
+            - It updates the corresponding project information in user data.
+
+        """
+
+        
         try:
             with open('save_username_password_email.json' , 'r') as file:
                 users_info = json.load(file)
