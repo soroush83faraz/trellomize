@@ -16,6 +16,19 @@ def hash_password(password):
     return encoded_hashed_password
 
 class User:
+    """
+    User class representing a person.
+    Attributes:
+        username (str): The person's name.
+        password (int): The person's password.
+        email (str): The person's gmail.
+        IsActive (bool): The person's state.
+        projects_member (list): The person's project's that he is a member.
+        projects_leads (list): The person's project's that he is a leader.   
+    functions :
+    
+         
+    """
     username = None
     password = None
     email = None
