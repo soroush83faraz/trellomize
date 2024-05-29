@@ -196,7 +196,6 @@ def Start_editing_for_member(gtask , InAccUser , gproj):
 
     if Chosen == '1':
         Comment(gtask , InAccUser , gproj)
-        b=b
     elif Chosen == '2':
         change_priority(gtask , InAccUser , gproj)
     elif Chosen == '3':

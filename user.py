@@ -7,11 +7,10 @@ import bcrypt
 import base64
 
 def hash_password(password):
-    # Generate a salt
+    
     salt = bcrypt.gensalt()
-    # Hash the password
+    
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
-    # Encode the hashed password to a Base64 string
     encoded_hashed_password = base64.b64encode(hashed_password).decode('utf-8')
     return encoded_hashed_password
 
