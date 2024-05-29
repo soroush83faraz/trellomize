@@ -18,6 +18,19 @@ in_hand_project = Projects(None , None)
 
 
 def Comment(gtask , InAccUser , gproj):
+    
+    """
+    Adds a comment to a task and updates the project history.
+
+    Args:
+        gtask (Task): The task to add a comment to.
+        InAccUser (User): The user who wrote the comment.
+        gproj (Project): The project containing the task.
+
+    Returns:
+        None
+    """
+    
     comment = input("please enter your comment here : ")
     
     inhand_comment.writer = InAccUser.username 
@@ -59,6 +72,15 @@ def Comment(gtask , InAccUser , gproj):
         json_file.close()                   
                     
 def assigning_task_to_member (gtask , InAccUser , gproj) :
+    
+    """
+    Assigns a task to a specific member and updates project history.
+
+    Args:
+        gtask (Task): The task to be assigned.
+        InAccUser (User): The user performing the assignment.
+    """
+    
     in_hand_project.ID = gproj.ID
     in_hand_project.update_project()
     try :
@@ -106,6 +128,16 @@ def assigning_task_to_member (gtask , InAccUser , gproj) :
 
                     
 def remove_assignees(gtask , inAccUser , gproj):
+    
+    """
+    Removes an assignee from a task and updates project data.
+
+    Args:
+        gtask (Task): The task from which to remove an assignee.
+        gproj (Project): The project containing the task.
+
+    """
+     
     in_hand_project.ID = gproj.ID
     in_hand_project.update_project()
     console.print('Wich assignee do you want to remove?' , justify='center' , style='green')
@@ -124,6 +156,17 @@ def remove_assignees(gtask , inAccUser , gproj):
 
 
 def change_priority(gtask , InAccUser , gproj):
+    
+    """
+    Changes the priority of a task and updates project history.
+
+    Args:
+        gtask (Task): The task whose priority needs to be changed.
+        InAccUser (User): The user performing the change.
+        gproj (Project): The project containing the task.
+
+    """
+    
     in_hand_project.ID = gproj.ID
     in_hand_project.update_project()
     console.print(f'Here is the priority{gtask.status}' , justify='center' , style='bold')
@@ -176,6 +219,16 @@ def change_priority(gtask , InAccUser , gproj):
 
 def Start_Editing(gtask , InAccUser , gproj):
     
+    """
+    Allows the user to perform various editing actions on a task.
+
+    Args:
+        gtask (Task): The task to be edited.
+        InAccUser (User): The user performing the editing.
+        gproj (Project): The project containing the task.
+
+    """
+    
     lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee' , '4_Change priority of tasks' , '5_View history of the task']
     Chosen = pro_print(lines_list)
 
@@ -191,6 +244,17 @@ def Start_Editing(gtask , InAccUser , gproj):
         gtask.visit_history()
 
 def Start_editing_for_member(gtask , InAccUser , gproj):
+    
+    """
+    Allows a project member to perform various editing actions on a task.
+
+    Args:
+        gtask (Task): The task to be edited.
+        InAccUser (User): The user performing the editing.
+        gproj (Project): The project containing the task.
+
+    """
+    
     lines_list = ['1_Add_comment_to_this_task' , '2_Change priority of tasks' , '3_View history of the task']
     Chosen = pro_print(lines_list)
 
