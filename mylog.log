@@ -6206,3 +6206,7 @@
 2024-05-29 13:07:43,856 | CRITICAL | sync_information(None , saleh) called in go_to_project_for_member.py
 2024-05-29 13:07:43,856 | INFO | sync_information(None , saleh) in go_to_project_for_member.py
 2024-05-29 13:07:43,858 | INFO | show_task_allways(None , saleh) in go_to_project_for_member.py
+2024-05-29 14:31:27,846 | INFO | Calling proprint function in main
+2024-05-29 14:35:53,252 | INFO | Calling proprint function in main
+2024-05-29 14:38:31,606 | INFO | Calling proprint function in main
+2024-05-29 14:49:09,509 | INFO | Calling proprint function in main
