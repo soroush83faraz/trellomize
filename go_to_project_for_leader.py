@@ -535,14 +535,14 @@ def final_move(movement_list , array_2D , text):
 #Function for Moving task=========================================================
 def Move_task(ID , username):
     logging.info(f"Arrived in Move_task({ID} , {username})")
-    # try :
-    #     with open("save_username_password_email.json" , "r") as json_file :
-    #         users_info = json.load(json_file)
-    #         json_file.close()
+    try :
+        with open("save_username_password_email.json" , "r") as json_file :
+            users_info = json.load(json_file)
+            json_file.close()
             
             
-    # except FileNotFoundError:
-    #     users_info = []
+    except FileNotFoundError:
+        users_info = []
 
     Backlog_tasks = []
     Todo_tasks = []
@@ -550,42 +550,43 @@ def Move_task(ID , username):
     Done_tasks = []
     Archived_tasks = []
 
-    # owner_of_proj = in_work_project.finding_projects_leads()
+    owner_of_proj = in_work_project.finding_projects_leads()
 
-    for task in in_work_project.tasks:
-        if task.status == 'BACKLOG':
-            Backlog_tasks.append(task)
-        elif task.status == 'TODO':
-            Todo_tasks.append(task)
-        elif task.status == 'DOING':
-            Doing_tasks.append(task)
-        elif task.status == 'DONE':
-            Done_tasks.append(task)
-        elif task.status == 'ARCHIVED':
-            Archived_tasks.append(task)
+    for task in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+        
+            if task['Status'] == 'BACKLOG':
+                Backlog_tasks.append(task)
+            elif task['Status'] == 'TODO':
+                Todo_tasks.append(task)
+            elif task['Status'] == 'DOING':
+                Doing_tasks.append(task)
+            elif task ["Status"] == 'DONE':
+                Done_tasks.append(task)
+            elif task["Status"] == 'ARCHIVED':
+                Archived_tasks.append(task)
 
     max_length = max([len(Backlog_tasks) , len(Todo_tasks) , len(Doing_tasks) , len(Done_tasks) , len(Archived_tasks)])
 
     for i in range(max_length - len(Backlog_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Backlog_tasks.append(ftask)
+        Backlog_tasks.append({'Title' : ''})
     for i in range(max_length - len(Todo_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Todo_tasks.append(ftask)
+        Todo_tasks.append({'Title' : ''})
     for i in range(max_length - len(Doing_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Doing_tasks.append(ftask)
+        Doing_tasks.append({'Title' : ''})
     for i in range(max_length - len(Done_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Done_tasks.append(ftask)
+        Done_tasks.append({'Title' : ''})
     for i in range(max_length - len(Archived_tasks)):
         ftask = Task(None , None , None , None)
         ftask.title = ''
-        Archived_tasks.append(ftask)
+        Archived_tasks.append({'Title' : ''})
 
     column = 5
 
@@ -599,18 +600,18 @@ def Move_task(ID , username):
     console.print('Choose which one of tasks do you want to move 😊' , justify='center' , style='green bold')
     rows , columns = (row , column)
 
-    array_2D = [[0, 0 , 0 , 0 , 0] for _ in range(rows)]
+    array_2D = [[0 , 0 , 0 , 0 , 0] for _ in range(rows)]
     
     for num in range(len(Backlog_tasks)):
-        array_2D[num][0] = Backlog_tasks[num].title
+        array_2D[num][0] = Backlog_tasks[num]["Title"]
     for num in  range(len(Todo_tasks)):
-        array_2D[num][1] = Todo_tasks[num].title
+        array_2D[num][1] = Todo_tasks[num]["Title"]
     for num in range(len(Doing_tasks)):
-        array_2D[num][2] = Doing_tasks[num].title
+        array_2D[num][2] = Doing_tasks[num]["Title"]
     for num in range(len(Done_tasks)):
-        array_2D[num][3] = Done_tasks[num].title
+        array_2D[num][3] = Done_tasks[num]["Title"]
     for num in range(len(Archived_tasks)):
-        array_2D[num][4] = Archived_tasks[num].title
+        array_2D[num][4] = Archived_tasks[num]["Title"]
 
     worked = True
     moving_list = []

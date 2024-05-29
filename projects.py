@@ -61,7 +61,7 @@ class Projects:
                 break
             
             elif member_name in self.members_usernames:
-                console.print('This has benn already added' , justify='center' , style='cyan bold')
+                console.print('This has been already added' , justify='center' , style='cyan bold')
                 break
 
             for i in data:
@@ -234,7 +234,6 @@ class Projects:
 
         return task_list
 
-
     def add_task_to_other_user(self , task):
         try:
             with open('save_username_password_email.json' , 'r') as file:
@@ -348,12 +347,12 @@ class Projects:
             
         for user in users_info:
             if user['username'] == usern:
- 
+                dicted = []
                 for task in self.tasks:
                     if isinstance(task , Task):
-                        dicted = task.make_dict_of_tasks()
-                        self.tasks.remove(task)
-                        self.tasks.append(dicted)
+                        dicted.append(task.make_dict_of_tasks())
+                self.tasks.clear()
+                self.tasks = dicted
                 user['projects_member'].append(self.make_dict_of_project())
 
                 # for proj in user['projects_member']:
@@ -406,6 +405,25 @@ class Projects:
         for member in self.members_usernames:
             lines_list.append(member)
         chosen_member = int(pro_print(lines_list))
+        
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+
+        for user in users_info:
+            for project in user['projects_leads']:
+                for task in project['tasks']:
+                    if self.members_usernames[chosen_member-1] in task['Assignees']:
+                        task['Assignees'].remove(self.members_usernames[chosen_member-1])
+        
+            for project in user['projects_leads']:
+                for task in project['tasks']:
+                    if self.members_usernames[chosen_member-1] in task['Assignees']:
+                        task['Assignees'].remove(self.members_usernames[chosen_member-1])
+
         self.members_usernames.pop(chosen_member-1)
         self.update_members()
 
@@ -421,6 +439,7 @@ class Projects:
                 if project['ID'] == self.ID and user['username'] not in self.members_usernames:
                     user['projects_member'].remove(project)
         
+
         with open('save_username_password_email.json' , 'w') as file:
             json.dump(users_info , file , indent=4)
             file.close()
@@ -472,8 +491,7 @@ class Projects:
                         rtask.status = task['Status']
                         rtask.title = task['Title']
                         self.tasks.append(rtask)
-                break
-            break
+               
 
     def save_into_json(self):
         try:

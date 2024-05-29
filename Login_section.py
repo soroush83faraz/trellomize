@@ -59,10 +59,25 @@ def Log_in():
                     break
                 break
         elif Choice == '3':
-            if len(check_combinations(username , password)) != 0:
+            try:
+                with open('save_username_password_email.json' , 'r') as file:
+                    users_info = json.load(file)
+                    file.close()
+            except:
+                users_info = []
+
+            for user in users_info:
+                if user['username'] == username:
+                    booleanIsActive = user['IsActive']
+            if booleanIsActive == False:
+                console.print("You are banned by admin of server" , justify='center' , style='red bold')
+                a = input('                                                                              enter sth : ')
+            elif len(check_combinations(username , password)) != 0 and booleanIsActive:
+                
                 datalist = check_combinations(username , password)
                 console.print(f'[green]Welcome dear [bold][italic]{username}[/][/] to Trellomize[/]  😊💪' , justify='center')
                 break
+            
             else:
                 console.print("The username-password combination doesn't exist  ❌" , justify='center' , style='green italic')
                 logging.warning(f"{username} tried to log in with false informations")
