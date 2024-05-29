@@ -64,4 +64,33 @@ class User:
         console.print('Your Account was saved successfully  ✅✌️'  , style='green' , justify= 'center')
 
 
+    def remove_project(self):
+        try:
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
+        except:
+            users_info = []
+
+        lines_list = []
+        for user in users_info:
+            if user['username'] == self.username:
+                for project in self.projects_leads:
+                    lines_list.append(project["ID"])
    
+        chosen_project = pro_print(lines_list)
+        Chosen_ID = lines_list[int(chosen_project)-1]
+
+        for user in users_info:
+            for project in user['projects_leads']:
+                if project['ID'] == Chosen_ID:
+                    user['projects_leads'].remove(project)
+            
+            for project in user['projects_member']:
+                if project['ID'] == Chosen_ID:
+                    user['projects_member'].remove(project)
+
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file , indent=4)
+            file.close()
+        
