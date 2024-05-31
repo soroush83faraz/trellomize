@@ -14,9 +14,21 @@ In_account_user = User(None , None , None , None , None)
 pre_list_of_members = []
 
 def cpp_cls():
+    """
+    Clears the terminal screen.
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
 #Function for making new project in mainpage of App=============
 def Creat_new_project():
+    
+    """
+    Creates a new project within the Trellomize application.
+
+    Displays prompts to the user for entering project details such as title, members, and ID.
+    Allows the user to save the project or exit the creation process.
+
+    """
+    
     logging.info("Arrived in Creat_new_project() in Trellomize_space_when_log_in.py")
     while True:
         member_list = []
@@ -46,6 +58,13 @@ def Creat_new_project():
 #===============================================================
 
 def Work_inside_Trellomize(datalist):
+    
+    """
+    Handles user interaction within the Trellomize application.
+
+    Args:
+        datalist (dict): A dictionary containing user data, including username, password, email, projects_leads, and projects_member.
+    """
     logging.info("Arrived in Work_inside_Trellomize()")
     In_account_user.username = datalist['username']
     In_account_user.password = datalist['password']
@@ -79,6 +98,15 @@ def Work_inside_Trellomize(datalist):
 
 
 def show_all_projects():
+    """
+    Displays a list of projects available to the user.
+
+    Reads user information from a JSON file named "save_username_password_email.json".
+    Retrieves the projects led by the user and the projects they are a member of.
+    Displays project names along with their status (leader/member).
+
+    """
+
     logging.info("Arrived in show_all_projects() in Trellomize_space_when_log_in.py")
     try:
         with open('save_username_password_email.json' , 'r') as file:

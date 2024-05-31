@@ -21,6 +21,16 @@ in_work_project = Projects(None , None)
 in_hand_task = Task(None , None , None , None)
 #======================================================================
 def justify_table_center(table):
+    
+    """
+    Centers the content within each cell of a 2D list (table).
+
+    Args:
+        table (list): A 2D list representing the table.
+
+    Returns:
+        list: A new 2D list with centered content in each cell.
+    """
     # Split the table into lines
     lines = table.split('\n')
 
@@ -67,6 +77,16 @@ def clear_terminal():
 
 #FUNCTION FOR SYNCING INFORMATION==================================================
 def sync_information(ID , username):
+    """
+    Synchronizes user information and project details within the Trellomize application.
+
+    Retrieves user data from the JSON file and updates the in-work project based on the specified project ID.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """
     logging.info(f"sync_information({ID} , {username}) in go_to_project_for_member.py")
     try:
         with open('save_username_password_email.json' , 'r') as file:
@@ -115,6 +135,17 @@ def sync_information(ID , username):
 #=================================================================================
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
+    
+    """
+    Displays a table of tasks organized by status columns (BACKLOG, TODO, DOING, DONE, ARCHIVED) within a project.
+
+    Retrieves task information from the project and presents it in a tabular format.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """ 
     logging.info(f"show_task_allways({ID} , {username}) in go_to_project_for_member.py")
     table = Table(title = 'Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
@@ -174,15 +205,16 @@ def show_task_allways(ID , username):
     console.print(table , justify='center')
 
 def swap_task(origin_point , destination_point):
-    # try :
-    #     with open("save_username_password_email.json" , "r") as json_file :
-    #         users_info = json.load(json_file)
-    #         json_file.close()
-            
-            
-    # except FileNotFoundError:
-    #     users_info = []
+    """
+    Moves a task from one status column to another within a project in the Trellomize application.
 
+    Retrieves task information from the project and updates the task's status based on the destination column.
+
+    Args:
+        origin_point (list): A list containing the initial row and column of the task.
+        destination_point (list): A list containing the target row and column for the task.
+
+    """
     Backlog_tasks = []
     Todo_tasks = []
     Doing_tasks = []
@@ -254,6 +286,20 @@ def swap_task(origin_point , destination_point):
         json.dump(users_info , file , indent=4)
 #=================================================================================
 def final_move(movement_list , array_2D , text):
+    
+    """
+    Allows the user to move a task within a project in the Trellomize application.
+
+    Displays a grid of tasks organized into columns (BACKLOG, TODO, DOING, DONE, ARCHIVED).
+    The user can navigate the grid and choose a task to move to a different column.
+    Updates the task's status based on the user's selection.
+
+    Args:
+        movement_list (list): A list containing the initial row and column of the task.
+        array_2D (list): A 2D array representing the task grid.
+        text (str): Additional text (e.g., task title) associated with the movement.
+
+    """
     logging.info(f"Arrived in final_move({movement_list} , {array_2D} , {text}) in go_to_project_or_member.py")
     origin_point_row = movement_list[0][0]
     origin_point_column = movement_list[0][1]
@@ -302,6 +348,18 @@ def final_move(movement_list , array_2D , text):
             clear_terminal()
 #=================================================================================
 def Move_task(ID , username):
+    
+    """
+    Moves tasks within a project in the Trellomize application(coolest function in the code).
+
+    Retrieves task information from user data and organizes tasks into different columns (BACKLOG, TODO, DOING, DONE, ARCHIVED).
+    Allows the user to choose a task to move and updates its status.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """    
     logging.info(f"Arrived in Move_task({ID} , {username}) in go_to_project_for_member.py")
     # try :
     #     with open("save_username_password_email.json" , "r") as json_file :
@@ -429,6 +487,18 @@ def Move_task(ID , username):
 
 def edit_task(ID , username):
     
+    """
+    Allows the user to edit a task within a project in the Trellomize application.
+
+    Retrieves task information based on the specified project ID and username.
+    Displays a grid of tasks organized by status columns (BACKLOG, TODO, DOING, DONE, ARCHIVED).
+    The user can navigate the grid and choose a task to edit.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """
     try :
         with open("save_username_password_email.json" , "r") as json_file :
             users_info = json.load(json_file)

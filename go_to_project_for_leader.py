@@ -22,9 +22,21 @@ in_hand_task = Task(None , None , None , None)
 #======================================================================
 
 def center_align(data):
+    """
+    Centers the content within each cell of a 2D list (table).
+
+    Args:
+        data (list): A 2D list representing the table.
+
+    Returns:
+        list: A new 2D list with centered content in each cell.
+    """
     return [[str(cell).center(len(cell) + 2) for cell in row] for row in data]
 
-def clear_terminal():
+def clear_terminal():   
+    """
+    Clears the terminal screen and shows all tasks.
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
     show_task_allways(in_work_project.ID , In_account_user.username)
 
@@ -32,6 +44,17 @@ def clear_terminal():
 
 #FUNCTION FOR SYNCING INFORMATION==================================================
 def sync_information(ID , username):
+    
+    """
+    Synchronizes user information and project details within the Trellomize application.
+
+    Retrieves user data from the JSON file and updates the in-work project based on the specified project ID.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """
     logging.info(f"Arrived in sync_information({ID} , {username}) in go_to_project_for_leader.py")
     try:
         with open('save_username_password_email.json' , 'r') as file:
@@ -79,71 +102,92 @@ def sync_information(ID , username):
 
 #=================================================================================
 def show_big_table():
-        logging.info("show_big_table() called in go_to_project_for_leader.py")
-        try :
-            with open("save_username_password_email.json" , "r") as json_file :
-                users_info = json.load(json_file)
-                json_file.close()
-               
-        except FileNotFoundError:
-            users_info = []
     
-        # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]]) 
-    
-        table = Table(title="TASKS" , )
-        table.add_column("Index" , justify="center" , style="bold white")
-        table.add_column("Title" , justify="center" , style="cyan")
-        table.add_column("Description" , justify="center" , style="green")
-        table.add_column("Priority" , justify="center" , style="magenta")
-        table.add_column("Status" , justify="center" , style="yellow")
-        table.add_column("Comments" , justify="center" , style="blue")
-        table.add_column("ID" , justify="center" , style="red")
+    """
+    Displays a table of tasks organized by priority and status within a project.
 
-        
-        CRITICAL = []
-        HIGH = []
-        MEDIUM = []
-        LOW = []  
-        all = []  
+    Retrieves task information from the project and presents it in a tabular format.
 
-        owner_of_proj = in_work_project.finding_projects_leads()
-        for i in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
-            # print(i["Title"])
-            if i["Priority"] == "CRITICAL" :
-                CRITICAL.append(i)
-            if i["Priority"] == "HIGH" :
-                HIGH.append(i)
-            if i["Priority"] == "MEDIUM" :
-                MEDIUM.append(i)
-            if i["Priority"] == "LOW" :
-                LOW.append(i)            
-        if len(CRITICAL) != 0 :
-            all.append(CRITICAL)
-        if len(HIGH) != 0 :         
-            all.append(HIGH)        
-        if len(MEDIUM) !=0 :   
-            all.append(MEDIUM)        
-        if len(LOW) != 0 :        
-            all.append(LOW)  
+    Returns:
+        A list of tasks.
+    """
     
-        tasks = []
-        index = 0 
-        for j in all : 
-            for i in j :
-                tasks.append(i)
-                # table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
-        for i in tasks :     
-            index = index + 1 
-            table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
-        clear_terminal()     
-        table = Align.center(table , vertical='bottom')   
-        console = Console()
-        console.print(table)  
-        logging.warning(f"show big table returns {tasks}") 
-        return tasks
+    logging.info("show_big_table() called in go_to_project_for_leader.py")
+    try :
+        with open("save_username_password_email.json" , "r") as json_file :
+            users_info = json.load(json_file)
+            json_file.close()
+           
+    except FileNotFoundError:
+        users_info = []
+
+    # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]]) 
+
+    table = Table(title="TASKS" , )
+    table.add_column("Index" , justify="center" , style="bold white")
+    table.add_column("Title" , justify="center" , style="cyan")
+    table.add_column("Description" , justify="center" , style="green")
+    table.add_column("Priority" , justify="center" , style="magenta")
+    table.add_column("Status" , justify="center" , style="yellow")
+    table.add_column("Comments" , justify="center" , style="blue")
+    table.add_column("ID" , justify="center" , style="red")
+    
+    CRITICAL = []
+    HIGH = []
+    MEDIUM = []
+    LOW = []  
+    all = []  
+    owner_of_proj = in_work_project.finding_projects_leads()
+    for i in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+        # print(i["Title"])
+        if i["Priority"] == "CRITICAL" :
+            CRITICAL.append(i)
+        if i["Priority"] == "HIGH" :
+            HIGH.append(i)
+        if i["Priority"] == "MEDIUM" :
+            MEDIUM.append(i)
+        if i["Priority"] == "LOW" :
+            LOW.append(i)            
+    if len(CRITICAL) != 0 :
+        all.append(CRITICAL)
+    if len(HIGH) != 0 :         
+        all.append(HIGH)        
+    if len(MEDIUM) !=0 :   
+        all.append(MEDIUM)        
+    if len(LOW) != 0 :        
+        all.append(LOW)  
+
+    tasks = []
+    index = 0 
+    for j in all : 
+        for i in j :
+            tasks.append(i)
+            # table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+    for i in tasks :     
+        index = index + 1 
+        table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+    clear_terminal()     
+    table = Align.center(table , vertical='bottom')   
+    console = Console()
+    console.print(table)  
+    logging.warning(f"show big table returns {tasks}") 
+    return tasks
 
 #EVERYTHING STARTS HERE===========================================================
 def start(IDr , usernamer):
+    
+    """
+    Handles user interaction within a project in the Trellomize application.
+
+    Displays options for creating, moving, editing tasks, viewing members, and watching project details.
+    Allows the user to choose actions related to the project.
+
+    Args:
+        IDr (str): The project ID.
+        usernamer (str): The username of the user.
+
+    """
+    
     logging.info(f"Arrived in start({IDr} , {usernamer})")
 
     proj_path_leads = in_work_project.finding_projects_leads()
@@ -184,6 +228,19 @@ def start(IDr , usernamer):
 #=================================================================================
 #This part is for editing tasks===================================================
 def edit_task(ID , username):
+    
+    """
+    Allows the user to edit a task within a project in the Trellomize application.
+
+    Retrieves task information based on the specified project ID and username.
+    Displays a grid of tasks organized by status columns (BACKLOG, TODO, DOING, DONE, ARCHIVED).
+    The user can navigate the grid and choose a task to edit.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """
     logging.info(f"arrived in edit_task({ID} , {username})")
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -299,6 +356,18 @@ def edit_task(ID , username):
 #=================================================================================
 #edit task========================================================================
 def edit_it(array_2D , current_point_list):
+    
+    """
+    Initiates the process of editing a task within the project.
+
+    Args:
+        array_2D (list): A 2D array representing the project board.
+        current_point_list (list): The current position of the cursor on the board.
+
+    Note:
+        - This method identifies the task to be edited based on the cursor position.
+
+    """
     logging.info(f"Arrived in edit_it({array_2D , current_point_list}) in go to_project_for_leader")
     owner_of_proj = in_work_project.finding_projects_leads()
     Id_we_wanna_edit = ''
@@ -339,6 +408,18 @@ def edit_it(array_2D , current_point_list):
 
 #Function for showing project info allways========================================
 def show_task_allways(ID , username):
+    
+    """
+    Displays a table of tasks organized by status columns (BACKLOG, TODO, DOING, DONE, ARCHIVED) within a project.
+
+    Retrieves task information from the project and presents it in a tabular format.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """ 
+    
     logging.info(f"Arrived in show_task_allways({ID} , {username})  in go_to_project_for_leader.py")
     table = Table(title = 'Project')
     table.add_column("BACKLOG" , justify='center' , style="blue")
@@ -398,6 +479,18 @@ def show_task_allways(ID , username):
 
 #=================================================================================
 def swap_task(origin_point , destination_point):
+    
+    """
+    Moves a task from one status column to another within a project in the Trellomize application.
+
+    Retrieves task information from the project and updates the task's status based on the destination column.
+
+    Args:
+        origin_point (list): A list containing the initial row and column of the task.
+        destination_point (list): A list containing the target row and column for the task.
+
+    """
+    
     logging.info(f"Arrived in swap_task({origin_point} , {destination_point})")
     # try :
     #     with open("save_username_password_email.json" , "r") as json_file :
@@ -485,6 +578,21 @@ def swap_task(origin_point , destination_point):
 
 #Function for second part of movement=============================================
 def final_move(movement_list , array_2D , text):
+    
+    """
+    Allows the user to move a task within a project in the Trellomize application.
+
+    Displays a grid of tasks organized into columns (BACKLOG, TODO, DOING, DONE, ARCHIVED).
+    The user can navigate the grid and choose a task to move to a different column.
+    Updates the task's status based on the user's selection.
+
+    Args:
+        movement_list (list): A list containing the initial row and column of the task.
+        array_2D (list): A 2D array representing the task grid.
+        text (str): Additional text (e.g., task title) associated with the movement.
+
+    """
+    
     logging.info(f"final_move({movement_list} , {array_2D} , {text}) in go_to_project_for_leader.py")
     origin_point_row = movement_list[0][0]
     origin_point_column = movement_list[0][1]
@@ -534,6 +642,19 @@ def final_move(movement_list , array_2D , text):
 #=================================================================================
 #Function for Moving task=========================================================
 def Move_task(ID , username):
+    
+    """
+    Moves tasks within a project in the Trellomize application(coolest function in the code).
+
+    Retrieves task information from user data and organizes tasks into different columns (BACKLOG, TODO, DOING, DONE, ARCHIVED).
+    Allows the user to choose a task to move and updates its status.
+
+    Args:
+        ID (str): The project ID.
+        username (str): The username of the user.
+
+    """    
+
     logging.info(f"Arrived in Move_task({ID} , {username})")
     try :
         with open("save_username_password_email.json" , "r") as json_file :
