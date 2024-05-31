@@ -67,6 +67,20 @@ class Task:
             dicted_tasks = {'Title' : self.title , 'Description' : self.discription , 'Priority' : self.priority , 'Status' : self.status , "Assignees" : self.assignees ,'Comments' : self.comments , "ID" : self.ID , 'Start_time' : self.start_time ,'End_time' : self.end_time , 'History' : self.history}
         return dicted_tasks
     
+    def watch_comments(self):
+        console = Console()
+        for text in self.comments:
+
+            custom_text = Text( f'Time :{text['Time']}'+'\n' +f'Writer :{text['Writer']}'+ '\n' + text['Text'] , style="bold magenta")
+            panel = Panel(
+                custom_text,
+                title="Comment",
+                title_align="center",
+                border_style="bright_green",
+                expand=False 
+            )
+            centered_panel = Align.center(panel)
+            console.print(centered_panel)
 
     def visit_history(self):
         console = Console()
