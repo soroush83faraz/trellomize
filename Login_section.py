@@ -87,7 +87,7 @@ def Log_in():
                     file.close()
             except:
                 users_info = []
-
+            booleanIsActive = True
             for user in users_info:
                 if user['username'] == username:
                     booleanIsActive = user['IsActive']

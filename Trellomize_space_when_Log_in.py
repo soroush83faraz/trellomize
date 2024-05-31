@@ -79,7 +79,8 @@ def Work_inside_Trellomize(datalist):
         console.print(f'Dear [green][italic]{In_account_user.username}[/][/] Choose a number & [red](*)[/] to exit' , justify='center')
         
 
-        lines_list = ['1_Creat new project' ,"2_View all projects" ]
+        lines_list = ['1_Creat new project' ,"2_View all projects" , "3_Remove a project"]
+
 
         chosen_option = pro_print(lines_list)
 
@@ -93,8 +94,12 @@ def Work_inside_Trellomize(datalist):
 
         elif chosen_option == '2':
             cpp_cls()
-            logging.critical(f"shoe_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py")
+            logging.critical(f"show_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py")
             show_all_projects()
+
+        elif chosen_option == '3':
+            logging.critical(f"In_account_user.remove_project() called in Trellomize_space_when_Log_in.py")
+            In_account_user.remove_project()
 
 
 def show_all_projects():

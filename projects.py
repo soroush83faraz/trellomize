@@ -554,20 +554,28 @@ class Projects:
                 file.close()
         except:
             users_info = []
-
-        for user in users_info:
-            for project in user['projects_leads']:
-                for task in project['tasks']:
-                    if self.members_usernames[chosen_member-1] in task['Assignees']:
-                        task['Assignees'].remove(self.members_usernames[chosen_member-1])
+        name = self.members_usernames[chosen_member-1]
         
-            for project in user['projects_leads']:
-                for task in project['tasks']:
-                    if self.members_usernames[chosen_member-1] in task['Assignees']:
-                        task['Assignees'].remove(self.members_usernames[chosen_member-1])
 
         self.members_usernames.pop(chosen_member-1)
         self.update_members()
+
+        for user in users_info:
+            for project in user['projects_leads']:
+                if self.ID == project['ID']: 
+                    for task in project['tasks']:
+                        if name in task['Assignees']:
+                            task['Assignees'].remove(name)
+        
+            for project in user['projects_member']:
+                if self.ID == project['ID']:
+                    for task in project['tasks']:
+                        if name in task['Assignees']:
+                            task['Assignees'].remove(name)
+
+        with open('save_username_password_email.json' , 'w') as file:
+            json.dump(users_info , file , indent=4)
+            file.close()
 
         try:
             with open('save_username_password_email.json' , 'r') as file:
