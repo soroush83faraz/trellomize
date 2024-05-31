@@ -6731,3 +6731,87 @@
 2024-05-31 13:21:41,607 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
 2024-05-31 13:21:41,607 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
 2024-05-31 13:21:41,607 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
+2024-05-31 13:34:35,237 | INFO | Calling proprint function in main
+2024-05-31 13:34:59,207 | INFO | Returned from pro_print function
+2024-05-31 13:34:59,207 | CRITICAL | Log_in() called in main.py
+2024-05-31 13:35:04,438 | INFO | Returned from pro_print function
+2024-05-31 13:35:04,438 | WARNING | Log_in() returns []
+2024-05-31 13:35:04,438 | INFO | Calling proprint function in main
+2024-05-31 13:35:05,286 | INFO | Returned from pro_print function
+2024-05-31 13:35:05,286 | CRITICAL | make_an_account() called in main.py
+2024-05-31 13:35:06,228 | INFO | Returned from pro_print function
+2024-05-31 13:35:08,163 | WARNING | alpha_or_num_function retruns
+2024-05-31 13:35:08,163 | WARNING | validating_username returnssiina
+2024-05-31 13:35:10,790 | INFO | Returned from pro_print function
+2024-05-31 13:35:17,901 | WARNING | find_strange function returns
+2024-05-31 13:35:17,901 | WARNING | IsPasswordValidFunction returns siina@@2
+2024-05-31 13:35:19,354 | INFO | Returned from pro_print function
+2024-05-31 13:35:23,233 | WARNING | my_validate_email_function returns
+2024-05-31 13:35:26,138 | INFO | Returned from pro_print function
+2024-05-31 13:35:26,334 | INFO | An account was made by siina in save_account function and was saved in save_username_password_email.json
+2024-05-31 13:35:26,334 | WARNING | make_an_account() saved newAccount
+2024-05-31 13:35:26,334 | INFO | Calling proprint function in main
+2024-05-31 13:35:27,623 | INFO | Returned from pro_print function
+2024-05-31 13:35:27,637 | CRITICAL | Log_in() called in main.py
+2024-05-31 13:35:28,923 | INFO | Returned from pro_print function
+2024-05-31 13:35:32,997 | INFO | Returned from pro_print function
+2024-05-31 13:35:36,905 | INFO | Returned from pro_print function
+2024-05-31 13:35:39,865 | INFO | Returned from pro_print function
+2024-05-31 13:35:40,068 | INFO | saeed was logged in his account
+2024-05-31 13:35:40,068 | WARNING | check_combinations() returns{'username': 'saeed', 'password': 'JDJiJDEyJHgxRUJDWk1lcnF1d3JTbTRMektnai5lNVRUTXNKbk1FZlhoLlduWEgwaTNHbDhnNG1OSDVP', 'email': 'saeed@gmail.com', 'projects_leads': [{'ID': '12', 'name': 'Tupac', 'leader': 'saeed', 'members': ['soroush'], 'tasks': [{'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}]}]}], 'projects_member': [], 'IsActive': True}
+2024-05-31 13:35:40,257 | INFO | saeed was logged in his account
+2024-05-31 13:35:40,257 | WARNING | check_combinations() returns{'username': 'saeed', 'password': 'JDJiJDEyJHgxRUJDWk1lcnF1d3JTbTRMektnai5lNVRUTXNKbk1FZlhoLlduWEgwaTNHbDhnNG1OSDVP', 'email': 'saeed@gmail.com', 'projects_leads': [{'ID': '12', 'name': 'Tupac', 'leader': 'saeed', 'members': ['soroush'], 'tasks': [{'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}]}]}], 'projects_member': [], 'IsActive': True}
+2024-05-31 13:35:40,257 | WARNING | Log_in() returns {'username': 'saeed', 'password': 'JDJiJDEyJHgxRUJDWk1lcnF1d3JTbTRMektnai5lNVRUTXNKbk1FZlhoLlduWEgwaTNHbDhnNG1OSDVP', 'email': 'saeed@gmail.com', 'projects_leads': [{'ID': '12', 'name': 'Tupac', 'leader': 'saeed', 'members': ['soroush'], 'tasks': [{'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}]}]}], 'projects_member': [], 'IsActive': True}
+2024-05-31 13:35:40,257 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-31 13:35:40,257 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-31 13:35:43,487 | INFO | Returned from pro_print function
+2024-05-31 13:35:43,503 | CRITICAL | show_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-31 13:35:43,503 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-31 13:35:44,405 | INFO | Returned from pro_print function
+2024-05-31 13:35:44,405 | CRITICAL | start(12 , saeed) called in Trellomize_space_when_Log_in.py
+2024-05-31 13:35:44,405 | INFO | Arrived in start(12 , saeed)
+2024-05-31 13:35:44,405 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:44,405 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:44,405 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:35:44,405 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:35:44,425 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
+2024-05-31 13:35:51,375 | CRITICAL | inwork_project.update_project is calling in start(12 , saeed)
+2024-05-31 13:35:51,375 | CRITICAL | edit_task(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:35:51,376 | INFO | arrived in edit_task(12 , saeed)
+2024-05-31 13:35:51,376 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(12 , saeed)
+2024-05-31 13:35:51,376 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:51,376 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:35:52,278 | INFO | Arrived in edit_it(([['All eyes on me\u270f\ufe0f', '', '', '', '']], [0, 0])) in go to_project_for_leader
+2024-05-31 13:35:52,279 | CRITICAL | make_it_task({'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}]}) called in edit_it([['All eyes on me\u270f\ufe0f', '', '', '', '']] , [0, 0])
+2024-05-31 13:35:52,279 | CRITICAL | Start_Editing(<tasks.Task object at 0x0000023814BF7DA0> , <user.User object at 0x0000023814AAA1B0> , <projects.Projects object at 0x0000023814AAA1E0>) called in edit_it([['All eyes on me\u270f\ufe0f', '', '', '', '']] , [0, 0] in go_to_project_for_leader.py)
+2024-05-31 13:35:53,959 | INFO | Returned from pro_print function
+2024-05-31 13:35:57,012 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:57,012 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:57,013 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:35:57,013 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:35:57,013 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
+2024-05-31 13:35:59,572 | CRITICAL | inwork_project.update_project is calling in start(12 , saeed)
+2024-05-31 13:35:59,572 | CRITICAL | show_big_table is calling in start(12 , saeed)
+2024-05-31 13:35:59,572 | INFO | show_big_table() called in go_to_project_for_leader.py
+2024-05-31 13:35:59,593 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:35:59,603 | WARNING | show big table returns [{'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [{'Writer': 'saeed', 'Text': 'HHHEEELOOOOO', 'Time': '31/05/2024  13:35:57'}], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}, {'Doer': 'saeed', 'Date': '31/05/2024  13:35:57', 'Content': 'saeed wrote a comment for All eyes on me'}]}]
+2024-05-31 13:35:59,603 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:59,603 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:35:59,603 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:35:59,603 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:35:59,606 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
+2024-05-31 13:36:01,963 | CRITICAL | inwork_project.update_project is calling in start(12 , saeed)
+2024-05-31 13:36:01,963 | CRITICAL | edit_task(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:36:01,964 | INFO | arrived in edit_task(12 , saeed)
+2024-05-31 13:36:01,964 | CRITICAL | in_work_project.finding_projects_leads() is calling in edit_task(12 , saeed)
+2024-05-31 13:36:01,964 | CRITICAL | show_task_allways(ID , username) is calling in edit_task(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:36:01,965 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:36:02,822 | INFO | Arrived in edit_it(([['All eyes on me\u270f\ufe0f', '', '', '', '']], [0, 0])) in go to_project_for_leader
+2024-05-31 13:36:02,822 | CRITICAL | make_it_task({'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [{'Writer': 'saeed', 'Text': 'HHHEEELOOOOO', 'Time': '31/05/2024  13:35:57'}], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}, {'Doer': 'saeed', 'Date': '31/05/2024  13:35:57', 'Content': 'saeed wrote a comment for All eyes on me'}]}) called in edit_it([['All eyes on me\u270f\ufe0f', '', '', '', '']] , [0, 0])
+2024-05-31 13:36:02,822 | CRITICAL | Start_Editing(<tasks.Task object at 0x0000023814C1CC20> , <user.User object at 0x0000023814AAA1B0> , <projects.Projects object at 0x0000023814AAA1E0>) called in edit_it([['All eyes on me\u270f\ufe0f', '', '', '', '']] , [0, 0] in go_to_project_for_leader.py)
+2024-05-31 13:36:04,660 | INFO | Returned from pro_print function
+2024-05-31 13:36:04,662 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:36:04,662 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:36:04,663 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:36:04,663 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:36:04,667 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
