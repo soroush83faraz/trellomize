@@ -15,6 +15,70 @@ import logging
 logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 
+def show_big_table():
+        logging.info("show_big_table() called in go_to_project_for_leader.py")
+        try :
+            with open("save_username_password_email.json" , "r") as json_file :
+                users_info = json.load(json_file)
+                json_file.close()
+               
+        except FileNotFoundError:
+            users_info = []
+    
+        # print(users_info[proj_path_leads[0]][proj_path_leads[1]][0][proj_path_leads[2]]) 
+    
+        table = Table(title="TASKS" , )
+        table.add_column("Index" , justify="center" , style="bold white")
+        table.add_column("Title" , justify="center" , style="cyan")
+        table.add_column("Description" , justify="center" , style="green")
+        table.add_column("Priority" , justify="center" , style="magenta")
+        table.add_column("Status" , justify="center" , style="yellow")
+        table.add_column("Comments" , justify="center" , style="blue")
+        table.add_column("ID" , justify="center" , style="red")
+
+        
+        CRITICAL = []
+        HIGH = []
+        MEDIUM = []
+        LOW = []  
+        all = []  
+
+        owner_of_proj = in_work_project.finding_projects_leads()
+        for i in users_info[owner_of_proj[0]][owner_of_proj[1]][owner_of_proj[2]][owner_of_proj[3]]:
+            # print(i["Title"])
+            if i["Priority"] == "CRITICAL" :
+                CRITICAL.append(i)
+            if i["Priority"] == "HIGH" :
+                HIGH.append(i)
+            if i["Priority"] == "MEDIUM" :
+                MEDIUM.append(i)
+            if i["Priority"] == "LOW" :
+                LOW.append(i)            
+        if len(CRITICAL) != 0 :
+            all.append(CRITICAL)
+        if len(HIGH) != 0 :         
+            all.append(HIGH)        
+        if len(MEDIUM) !=0 :   
+            all.append(MEDIUM)        
+        if len(LOW) != 0 :        
+            all.append(LOW)  
+    
+        tasks = []
+        index = 0 
+        for j in all : 
+            for i in j :
+                tasks.append(i)
+                # table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+        for i in tasks :     
+            index = index + 1 
+            table.add_row( str(index) , i["Title"] , i["Description"] , i["Priority"] , i["Status"] , "Comments" , i["ID"]) 
+        clear_terminal()     
+        table = Align.center(table , vertical='bottom')   
+        console = Console()
+        console.print(table)  
+        logging.warning(f"show big table returns {tasks}") 
+        return tasks
+
 #INFORMATION===========================================================
 In_account_user = User(None , None , None , None , None)
 in_work_project = Projects(None , None)
@@ -41,7 +105,7 @@ def start_for_member(IDr , username):
         logging.critical(f"sync_information({IDr} , {username}) called in go_to_project_for_member.py")
         sync_information(IDr , username)
         show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = [ "1_Move task" , '2_Edit task' , "3_exit "]
+        lines_list = [ "1_Move task" , '2_Enter task' , '3_Watch everything' , "4_exit "]
         Choice = pro_print_nocls(lines_list)
 
         if Choice == '1':
@@ -54,10 +118,12 @@ def start_for_member(IDr , username):
             in_work_project.update_project()
             logging.critical(f"edit_task({in_work_project.ID} , {In_account_user.username}) is called in start_for_member({IDr} , {username} in go_to_project_for_member.py)")
             edit_task(in_work_project.ID , In_account_user.username)
-        # elif Choice == '3':
-        #     logging.critical(f"in_work_project.show_all_members({In_account_user}) is called in start_for_member({IDr} , {username} in go_t_project_for_leader.py)")
-        #     in_work_project.show_all_members(In_account_user)
         elif Choice == '3':
+            logging.critical(f"inwork_project.update_project is calling in start({IDr} , {username})")
+            in_work_project.update_project()
+            logging.critical(f"show_big_table is calling in start({IDr} , {username})")
+            show_big_table()
+        elif Choice == '4':
             break
 
 
