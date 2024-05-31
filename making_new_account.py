@@ -124,15 +124,15 @@ def validating_username():
             console.print("[violet][bold]Your username must include just[/][/] [red][italic]number[/][/] and [red][italic]alphabetical[/][/] letter" , justify='center')
             problem = True
         try: 
-            with open('save_username_password_email.json' , mode='r') as reading_file:
-                username_dict = json.load(reading_file)
-                existing_username = []
-                for i in username_dict:
-                    existing_username.append(i)
-            reading_file.close()
-
+            with open('save_username_password_email.json' , 'r') as file:
+                users_info = json.load(file)
+                file.close()
         except:
-            existing_username = []
+            users_info = []
+
+        existing_username = []
+        for user in users_info:
+            existing_username.append(user['username'])
 
         if username in existing_username:
             console.print('This username is used' , style='green underline' , justify='center')

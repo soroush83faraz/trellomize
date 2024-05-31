@@ -196,7 +196,7 @@ def start(IDr , usernamer):
         sync_information(IDr , usernamer)
         logging.critical(f"show_task_allways({in_work_project.ID} , {In_account_user.username}) is calling in start({IDr} , {usernamer})")
         show_task_allways(in_work_project.ID , In_account_user.username)
-        lines_list = ["1_Create a new task" , "2_Move task" , '3_Edit task' , "4_See all members", '5 Watch everything' , "6_exit "]
+        lines_list = ["1_Create a new task" , "2_Move task" , '3_Enter task' , "4_See all members", '5 Watch everything' , "6_exit "]
         logging.critical(f"pro_print_nocls({lines_list}) is calling in start({IDr} , {usernamer})")
         Choice = pro_print_nocls(lines_list)
 
