@@ -6646,3 +6646,88 @@
 2024-05-31 13:12:37,510 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
 2024-05-31 13:12:37,510 | WARNING | make_an_account() saved newAccount
 2024-05-31 13:12:37,510 | INFO | Calling proprint function in main
+2024-05-31 13:19:50,471 | INFO | Calling proprint function in main
+2024-05-31 13:19:52,192 | INFO | Returned from pro_print function
+2024-05-31 13:19:52,192 | CRITICAL | make_an_account() called in main.py
+2024-05-31 13:19:53,203 | INFO | Returned from pro_print function
+2024-05-31 13:19:55,285 | WARNING | alpha_or_num_function retruns
+2024-05-31 13:19:55,632 | WARNING | alpha_or_num_function retruns
+2024-05-31 13:20:04,769 | INFO | Calling proprint function in main
+2024-05-31 13:20:08,304 | INFO | Returned from pro_print function
+2024-05-31 13:20:08,304 | CRITICAL | make_an_account() called in main.py
+2024-05-31 13:20:11,670 | INFO | Returned from pro_print function
+2024-05-31 13:20:13,785 | WARNING | alpha_or_num_function retruns
+2024-05-31 13:20:13,785 | WARNING | validating_username returnssoroush
+2024-05-31 13:20:14,883 | INFO | Returned from pro_print function
+2024-05-31 13:20:18,895 | WARNING | alpha_or_num_function retruns
+2024-05-31 13:20:18,895 | WARNING | validating_username returnssoroush
+2024-05-31 13:20:20,385 | INFO | Returned from pro_print function
+2024-05-31 13:20:22,974 | WARNING | find_strange function returns
+2024-05-31 13:20:22,974 | WARNING | IsPasswordValidFunction returns soroush@@
+2024-05-31 13:20:26,367 | INFO | Returned from pro_print function
+2024-05-31 13:20:29,418 | WARNING | find_strange function returns
+2024-05-31 13:20:29,418 | WARNING | IsPasswordValidFunction returns soroush@@2
+2024-05-31 13:20:30,653 | INFO | Returned from pro_print function
+2024-05-31 13:20:41,265 | WARNING | my_validate_email_function returns
+2024-05-31 13:20:42,860 | INFO | Returned from pro_print function
+2024-05-31 13:20:43,047 | INFO | An account was made by soroush in save_account function and was saved in save_username_password_email.json
+2024-05-31 13:20:43,047 | WARNING | make_an_account() saved newAccount
+2024-05-31 13:20:43,047 | INFO | Calling proprint function in main
+2024-05-31 13:20:45,280 | INFO | Returned from pro_print function
+2024-05-31 13:20:45,281 | CRITICAL | Log_in() called in main.py
+2024-05-31 13:20:46,405 | INFO | Returned from pro_print function
+2024-05-31 13:20:48,302 | INFO | Returned from pro_print function
+2024-05-31 13:20:52,436 | INFO | Returned from pro_print function
+2024-05-31 13:20:52,648 | INFO | saeed was logged in his account
+2024-05-31 13:20:52,648 | WARNING | check_combinations() returns{'username': 'saeed', 'password': 'JDJiJDEyJHgxRUJDWk1lcnF1d3JTbTRMektnai5lNVRUTXNKbk1FZlhoLlduWEgwaTNHbDhnNG1OSDVP', 'email': 'saeed@gmail.com', 'projects_leads': [], 'projects_member': [], 'IsActive': True}
+2024-05-31 13:20:52,853 | INFO | saeed was logged in his account
+2024-05-31 13:20:52,853 | WARNING | check_combinations() returns{'username': 'saeed', 'password': 'JDJiJDEyJHgxRUJDWk1lcnF1d3JTbTRMektnai5lNVRUTXNKbk1FZlhoLlduWEgwaTNHbDhnNG1OSDVP', 'email': 'saeed@gmail.com', 'projects_leads': [], 'projects_member': [], 'IsActive': True}
+2024-05-31 13:20:52,853 | WARNING | Log_in() returns {'username': 'saeed', 'password': 'JDJiJDEyJHgxRUJDWk1lcnF1d3JTbTRMektnai5lNVRUTXNKbk1FZlhoLlduWEgwaTNHbDhnNG1OSDVP', 'email': 'saeed@gmail.com', 'projects_leads': [], 'projects_member': [], 'IsActive': True}
+2024-05-31 13:20:52,853 | CRITICAL | Work_inside_trellomize() called in main.py
+2024-05-31 13:20:52,853 | INFO | Arrived in Work_inside_Trellomize()
+2024-05-31 13:21:00,841 | INFO | Returned from pro_print function
+2024-05-31 13:21:00,862 | CRITICAL | show_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-31 13:21:00,862 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-31 13:21:01,885 | INFO | Returned from pro_print function
+2024-05-31 13:21:01,916 | CRITICAL | Creat_new_project() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-31 13:21:01,916 | INFO | Arrived in Creat_new_project() in Trellomize_space_when_log_in.py
+2024-05-31 13:21:02,943 | INFO | Returned from pro_print function
+2024-05-31 13:21:09,185 | INFO | Returned from pro_print function
+2024-05-31 13:21:09,185 | CRITICAL | Add_member() called in Trellomize_space_when_log_in.py
+2024-05-31 13:21:09,185 | INFO | Arrived in Add_member(<user.User object at 0x000001C32BC32C60>) in project.py
+2024-05-31 13:21:13,118 | INFO | Returned from pro_print function
+2024-05-31 13:21:13,118 | CRITICAL | get_ID() called in Trellomize_space_when_log_in.py
+2024-05-31 13:21:13,118 | INFO | Arrived in get_ID(<user.User object at 0x000001C32BC32C60>) in project.py
+2024-05-31 13:21:16,687 | INFO | Returned from pro_print function
+2024-05-31 13:21:16,687 | CRITICAL | save_my_project() called in Trellomize_space_when_log_in.py
+2024-05-31 13:21:16,687 | INFO | Arrived inn save_my_project(<user.User object at 0x000001C32BC32C60> in project.py)
+2024-05-31 13:21:18,309 | INFO | Returned from pro_print function
+2024-05-31 13:21:19,121 | INFO | Returned from pro_print function
+2024-05-31 13:21:19,145 | CRITICAL | show_all_projects() called in Work_Inside_Trellomize() in Trellomize_space_when_Log_in.py
+2024-05-31 13:21:19,145 | INFO | Arrived in show_all_projects() in Trellomize_space_when_log_in.py
+2024-05-31 13:21:19,519 | INFO | Returned from pro_print function
+2024-05-31 13:21:19,519 | CRITICAL | start(12 , saeed) called in Trellomize_space_when_Log_in.py
+2024-05-31 13:21:19,519 | INFO | Arrived in start(12 , saeed)
+2024-05-31 13:21:19,519 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:21:19,519 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:21:19,519 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:21:19,519 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:21:19,537 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
+2024-05-31 13:21:22,736 | INFO | Returned from pro_print function
+2024-05-31 13:21:31,137 | INFO | Returned from pro_print function
+2024-05-31 13:21:36,290 | INFO | Returned from pro_print function
+2024-05-31 13:21:36,294 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:21:36,294 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:21:36,295 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:21:36,295 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:21:36,299 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
+2024-05-31 13:21:41,586 | CRITICAL | inwork_project.update_project is calling in start(12 , saeed)
+2024-05-31 13:21:41,586 | CRITICAL | show_big_table is calling in start(12 , saeed)
+2024-05-31 13:21:41,586 | INFO | show_big_table() called in go_to_project_for_leader.py
+2024-05-31 13:21:41,607 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:21:41,607 | WARNING | show big table returns [{'Title': 'All eyes on me', 'Description': 'Put your discription here', 'Priority': 'LOW', 'Status': 'BACKLOG', 'Assignees': ['soroush'], 'Comments': [], 'ID': '77e2307d-a3d7-40e7-a74c-b892a7ca2cc8', 'Start_time': '31/05/2024  13:21:20', 'End_time': '01/06/2024  13:21:20', 'History': [{'Doer': 'saeed', 'Date': '31/05/2024  13:21:36', 'Content': 'saeed Made project: Tupac'}]}]
+2024-05-31 13:21:41,607 | CRITICAL | sync_information(12 , saeed) is calling in start(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:21:41,607 | INFO | Arrived in sync_information(12 , saeed) in go_to_project_for_leader.py
+2024-05-31 13:21:41,607 | CRITICAL | show_task_allways(12 , saeed) is calling in start(12 , saeed)
+2024-05-31 13:21:41,607 | INFO | Arrived in show_task_allways(12 , saeed)  in go_to_project_for_leader.py
+2024-05-31 13:21:41,607 | CRITICAL | pro_print_nocls(['1_Create a new task', '2_Move task', '3_Enter task', '4_See all members', '5 Watch everything', '6_exit ']) is calling in start(12 , saeed)
