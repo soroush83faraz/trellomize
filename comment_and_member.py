@@ -229,7 +229,7 @@ def Start_Editing(gtask , InAccUser , gproj):
 
     """
     
-    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee' , '4_Change priority of tasks' , '5_View history of the task']
+    lines_list = ['1_Add_comment_to_this_task' , '2_Assign a member to this task' , '3_Remove assignee' , '4_Change priority of tasks' , '5_Watch history of the task' , '6_Watch all comments']
     Chosen = pro_print(lines_list)
 
     if Chosen == '1':
@@ -242,6 +242,10 @@ def Start_Editing(gtask , InAccUser , gproj):
         change_priority(gtask , InAccUser , gproj)
     elif Chosen == '5':
         gtask.visit_history()
+    elif Chosen == '6' : 
+        gtask.watch_comments()
+    
+        
 
 def Start_editing_for_member(gtask , InAccUser , gproj):
     
@@ -255,7 +259,7 @@ def Start_editing_for_member(gtask , InAccUser , gproj):
 
     """
     
-    lines_list = ['1_Add_comment_to_this_task' , '2_Change priority of tasks' , '3_View history of the task']
+    lines_list = ['1_Add_comment_to_this_task' , '2_Change priority of tasks' , '3_View history of the task' , '4_Watch Comments']
     Chosen = pro_print(lines_list)
 
     if Chosen == '1':
@@ -264,3 +268,6 @@ def Start_editing_for_member(gtask , InAccUser , gproj):
         change_priority(gtask , InAccUser , gproj)
     elif Chosen == '3':
         gtask.visit_history()
+    elif Chosen == '4':
+        gtask.watch_comments()
+    
