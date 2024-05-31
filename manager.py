@@ -30,22 +30,29 @@ def main () :
                 input_from_json = json.load(json_file)     
         except :
             input_from_json = []
+        try :
+            with open('save_username_password_email.json' , 'r') as json_file :
+                inputjson = json.load(json_file)     
+        except :
+            inputjson = None
         
         if input_from_json["password"] == args.password[0] and input_from_json["username"] == args.username[0]:
-   
-            while True :
-                show_is_active()
-                username = input("username : ")
-                try :
-                    with open('save_username_password_email.json' , 'r') as json_file :
-                        input_from_json = json.load(json_file)     
-                except :
-                    input_from_json = []
+            if inputjson != None:   
+                while True :
+                    show_is_active()
+                    username = input("username : ")
+                    try :
+                        with open('save_username_password_email.json' , 'r') as json_file :
+                            input_from_json = json.load(json_file)     
+                    except :
+                        input_from_json = []
 
-                for user in input_from_json :
-                    if username == user["username"] :
-                        changing_is_active(username)
-                        return
+                    for user in input_from_json :
+                        if username == user["username"] :
+                            changing_is_active(username)
+                            return
+            else :
+                con.print("there are no user to edit" ,  style="bold")
         else :
             clear()
             con.print("you dont have the [bold yellow]acces[/bold yellow] to change field")              
@@ -114,7 +121,7 @@ def purge_data () :
         json.dump(None, json_file)
         con.print("no more data" , style="blue")
     with open('save_username_password_email.json' , 'w') as json_file:
-        json.dump(None, json_file)
+        json.dump( None, json_file)
               
 def show_is_active () :
     
@@ -132,10 +139,10 @@ def show_is_active () :
             json_file.close()
                 
     except :
-        user_info = []
-        
-    for user in user_info :
-        print(user["username"] , "IsActive =" , user["IsActive"] )    
+        user_info = None
+    if user_info != None :  
+        for user in user_info :
+            print(user["username"] , "IsActive =" , user["IsActive"] )    
         
 def changing_is_active (username) :
     
@@ -157,9 +164,9 @@ def changing_is_active (username) :
             json_file.close()
                 
     except :
-        user_info = []
+        user_info = None
         
-    if len(user_info) != 0 :
+    if user_info != None :
         for user in user_info :
             if user["username"] == username :
                 if user["IsActive"] == True :
