@@ -23,7 +23,7 @@ def main () :
     clear()
 
     # print(f"username : {args.username} and {args.function_name}")
-    if args.function_name[0] == "changefield" :
+    if args.function_name[0] == "change-field" :
     
         try :
             with open('admin.json' , 'r') as json_file :
@@ -31,7 +31,7 @@ def main () :
         except :
             input_from_json = []
         
-        if input_from_json["password"] == "admin" :
+        if input_from_json["password"] == args.password[0] and input_from_json["username"] == args.username[0]:
    
             while True :
                 show_is_active()
@@ -159,16 +159,17 @@ def changing_is_active (username) :
     except :
         user_info = []
         
-    for user in user_info :
-        if user["username"] == username :
-            if user["IsActive"] == True :
-                user["IsActive"] = False
-                print(f"{username} Is Deactive")
-            else :
-                user["IsActive"] = True
-                print(f"{username} Is Active")
-            with open('save_username_password_email.json' , 'w') as json_file:
-                json.dump(user_info, json_file , indent = 4)               
+    if len(user_info) != 0 :
+        for user in user_info :
+            if user["username"] == username :
+                if user["IsActive"] == True :
+                    user["IsActive"] = False
+                    print(f"{username} Is Deactive")
+                else :
+                    user["IsActive"] = True
+                    print(f"{username} Is Active")
+                with open('save_username_password_email.json' , 'w') as json_file:
+                    json.dump(user_info, json_file , indent = 4)               
         
     
     
