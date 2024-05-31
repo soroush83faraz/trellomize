@@ -24,20 +24,31 @@ def main () :
 
     # print(f"username : {args.username} and {args.function_name}")
     if args.function_name[0] == "changefield" :
-        while True :
-            show_is_active()
-            username = input("username : ")
-            try :
-                with open('save_username_password_email.json' , 'r') as json_file :
-                    input_from_json = json.load(json_file)     
-            except :
-                input_from_json = []
-                
-            for user in input_from_json :
-                if username == user["username"] :
-                    changing_is_active(username)
-                    return
-                 
+    
+        try :
+            with open('admin.json' , 'r') as json_file :
+                input_from_json = json.load(json_file)     
+        except :
+            input_from_json = []
+        
+        if input_from_json["password"] == "admin" :
+   
+            while True :
+                show_is_active()
+                username = input("username : ")
+                try :
+                    with open('save_username_password_email.json' , 'r') as json_file :
+                        input_from_json = json.load(json_file)     
+                except :
+                    input_from_json = []
+
+                for user in input_from_json :
+                    if username == user["username"] :
+                        changing_is_active(username)
+                        return
+        else :
+            clear()
+            con.print("you dont have the [bold yellow]acces[/bold yellow] to change field")              
         
 
     if args.function_name[0] == "create-admin" :
