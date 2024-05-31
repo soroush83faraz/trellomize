@@ -6631,3 +6631,18 @@
 2024-05-31 12:43:02,224 | CRITICAL | sync_information(14 , soroush) called in go_to_project_for_member.py
 2024-05-31 12:43:02,224 | INFO | sync_information(14 , soroush) in go_to_project_for_member.py
 2024-05-31 12:43:02,224 | INFO | show_task_allways(14 , soroush) in go_to_project_for_member.py
+2024-05-31 13:12:17,398 | INFO | Calling proprint function in main
+2024-05-31 13:12:24,480 | INFO | Returned from pro_print function
+2024-05-31 13:12:24,480 | CRITICAL | make_an_account() called in main.py
+2024-05-31 13:12:25,862 | INFO | Returned from pro_print function
+2024-05-31 13:12:27,074 | WARNING | alpha_or_num_function retruns
+2024-05-31 13:12:27,076 | WARNING | validating_username returnssaeed
+2024-05-31 13:12:27,504 | INFO | Returned from pro_print function
+2024-05-31 13:12:29,639 | WARNING | find_strange function returns
+2024-05-31 13:12:29,640 | WARNING | IsPasswordValidFunction returns saeed@@2
+2024-05-31 13:12:30,449 | INFO | Returned from pro_print function
+2024-05-31 13:12:34,308 | WARNING | my_validate_email_function returns
+2024-05-31 13:12:37,314 | INFO | Returned from pro_print function
+2024-05-31 13:12:37,510 | INFO | An account was made by saeed in save_account function and was saved in save_username_password_email.json
+2024-05-31 13:12:37,510 | WARNING | make_an_account() saved newAccount
+2024-05-31 13:12:37,510 | INFO | Calling proprint function in main
