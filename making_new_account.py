@@ -11,6 +11,14 @@ user = User(None , None , None , None , None)
 logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 #1 : emailaddress in not valid \ 2 : emailaddress is used \ 7 : emailaddress is correct
 def my_validate_email():
+    
+    """
+    Validates the user-entered email address.
+
+    Returns:
+        The valid email address if it meets the specified criteria, otherwise None.
+    """
+    
     print('Enter a standard form of emailaddress and if you wanna exit enter *')
     while True:
         problem = False
@@ -42,6 +50,18 @@ def my_validate_email():
 #==============================================================================
 #Function for checking if username just include alphabet and numbers===========
 def alpha_or_num(username):
+    
+    """
+    Validates whether a username contains only alphanumeric characters.
+
+    Args:
+        username (str): The username to check.
+
+    Returns:
+        True if the username contains only letters and numbers, False otherwise.
+
+    """
+    
     alphanum = 0
     numnum = 0
     for letter in username:
@@ -56,6 +76,17 @@ def alpha_or_num(username):
 #==============================================================================
 #Functiom for finding forbidden chatacter for password=========================
 def find_strange(password):
+    
+    """
+    Finds any non-alphanumeric characters in the given password.
+
+    Args:
+        password (str): The password to check.
+
+    Returns:
+        The first non-alphanumeric character found, or None if none exist.
+    """
+    
     checklist = ['@', '#' , '$' , '&']
     for letter in password:
         if not letter.isalpha() and not letter.isdigit() and letter not in checklist:
@@ -68,6 +99,14 @@ def find_strange(password):
 #==============================================================================
 #Section for validating username===============================================
 def validating_username():
+    
+    """
+    Validates the user-entered username.
+
+    Returns:
+        str: The valid username if it meets the specified criteria, otherwise None.
+    """
+    
     while True:
         problem = False
         console.print("[italic][green]Username must include at least 5 letter or number \t if you wanna Exit enter[/][/] [red]*[/]" , justify='center')
@@ -106,6 +145,15 @@ def validating_username():
         
 #==============================================================================
 def IsPasswordValid():
+    
+    """
+    Validates the user-entered password.
+
+    Returns:
+        The valid password if it meets the specified criteria, otherwise None.
+
+    """
+    
     checklist = ['@' , '#' , '$' , '&']
     
     console.print('[green]Your password should include at least[/] [red]8[/] [green]letter and must be combination of letter number and a character like[/] [red]@,#,$,&[/] \t [green]if you wanna exit enter[/] [red]*[/]   😊' , justify='center')
@@ -163,6 +211,16 @@ def IsPasswordValid():
 
 
 def make_an_account():
+    
+    """
+    Guides the user through creating an account in Trellomize.
+
+    Prompts the user to choose a username, password, and email address.
+    Validates input and saves the account if all required fields are provided.
+
+
+    """
+    
     console.print('For making an account in trellomize you should pick username , password and emailaddress  😊' , style='bold blue' , justify='center')
 
     user.username = None

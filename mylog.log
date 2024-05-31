@@ -6210,3 +6210,10 @@
 2024-05-29 14:35:53,252 | INFO | Calling proprint function in main
 2024-05-29 14:38:31,606 | INFO | Calling proprint function in main
 2024-05-29 14:49:09,509 | INFO | Calling proprint function in main
+2024-05-31 08:49:11,188 | INFO | Arrived in Add_member(<user.User object at 0x0000025474BDDBE0>) in project.py
+2024-05-31 08:49:11,193 | INFO | Arrived in Add_member(<user.User object at 0x0000025474BDDC70>) in project.py
+2024-05-31 08:49:11,196 | INFO | Arrived in Add_member(<user.User object at 0x0000025474BDDBE0>) in project.py
+2024-05-31 08:49:11,203 | INFO | Arrived in get_ID(<user.User object at 0x0000025474BDDC70>) in project.py
+2024-05-31 08:49:11,205 | INFO | Arrived in get_ID(<user.User object at 0x0000025474BFB3B0>) in project.py
+2024-05-31 08:49:11,209 | INFO | Arrived inn save_my_project(<user.User object at 0x0000025474BDD850> in project.py)
+2024-05-31 08:49:11,210 | INFO | Arrived inn save_my_project(<user.User object at 0x0000025474BDD8E0> in project.py)

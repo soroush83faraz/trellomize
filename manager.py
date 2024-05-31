@@ -8,6 +8,13 @@ con = Console()
 parser = argparse.ArgumentParser()
 
 def main () :
+    """
+    Entry point for your program.
+
+    Parses command-line arguments and executes the specified function.
+
+    """
+    
     parser.add_argument("function_name" , nargs=1 , type=str , help="calls the function name if there is one" )
     parser.add_argument("--password" , nargs=1 , type=str , help="gets password" )
     parser.add_argument("--username" , nargs=1 , type=str , help="gets username" )
@@ -57,6 +64,15 @@ def main () :
                 
 
 def create_admin(username , password) :
+    
+    """
+    Creates an admin account with the specified username and password.
+
+    Args:
+        username (str): The desired username for the admin account.
+        password (str): The desired password for the admin account.
+    """
+    
     data = {"username" : username , "password": password}
    
     try :
@@ -78,6 +94,11 @@ def create_admin(username , password) :
             
         
 def purge_data () :
+    
+    """
+    Purges data by writing `None` to two JSON files: 'admin.json' and 'save_username_password_email.json'.
+    """
+    
     with open('admin.json' , 'w') as json_file:
         json.dump(None, json_file)
         con.print("no more data" , style="blue")
@@ -85,6 +106,15 @@ def purge_data () :
         json.dump(None, json_file)
               
 def show_is_active () :
+    
+    """
+    Displays the username and whether the user is active or not.
+
+    Reads user information from a JSON file named "save_username_password_email.json".
+    If the file doesn't exist or is empty, it assumes no users are active.
+
+    """
+    
     try :
         with open ("save_username_password_email.json" , "r") as json_file :
             user_info = json.load(json_file)
@@ -106,7 +136,7 @@ def changing_is_active (username) :
 
     Note:
         - This method modifies the 'IsActive' attribute in user data.
-        - If the account is currently active, it will be deactivated, and vice versa.
+        - If the account is currently active, it will be deactivated, and reverse.
 
     """
     
@@ -135,6 +165,9 @@ def changing_is_active (username) :
         
                
 def clear():
+    """
+    Clears the terminal screen.
+    """
     os.system('cls')
     
 if __name__ == "__main__":

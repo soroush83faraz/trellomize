@@ -8,6 +8,14 @@ from printing import *
 
 def create_new_task (proj_path_leads) :
     
+    """
+    Creates a new task and allows the user to customize its details.
+
+    Args:
+        proj_path_leads (list): A list containing project, path, and lead information.
+
+    """
+    
     Title = "Task"
     Description = "Put your discription here"
     Priority = "LOW"
@@ -68,6 +76,15 @@ def create_new_task (proj_path_leads) :
 
 def work_inside_proj (ID , username_In_Acc):
     
+    """
+    Provides functionality for project leads to manage tasks within a project.
+
+    Args:
+        ID (str): The user's identification.
+        username_In_Acc (str): The username associated with the account.
+
+    """
+    
     proj_path_member = finding_projects_member (ID , username_In_Acc)       
     # print(proj_member) 
     proj_path_leads = finding_projects_leads (ID , username_In_Acc)     
@@ -114,6 +131,15 @@ def work_inside_proj (ID , username_In_Acc):
 
 def finding_projects_leads (ID , username) :
     
+    """
+    Finds the path to a project's tasks for a given project lead.
+
+    Args:
+        ID (str): The project's identification.
+        username (str): The username associated with the account.
+
+    """
+    
     try :
         with open("save_username_password_email.json" , "r") as json_file :
             users_info = json.load(json_file)
@@ -138,6 +164,13 @@ def finding_projects_leads (ID , username) :
             
 def finding_projects_member (ID , username) :
     
+    """
+    Finds the path to a project's tasks for a given project member.
+
+    Args:
+        ID (str): The project's identification.
+        username (str): The username associated with the account.
+    """
     
     try :
         with open("save_username_password_email.json" , "r") as json_file :
@@ -162,6 +195,15 @@ def finding_projects_member (ID , username) :
 
 
 def task_and_member (proj_path_leads) :
+    
+    """
+    Allows project leads to edit tasks within a project.
+
+    Args:
+        proj_path_leads (list): A list containing path information.
+
+    """
+    
     while True :
         clear()
         tasks = show_task (proj_path_leads) 
@@ -243,7 +285,16 @@ def task_and_member (proj_path_leads) :
       
                      
             
-def show_task (proj_path_leads) :
+def show_task(proj_path_leads):
+    """
+    Displays a table of tasks within a project, categorized by priority.
+
+    Args:
+        proj_path_leads (list): A list containing path information.
+
+    Returns:
+        list: A list of dictionaries representing the tasks.
+    """
     try :
         with open("save_username_password_email.json" , "r") as json_file :
             users_info = json.load(json_file)
@@ -304,6 +355,11 @@ def show_task (proj_path_leads) :
          
                
 def clear():
+    
+    """
+    Clears the terminal screen.
+    """
+    
     os.system('cls')            
     
 # work_inside_proj("1323" , 'saeed')

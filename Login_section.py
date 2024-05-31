@@ -14,6 +14,19 @@ logging.basicConfig(filename="mylog.log", level=logging.INFO, format="%(asctime)
 
 #FUnction for checking if a combination is valid or not==============
 def check_combinations(username , password):
+    
+    """
+    Validates the combination of a username and password.
+
+    Args:
+        username (str): The username to check.
+        password (str): The password to check.
+
+    Returns:
+        dict: A dictionary containing user data if the combination is valid, otherwise an empty dictionary.
+
+    """
+    
     data_list = {}
     with open('save_username_password_email.json' , 'r') as file:
         reader_list = json.load(file)
@@ -35,6 +48,15 @@ def check_combinations(username , password):
 #====================================================================
 #Function That you should log in with this===========================
 def Log_in():
+    
+    """
+    Allows users to log in by entering their username and password.
+
+    Returns:
+        list: A list containing user data (e.g., username, email, etc.) upon successful login.
+
+    """
+    
     datalist = []
     username = None
     password = None
