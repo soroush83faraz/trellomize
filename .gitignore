@@ -1,4 +1,10 @@
 *.json
 __pycache__/
 venvy/
+myvenv/
+.venv/
+venv/
 *.log
+tempCodeRunnerFile.py
+.idea/
+.vscode/
