@@ -2,6 +2,8 @@
 
 A Trello-style team task manager that runs entirely in the terminal, built in Python with [rich](https://github.com/Textualize/rich) for the UI. Users sign up, create projects, invite members, and manage tasks on a Kanban-style board — with roles, comments, per-task history, and an admin CLI.
 
+**Web demo:** https://soroush83faraz.github.io/trellomize/ — an interactive browser demo of the same data model (statuses, priorities, roles, comments, history) as a drag-and-drop kanban board. The CLI remains the full product.
+
 ## Features
 
 - **Accounts and authentication**
